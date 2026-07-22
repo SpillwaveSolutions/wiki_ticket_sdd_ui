@@ -9,7 +9,7 @@ _The evidence chain: plan → item → ticket → code → release, forward and 
 - produced-by: [[Plan-wiki-ticket-ui-ia]]
 
 ### Web shell: Vite + React + Tailwind dark dashboard chrome with repo picker
-`01KY5ZZX8ZX1T0SD6S60CQD5Z0` · status: todo
+`01KY5ZZX8ZX1T0SD6S60CQD5Z0` · status: in_progress
 - belongs-to: WikiTicket UI — IA-aware dashboard (supersedes wiki-ticket-ui)
 - references: [github#4](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/4)
 - produced-by: [[Plan-wiki-ticket-ui-ia]]
@@ -52,7 +52,7 @@ _The evidence chain: plan → item → ticket → code → release, forward and 
 - produced-by: [[Plan-wiki-ticket-ui-ia]]
 
 ### Server: Hono JSON API over any worklog repo — fold, events, docs, index plane, git, gh, ledger, sync state
-`01KY5ZZX8YBZ3FS5QP06RF4PT6` · status: in_progress
+`01KY5ZZX8YBZ3FS5QP06RF4PT6` · status: done
 - belongs-to: WikiTicket UI — IA-aware dashboard (supersedes wiki-ticket-ui)
 - references: [github#3](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/3)
 - produced-by: [[Plan-wiki-ticket-ui-ia]]
