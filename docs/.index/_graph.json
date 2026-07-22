@@ -194,22 +194,22 @@
   },
   "item/01KY5ZZX8ZBF099JH8N2ZRJKKE": {
    "doc_type": "item",
-   "status": "todo",
+   "status": "in_progress",
    "title": "Panels wave 2: Releases, Docs browser (inventory-driven), Publish plane (3-way drift), Sync health, Charts"
   },
   "item/01KY5ZZX8ZJJX208WYH58MY9WS": {
    "doc_type": "item",
-   "status": "todo",
+   "status": "in_progress",
    "title": "Traceability panel: interactive _graph.json explorer with trace-check integrity checklist"
   },
   "item/01KY5ZZX8ZTV1ZYR8FYGBEWKJV": {
    "doc_type": "item",
-   "status": "todo",
+   "status": "in_progress",
    "title": "Panels wave 1: Overview, Board, Roadmap (Mermaid), Activity feed"
   },
   "item/01KY5ZZX8ZX1T0SD6S60CQD5Z0": {
    "doc_type": "item",
-   "status": "in_progress",
+   "status": "done",
    "title": "Web shell: Vite + React + Tailwind dark dashboard chrome with repo picker"
   },
   "item/01KY5ZZX8ZYPXTMVCGX4AAZQSG": {

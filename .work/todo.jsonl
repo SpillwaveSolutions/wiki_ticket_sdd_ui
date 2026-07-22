@@ -20,3 +20,7 @@
 {"actor":"richardhightower","ev":"01KY6079EQ3HJ03BB3AQSNMRV5","item":"01KY5ZZX8YBZ3FS5QP06RF4PT6","op":"update","set":{"status":"in_progress"},"ts":"2026-07-22T22:47:57Z"}
 {"actor":"richardhightower","ev":"01KY60WH4W6BTZ7J7ESK7GQVSK","item":"01KY5ZZX8YBZ3FS5QP06RF4PT6","op":"close","set":{"status":"done"},"ts":"2026-07-22T22:59:33Z"}
 {"actor":"richardhightower","ev":"01KY60WHARCQ666G1CSHDMJS5E","item":"01KY5ZZX8ZX1T0SD6S60CQD5Z0","op":"update","set":{"status":"in_progress"},"ts":"2026-07-22T22:59:33Z"}
+{"actor":"richardhightower","ev":"01KY61DGEQBE0EVCXMT2TESJ52","item":"01KY5ZZX8ZX1T0SD6S60CQD5Z0","op":"close","set":{"status":"done"},"ts":"2026-07-22T23:08:49Z"}
+{"actor":"richardhightower","ev":"01KY61DGMDQ6TCVEFWD6JD8R03","item":"01KY5ZZX8ZTV1ZYR8FYGBEWKJV","op":"update","set":{"status":"in_progress"},"ts":"2026-07-22T23:08:49Z"}
+{"actor":"richardhightower","ev":"01KY61DGT8BDZVNVPSX7EBSKYB","item":"01KY5ZZX8ZBF099JH8N2ZRJKKE","op":"update","set":{"status":"in_progress"},"ts":"2026-07-22T23:08:49Z"}
+{"actor":"richardhightower","ev":"01KY61DH00TBP19BAAER287PK3","item":"01KY5ZZX8ZJJX208WYH58MY9WS","op":"update","set":{"status":"in_progress"},"ts":"2026-07-22T23:08:50Z"}

@@ -9,25 +9,25 @@ _The evidence chain: plan → item → ticket → code → release, forward and 
 - produced-by: [[Plan-wiki-ticket-ui-ia]]
 
 ### Web shell: Vite + React + Tailwind dark dashboard chrome with repo picker
-`01KY5ZZX8ZX1T0SD6S60CQD5Z0` · status: in_progress
+`01KY5ZZX8ZX1T0SD6S60CQD5Z0` · status: done
 - belongs-to: WikiTicket UI — IA-aware dashboard (supersedes wiki-ticket-ui)
 - references: [github#4](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/4)
 - produced-by: [[Plan-wiki-ticket-ui-ia]]
 
 ### Panels wave 1: Overview, Board, Roadmap (Mermaid), Activity feed
-`01KY5ZZX8ZTV1ZYR8FYGBEWKJV` · status: todo
+`01KY5ZZX8ZTV1ZYR8FYGBEWKJV` · status: in_progress
 - belongs-to: WikiTicket UI — IA-aware dashboard (supersedes wiki-ticket-ui)
 - references: [github#5](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/5)
 - produced-by: [[Plan-wiki-ticket-ui-ia]]
 
 ### Traceability panel: interactive _graph.json explorer with trace-check integrity checklist
-`01KY5ZZX8ZJJX208WYH58MY9WS` · status: todo
+`01KY5ZZX8ZJJX208WYH58MY9WS` · status: in_progress
 - belongs-to: WikiTicket UI — IA-aware dashboard (supersedes wiki-ticket-ui)
 - references: [github#7](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/7)
 - produced-by: [[Plan-wiki-ticket-ui-ia]]
 
 ### Panels wave 2: Releases, Docs browser (inventory-driven), Publish plane (3-way drift), Sync health, Charts
-`01KY5ZZX8ZBF099JH8N2ZRJKKE` · status: todo
+`01KY5ZZX8ZBF099JH8N2ZRJKKE` · status: in_progress
 - belongs-to: WikiTicket UI — IA-aware dashboard (supersedes wiki-ticket-ui)
 - references: [github#6](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/6)
 - produced-by: [[Plan-wiki-ticket-ui-ia]]
