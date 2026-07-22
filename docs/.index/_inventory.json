@@ -45,17 +45,6 @@
    "wiki_key": "plan/2026-07-22-wiki-ticket-ui-ia"
   },
   {
-   "canonical_key": "plan/README",
-   "doc_type": "plan",
-   "items": [],
-   "slug": "README",
-   "source": "docs/plans/README.md",
-   "status": "completed",
-   "title": "Plans live in the main repo",
-   "truth_state": "current",
-   "wiki_key": "plan/README"
-  },
-  {
    "canonical_key": "roadmap",
    "doc_type": "roadmap",
    "generated_at": "2026-07-22T22:44:46Z",

@@ -229,12 +229,6 @@
    "title": "WikiTicket UI \u2014 IA-aware dashboard (supersedes wiki-ticket-ui)",
    "truth_state": "current"
   },
-  "plan/README": {
-   "doc_type": "plan",
-   "source": "docs/plans/README.md",
-   "title": "Plans live in the main repo",
-   "truth_state": "current"
-  },
   "roadmap": {
    "doc_type": "roadmap",
    "source": "docs/roadmap.md",

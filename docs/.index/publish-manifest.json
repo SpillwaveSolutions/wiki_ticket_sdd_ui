@@ -14,7 +14,7 @@
    "frozen": false,
    "page_name": "Index-Decisions",
    "render": "as-is",
-   "render_hash": "a4e29ad24b7d",
+   "render_hash": "9f871c53e32e",
    "source": "docs/.index/rendered/decisions.md",
    "title": "Decisions Index",
    "truth_state": "current",
@@ -71,17 +71,6 @@
    "title": "WikiTicket UI \u2014 IA-aware dashboard (supersedes wiki-ticket-ui)",
    "truth_state": "current",
    "wiki_key": "plan/2026-07-22-wiki-ticket-ui-ia"
-  },
-  {
-   "banner": "> **Current** \u2014 the latest status report. Reports freeze once published; corrections appear in later reports.",
-   "frozen": true,
-   "page_name": "Plan-README",
-   "render": "doc+banner",
-   "render_hash": "a0f6e5ce765a",
-   "source": "docs/plans/README.md",
-   "title": "Plans live in the main repo",
-   "truth_state": "current",
-   "wiki_key": "plan/README"
   },
   {
    "banner": "> **Current** \u2014 this is the living version; regenerated at 2026-07-22T22:44:46Z. Historical snapshots are linked from [[Index-Releases]].",
