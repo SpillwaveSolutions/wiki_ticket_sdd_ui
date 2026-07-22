@@ -179,7 +179,7 @@
   },
   "item/01KY5ZZX8YBZ3FS5QP06RF4PT6": {
    "doc_type": "item",
-   "status": "todo",
+   "status": "in_progress",
    "title": "Server: Hono JSON API over any worklog repo \u2014 fold, events, docs, index plane, git, gh, ledger, sync state"
   },
   "item/01KY5ZZX8YXD5YDJKQGJ3VCCHN": {
