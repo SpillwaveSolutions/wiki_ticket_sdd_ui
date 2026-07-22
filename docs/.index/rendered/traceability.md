@@ -15,7 +15,7 @@ _The evidence chain: plan → item → ticket → code → release, forward and 
 - produced-by: [[Plan-wiki-ticket-ui-ia]]
 
 ### Panels wave 1: Overview, Board, Roadmap (Mermaid), Activity feed
-`01KY5ZZX8ZTV1ZYR8FYGBEWKJV` · status: in_progress
+`01KY5ZZX8ZTV1ZYR8FYGBEWKJV` · status: done
 - belongs-to: WikiTicket UI — IA-aware dashboard (supersedes wiki-ticket-ui)
 - references: [github#5](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/5)
 - produced-by: [[Plan-wiki-ticket-ui-ia]]
