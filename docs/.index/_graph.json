@@ -194,7 +194,7 @@
   },
   "item/01KY5ZZX8ZBF099JH8N2ZRJKKE": {
    "doc_type": "item",
-   "status": "in_progress",
+   "status": "done",
    "title": "Panels wave 2: Releases, Docs browser (inventory-driven), Publish plane (3-way drift), Sync health, Charts"
   },
   "item/01KY5ZZX8ZJJX208WYH58MY9WS": {
@@ -214,7 +214,7 @@
   },
   "item/01KY5ZZX8ZYPXTMVCGX4AAZQSG": {
    "doc_type": "item",
-   "status": "todo",
+   "status": "in_progress",
    "title": "Polish pass to the visually-stunning bar; README screenshots; tag v0.1.0"
   },
   "plan/2026-07-21-wiki-ticket-ui": {

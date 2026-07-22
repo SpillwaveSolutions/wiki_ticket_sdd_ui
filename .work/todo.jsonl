@@ -26,3 +26,5 @@
 {"actor":"richardhightower","ev":"01KY61DH00TBP19BAAER287PK3","item":"01KY5ZZX8ZJJX208WYH58MY9WS","op":"update","set":{"status":"in_progress"},"ts":"2026-07-22T23:08:50Z"}
 {"actor":"richardhightower","ev":"01KY622CAEX2RWT220M5GK8SZY","item":"01KY5ZZX8ZJJX208WYH58MY9WS","op":"close","set":{"status":"done"},"ts":"2026-07-22T23:20:13Z"}
 {"actor":"richardhightower","ev":"01KY625T1AASF3NWQ6MQE9GKXA","item":"01KY5ZZX8ZTV1ZYR8FYGBEWKJV","op":"close","set":{"status":"done"},"ts":"2026-07-22T23:22:05Z"}
+{"actor":"richardhightower","ev":"01KY627NNSTHVGAWPC8YRMBYP8","item":"01KY5ZZX8ZBF099JH8N2ZRJKKE","op":"close","set":{"status":"done"},"ts":"2026-07-22T23:23:06Z"}
+{"actor":"richardhightower","ev":"01KY627NV993BS450KADAGRV9D","item":"01KY5ZZX8ZYPXTMVCGX4AAZQSG","op":"update","set":{"status":"in_progress"},"ts":"2026-07-22T23:23:06Z"}
