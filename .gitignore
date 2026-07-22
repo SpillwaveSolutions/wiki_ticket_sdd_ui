@@ -1,0 +1,7 @@
+# Re-include files the developer's global gitignore may hide — this repo
+# commits its agent instructions deliberately.
+!CLAUDE.md
+!.claude/
+
+node_modules/
+dist/
