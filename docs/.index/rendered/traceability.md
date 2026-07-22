@@ -21,7 +21,7 @@ _The evidence chain: plan → item → ticket → code → release, forward and 
 - produced-by: [[Plan-wiki-ticket-ui-ia]]
 
 ### Traceability panel: interactive _graph.json explorer with trace-check integrity checklist
-`01KY5ZZX8ZJJX208WYH58MY9WS` · status: in_progress
+`01KY5ZZX8ZJJX208WYH58MY9WS` · status: done
 - belongs-to: WikiTicket UI — IA-aware dashboard (supersedes wiki-ticket-ui)
 - references: [github#7](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/7)
 - produced-by: [[Plan-wiki-ticket-ui-ia]]
