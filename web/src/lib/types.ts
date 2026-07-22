@@ -27,7 +27,9 @@ export interface WorklogItem {
   labels?: string[];
   unplanned?: boolean;
   discovered_during?: string;
-  external?: { system?: string; url?: string; number?: number | string } | string;
+  /** Real shape from `bin/worklog fold`/sync; not schema-enforced, so
+   * lib/external.ts's normalizeExternal() also tolerates legacy shapes. */
+  external?: { system?: string; key?: string | number; url?: string; hash?: string; synced_at?: string };
   _orphan?: boolean;
   _conflicts?: string[];
 }
@@ -193,4 +195,8 @@ export interface ReleasesResponse {
 export interface TraceCheckResponse {
   ok: boolean;
   output: string;
+  /** Count of unlinked-evidence gap lines in `output`, parsed server-side —
+   * same rule as traceability-graph.ts's parseTraceCheck(), which the panel
+   * still uses for the gap list itself (this field is just the count). */
+  gaps: number;
 }

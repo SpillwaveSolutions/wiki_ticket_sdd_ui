@@ -1,8 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { api } from "../lib/api";
 import { useApi } from "../lib/useApi";
+import { stripFrontmatter } from "../lib/format";
 import Panel from "../components/Panel";
 import Spinner from "../components/Spinner";
 import Badge from "../components/Badge";
@@ -11,15 +13,6 @@ import type { InventoryDoc } from "../lib/types";
 
 // Wave 2: inventory-driven doc browser with truth-state badges + supersede
 // chains from _inventory.json — see plan panel 6 (changed panel).
-
-/** Content starts after the closing `---` frontmatter fence, if present. */
-function stripFrontmatter(markdown: string): string {
-  if (!markdown.startsWith("---")) return markdown;
-  const end = markdown.indexOf("\n---", 3);
-  if (end === -1) return markdown;
-  const afterFence = markdown.indexOf("\n", end + 1);
-  return afterFence === -1 ? "" : markdown.slice(afterFence + 1);
-}
 
 /** Resolve a wiki_key/canonical_key/alias reference to the doc record it names. */
 function findDoc(docs: InventoryDoc[], key: string | undefined): InventoryDoc | undefined {
@@ -66,7 +59,7 @@ function IdentityHeader({ doc, docs, onNavigate }: {
               <button
                 type="button"
                 onClick={() => onNavigate(supersedesDoc.source)}
-                className="text-accent hover:underline"
+                className="focus-ring rounded text-accent hover:underline"
               >
                 {supersedesDoc.title}
               </button>
@@ -80,7 +73,7 @@ function IdentityHeader({ doc, docs, onNavigate }: {
               <button
                 type="button"
                 onClick={() => onNavigate(supersededByDoc.source)}
-                className="text-accent hover:underline"
+                className="focus-ring rounded text-accent hover:underline"
               >
                 {supersededByDoc.title}
               </button>
@@ -158,12 +151,12 @@ export default function Docs() {
             placeholder="Search title…"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="rounded-md border border-slate-700 bg-slate-900 px-2 py-1 text-xs text-slate-200 placeholder:text-slate-500"
+            className="focus-ring rounded-md border border-slate-700 bg-slate-900 px-2 py-1 text-xs text-slate-200 placeholder:text-slate-500 focus:border-accent/50"
           />
           <select
             value={typeFilter}
             onChange={(e) => setTypeFilter(e.target.value)}
-            className="rounded-md border border-slate-700 bg-slate-900 px-2 py-1 text-xs text-slate-200"
+            className="focus-ring rounded-md border border-slate-700 bg-slate-900 px-2 py-1 text-xs text-slate-200 focus:border-accent/50"
           >
             <option value="">All types</option>
             {docTypes.map((t) => (
@@ -173,7 +166,7 @@ export default function Docs() {
           <select
             value={truthFilter}
             onChange={(e) => setTruthFilter(e.target.value)}
-            className="rounded-md border border-slate-700 bg-slate-900 px-2 py-1 text-xs text-slate-200"
+            className="focus-ring rounded-md border border-slate-700 bg-slate-900 px-2 py-1 text-xs text-slate-200 focus:border-accent/50"
           >
             <option value="">All truth states</option>
             {truthStates.map((t) => (
@@ -195,7 +188,7 @@ export default function Docs() {
                   <button
                     type="button"
                     onClick={() => navigate(d.source)}
-                    className={`w-full rounded-md border px-2 py-1.5 text-left text-xs ${
+                    className={`focus-ring w-full rounded-md border px-2 py-1.5 text-left text-xs transition-colors ${
                       d.source === selectedSource
                         ? "border-accent/50 bg-accent/10 text-slate-100"
                         : "border-transparent text-slate-300 hover:bg-slate-800/60"
@@ -223,7 +216,7 @@ export default function Docs() {
                 {content.status === "error" && <ErrorState message={content.error} />}
                 {content.status === "ok" && content.data && (
                   <div className="prose prose-invert prose-sm max-w-none text-slate-300">
-                    <ReactMarkdown>{stripFrontmatter(content.data)}</ReactMarkdown>
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>{stripFrontmatter(content.data)}</ReactMarkdown>
                   </div>
                 )}
               </>

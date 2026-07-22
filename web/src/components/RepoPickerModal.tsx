@@ -70,7 +70,7 @@ export default function RepoPickerModal({ repo, onClose }: RepoPickerModalProps)
           />
           <button
             onClick={addDraft}
-            className="rounded-lg border border-slate-800 px-3 py-1.5 text-xs text-slate-300 hover:bg-slate-800/60"
+            className="focus-ring rounded-lg border border-slate-800 px-3 py-1.5 text-xs text-slate-300 transition-colors hover:bg-slate-800/60"
           >
             Remember
           </button>
@@ -78,7 +78,7 @@ export default function RepoPickerModal({ repo, onClose }: RepoPickerModalProps)
 
         <button
           onClick={onClose}
-          className="mt-4 w-full rounded-lg bg-accent/15 px-3 py-1.5 text-xs font-medium text-accent hover:bg-accent/25"
+          className="focus-ring mt-4 w-full rounded-lg bg-accent/15 px-3 py-1.5 text-xs font-medium text-accent transition-colors hover:bg-accent/25"
         >
           Close
         </button>

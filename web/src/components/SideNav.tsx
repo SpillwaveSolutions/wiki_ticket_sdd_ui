@@ -10,7 +10,7 @@ export default function SideNav() {
           to={panel.path}
           end={panel.path === "/"}
           className={({ isActive }) =>
-            `rounded-lg px-3 py-2 text-sm transition-colors ${
+            `focus-ring rounded-lg px-3 py-2 text-sm transition-colors ${
               isActive
                 ? "bg-accent/15 text-accent"
                 : "text-slate-400 hover:bg-slate-800/60 hover:text-slate-200"

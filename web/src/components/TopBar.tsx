@@ -46,7 +46,7 @@ export default function TopBar() {
       </div>
       <button
         onClick={() => setPickerOpen(true)}
-        className="rounded-lg border border-slate-800 px-3 py-1.5 text-xs text-slate-300 hover:bg-slate-800/60"
+        className="focus-ring rounded-lg border border-slate-800 px-3 py-1.5 text-xs text-slate-300 transition-colors hover:bg-slate-800/60"
       >
         Repo
       </button>

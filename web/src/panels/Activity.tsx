@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { api } from "../lib/api";
 import { useApi } from "../lib/useApi";
+import { relativeTime } from "../lib/format";
 import type { GitCommit, Release, WorklogEvent } from "../lib/types";
 import Panel from "../components/Panel";
 import Spinner from "../components/Spinner";
@@ -60,21 +61,6 @@ function toRows(events: WorklogEvent[], commits: GitCommit[], releases: Release[
   return [...worklogRows, ...gitRows, ...releaseRows].sort((a, b) => (b.ts > a.ts ? 1 : b.ts < a.ts ? -1 : 0));
 }
 
-function relativeTime(iso: string): string {
-  const diffMs = Date.now() - Date.parse(iso);
-  if (Number.isNaN(diffMs)) return iso;
-  const mins = Math.round(diffMs / 60_000);
-  if (mins < 1) return "just now";
-  if (mins < 60) return `${mins}m ago`;
-  const hours = Math.round(mins / 60);
-  if (hours < 24) return `${hours}h ago`;
-  const days = Math.round(hours / 24);
-  if (days < 30) return `${days}d ago`;
-  const months = Math.round(days / 30);
-  if (months < 12) return `${months}mo ago`;
-  return `${Math.round(months / 12)}y ago`;
-}
-
 const SOURCE_STYLE: Record<Source, string> = {
   worklog: "border-accent/40 bg-accent/10 text-accent",
   git: "border-blue-500/30 bg-blue-500/10 text-blue-300",
@@ -127,7 +113,7 @@ function ActivityBody({ events, commits, releases }: { events: WorklogEvent[]; c
           <select
             value={op}
             onChange={(e) => setOp(e.target.value)}
-            className="rounded border border-slate-800 bg-slate-900 px-2 py-1 text-slate-300"
+            className="focus-ring rounded border border-slate-800 bg-slate-900 px-2 py-1 text-slate-300 focus:border-accent/50"
           >
             <option value="all">all ops</option>
             {ops.map((o) => (

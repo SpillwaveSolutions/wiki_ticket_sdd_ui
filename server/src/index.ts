@@ -12,7 +12,9 @@ function parseArgs(argv: string[]): { repo?: string; port?: number } {
 
 const args = parseArgs(process.argv.slice(2));
 const repoPath = args.repo || process.env.WORKLOG_REPO || process.cwd();
-const port = args.port || Number(process.env.PORT) || 4180;
+// 4181 matches the web dev proxy's default VITE_API_PORT (web/vite.config.ts)
+// — was 4180 here, silently breaking `npm run dev` out of the box.
+const port = args.port || Number(process.env.PORT) || 4181;
 
 const app = createApp(repoPath);
 

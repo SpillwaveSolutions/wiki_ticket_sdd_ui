@@ -70,7 +70,7 @@ function NodeCard({ id, node, via, onClick }: NodeCardProps) {
       type="button"
       onClick={onClick}
       disabled={!onClick}
-      className="w-full rounded-lg border border-slate-800 bg-slate-900/40 p-2 text-left transition hover:border-accent/50 hover:bg-slate-900/70 disabled:cursor-default"
+      className="focus-ring w-full rounded-lg border border-slate-800 bg-slate-900/40 p-2 text-left transition hover:border-accent/50 hover:bg-slate-900/70 disabled:cursor-default"
     >
       <span className="flex items-center gap-1 text-[11px] uppercase tracking-wide text-slate-500">
         <span aria-hidden>{kindIcon(kind)}</span>
@@ -233,7 +233,7 @@ export default function Traceability() {
                             type="button"
                             onClick={() => focusOn(id)}
                             title={id}
-                            className={`w-full truncate rounded px-1.5 py-1 text-left text-xs ${
+                            className={`focus-ring w-full truncate rounded px-1.5 py-1 text-left text-xs transition-colors ${
                               id === focusId ? "bg-accent/20 text-accent" : "text-slate-300 hover:bg-slate-800"
                             }`}
                           >
@@ -252,7 +252,7 @@ export default function Traceability() {
                 <nav className="flex flex-wrap items-center gap-1 text-xs text-slate-400" aria-label="Breadcrumb">
                   {breadcrumb.map((id, i) => (
                     <span key={`${id}-${i}`} className="flex items-center gap-1">
-                      <button type="button" onClick={() => jumpToBreadcrumb(i)} className="text-accent hover:underline">
+                      <button type="button" onClick={() => jumpToBreadcrumb(i)} className="focus-ring rounded text-accent hover:underline">
                         {nodeLabel(id, nodes[id] ?? null)}
                       </button>
                       <span>/</span>
@@ -268,7 +268,7 @@ export default function Traceability() {
                     key={type}
                     type="button"
                     onClick={() => toggleEdgeType(type)}
-                    className={`rounded-full border px-2 py-0.5 text-[11px] ${
+                    className={`focus-ring rounded-full border px-2 py-0.5 text-[11px] transition-colors ${
                       hiddenTypes.has(type) ? "border-slate-800 text-slate-600 line-through" : "border-accent/40 text-accent"
                     }`}
                   >

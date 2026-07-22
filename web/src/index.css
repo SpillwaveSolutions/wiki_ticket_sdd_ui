@@ -15,4 +15,10 @@
   .glass {
     @apply bg-slate-900/60 backdrop-blur-md border border-slate-800/80;
   }
+  /* Shared keyboard-focus treatment for every interactive control — buttons,
+     inputs, selects, links styled as buttons. Applied alongside whatever
+     hover: classes the element already has. */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60;
+  }
 }

@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { api } from "../lib/api";
 import { useApi } from "../lib/useApi";
+import { relativeTime } from "../lib/format";
 import Panel from "../components/Panel";
 import Spinner from "../components/Spinner";
 import { ErrorState, OfflineState, EmptyState } from "../components/EmptyState";
@@ -40,9 +41,14 @@ function ReleaseRow({ tag, name, date, url, body, snapshots }: {
           <span className="text-sm font-medium text-slate-200">{name || tag}</span>
         </div>
         <div className="flex items-center gap-3 text-xs text-slate-500">
-          {date && <span>{new Date(date).toLocaleDateString()}</span>}
+          {date && <span title={new Date(date).toLocaleString()}>{relativeTime(date)}</span>}
           {url && (
-            <a href={url} target="_blank" rel="noreferrer" className="text-accent hover:underline">
+            <a
+              href={url}
+              target="_blank"
+              rel="noreferrer"
+              className="focus-ring rounded text-accent hover:underline"
+            >
               GitHub release
             </a>
           )}
@@ -55,7 +61,7 @@ function ReleaseRow({ tag, name, date, url, body, snapshots }: {
             <a
               key={s.wiki_key}
               href={`/docs?doc=${encodeURIComponent(s.source)}`}
-              className="rounded-full border border-blue-500/30 bg-blue-500/15 px-2 py-0.5 text-[11px] text-blue-300 hover:bg-blue-500/25"
+              className="focus-ring rounded-full border border-blue-500/30 bg-blue-500/15 px-2 py-0.5 text-[11px] text-blue-300 transition-colors hover:bg-blue-500/25"
             >
               {s.title}
             </a>
@@ -68,7 +74,7 @@ function ReleaseRow({ tag, name, date, url, body, snapshots }: {
           <button
             type="button"
             onClick={() => setOpen((o) => !o)}
-            className="text-xs text-slate-400 hover:text-slate-200"
+            className="focus-ring rounded text-xs text-slate-400 transition-colors hover:text-slate-200"
           >
             {open ? "Hide notes" : "Show notes"}
           </button>

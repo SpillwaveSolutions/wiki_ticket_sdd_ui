@@ -37,6 +37,17 @@ function run(cmd: string, args: string[], cwd: string) {
   return spawnSync(cmd, args, { cwd, encoding: "utf8", maxBuffer: 16 * 1024 * 1024 });
 }
 
+/** Counts gap lines in `bin/worklog trace-check` output — every non-blank
+ * line that isn't the "trace: ..." summary line. Mirrors
+ * web/src/panels/traceability-graph.ts's parseTraceCheck() so the client
+ * doesn't have to regex `output` itself just to get a count. */
+function countTraceCheckGaps(output: string): number {
+  return output
+    .split("\n")
+    .map((l) => l.trim())
+    .filter((l) => l.length > 0 && !l.startsWith("trace:")).length;
+}
+
 export function registerRoutes(app: Hono<Env>) {
   app.get("/api/repo", (c) => {
     const repoPath = c.get("repoPath");
@@ -236,6 +247,7 @@ export function registerRoutes(app: Hono<Env>) {
   app.get("/api/trace-check", (c) => {
     const repoPath = c.get("repoPath");
     const res = run("python3", ["bin/worklog", "trace-check"], repoPath);
-    return c.json({ ok: res.status === 0, output: (res.stdout || "") + (res.stderr || "") });
+    const output = (res.stdout || "") + (res.stderr || "");
+    return c.json({ ok: res.status === 0, output, gaps: countTraceCheckGaps(output) });
   });
 }

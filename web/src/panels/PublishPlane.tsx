@@ -122,7 +122,12 @@ export default function PublishPlane() {
                         </span>
                       </td>
                       <td className="px-2 py-2">
-                        <a href={e.url} target="_blank" rel="noreferrer" className="text-accent hover:underline">
+                        <a
+                          href={e.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="focus-ring rounded text-accent hover:underline"
+                        >
                           open ↗
                         </a>
                       </td>

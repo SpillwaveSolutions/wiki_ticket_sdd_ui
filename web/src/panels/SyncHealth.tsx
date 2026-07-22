@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { api, ApiError } from "../lib/api";
 import { useApi } from "../lib/useApi";
+import { normalizeExternal } from "../lib/external";
 import Panel from "../components/Panel";
 import Spinner from "../components/Spinner";
 import StatCard from "../components/StatCard";
@@ -18,10 +19,9 @@ function isOpen(item: WorklogItem): boolean {
 }
 
 function externalLabel(item: WorklogItem): string | undefined {
-  const ext = item.external;
+  const ext = normalizeExternal(item.external);
   if (!ext) return undefined;
-  if (typeof ext === "string") return ext;
-  return ext.url ?? (ext.number != null ? `#${ext.number}` : ext.system);
+  return ext.url ?? (ext.key != null ? `#${ext.key}` : ext.system);
 }
 
 export default function SyncHealth() {

@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
-import mermaid from "mermaid";
+import remarkGfm from "remark-gfm";
+import type { Mermaid } from "mermaid";
 import { api } from "../lib/api";
 import { useApi } from "../lib/useApi";
+import { stripFrontmatter } from "../lib/format";
 import Panel from "../components/Panel";
 import Spinner from "../components/Spinner";
 import { ErrorState } from "../components/EmptyState";
@@ -12,12 +14,6 @@ import { ErrorState } from "../components/EmptyState";
 // truth_state, source_hash, generated_at) that GET /api/roadmap already
 // parses into `meta` — but `markdown` still contains the raw header, so it
 // has to be stripped client-side before handing the body to react-markdown.
-
-/** Strips a leading `---\n...\n---\n` YAML frontmatter block, if present. */
-function stripFrontmatter(markdown: string): string {
-  const match = markdown.match(/^---\n[\s\S]*?\n---\n?/);
-  return match ? markdown.slice(match[0].length) : markdown;
-}
 
 // ponytail: react-markdown (no rehype-raw) doesn't drop this itself when it
 // isn't its own blank-line-delimited block (roadmap-render emits it right
@@ -52,11 +48,20 @@ function extractText(node: ReactNode): string {
   return "";
 }
 
-let mermaidInitialized = false;
-function ensureMermaidInit() {
-  if (mermaidInitialized) return;
-  mermaid.initialize({ theme: "dark", startOnLoad: false });
-  mermaidInitialized = true;
+// Lazy-loaded: mermaid is the single biggest dependency in this app and only
+// the Roadmap panel needs it. A cached dynamic-import promise means the
+// first mermaid block pays the fetch+init cost once; every other route never
+// touches the chunk.
+let mermaidPromise: Promise<Mermaid> | null = null;
+function loadMermaid(): Promise<Mermaid> {
+  if (!mermaidPromise) {
+    mermaidPromise = import("mermaid").then((mod) => {
+      const instance = mod.default;
+      instance.initialize({ theme: "dark", startOnLoad: false });
+      return instance;
+    });
+  }
+  return mermaidPromise;
 }
 
 let mermaidSeq = 0;
@@ -67,10 +72,9 @@ function MermaidBlock({ code }: { code: string }) {
   const idRef = useRef(`roadmap-mermaid-${++mermaidSeq}`);
 
   useEffect(() => {
-    ensureMermaidInit();
     let cancelled = false;
-    mermaid
-      .render(idRef.current, code)
+    loadMermaid()
+      .then((instance) => instance.render(idRef.current, code))
       .then(({ svg: rendered }) => {
         if (!cancelled) setSvg(rendered);
       })
@@ -131,8 +135,11 @@ function RoadmapBody({ meta, markdown }: { meta: Record<string, string>; markdow
             </span>
           )}
         </div>
-        <article className="max-w-none text-sm leading-relaxed text-slate-300">
-          <ReactMarkdown components={{ h2: Heading2, code: CodeBlock, pre: ({ children }) => <>{children}</> }}>
+        <article className="prose prose-invert prose-sm max-w-none text-slate-300 prose-code:before:content-none prose-code:after:content-none">
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            components={{ h2: Heading2, code: CodeBlock, pre: ({ children }) => <>{children}</> }}
+          >
             {body}
           </ReactMarkdown>
         </article>

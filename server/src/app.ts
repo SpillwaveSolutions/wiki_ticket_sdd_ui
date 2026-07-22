@@ -1,4 +1,8 @@
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { Hono } from "hono";
+import { serveStatic } from "@hono/node-server/serve-static";
 import { loadTargetRepo, resolveRepoPath, TargetRepoError, type WorklogConfig } from "./repo.js";
 import { registerRoutes } from "./routes.js";
 
@@ -8,6 +12,11 @@ export type Env = {
     config: WorklogConfig;
   };
 };
+
+// web/dist relative to this file, whether run via tsx (server/src) or the
+// built output (server/dist) — both sit two levels under the repo root.
+const here = path.dirname(fileURLToPath(import.meta.url));
+const webDistDir = path.resolve(here, "../../web/dist");
 
 export function createApp(repoCandidate?: string) {
   const app = new Hono<Env>();
@@ -28,5 +37,18 @@ export function createApp(repoCandidate?: string) {
   });
 
   registerRoutes(app);
+
+  // Serves the built web app (`npm run build`) so `npm start -- --repo
+  // <path>` is a one-command way to get the UI, not just the JSON API.
+  // No-op (404s) if web/dist hasn't been built — dev workflows use the Vite
+  // dev server + proxy instead, never this.
+  if (fs.existsSync(webDistDir)) {
+    app.use("*", serveStatic({ root: webDistDir }));
+    app.get("*", (c) => {
+      if (c.req.path.startsWith("/api/")) return c.notFound();
+      return c.html(fs.readFileSync(path.join(webDistDir, "index.html"), "utf8"));
+    });
+  }
+
   return app;
 }

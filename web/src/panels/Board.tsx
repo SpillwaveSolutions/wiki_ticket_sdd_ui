@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { api } from "../lib/api";
 import { useApi } from "../lib/useApi";
 import type { WorklogEvent, WorklogItem } from "../lib/types";
+import { normalizeExternal } from "../lib/external";
 import Panel from "../components/Panel";
 import Spinner from "../components/Spinner";
 import Badge from "../components/Badge";
@@ -19,41 +20,6 @@ const COLUMNS: { key: ColumnKey; label: string }[] = [
   { key: "blocked", label: "Blocked" },
   { key: "recently_done", label: "Recently done" },
 ];
-
-/**
- * External-issue reference, normalized from the (loosely typed) `external`
- * field. Real repo data is a flat object `{system, key, url, ...}`, but the
- * shape isn't schema-enforced, so this also tolerates a `{github: {...}}`
- * wrapper and an array of refs (first entry wins).
- * Candidate for extraction to lib/types.ts + lib/api.ts if another panel
- * needs GitHub-issue linking (Docs/Releases/Traceability all plausibly will).
- */
-interface ExternalRef {
-  system?: string;
-  key?: string | number;
-  url?: string;
-}
-
-function normalizeExternal(raw: unknown): ExternalRef | null {
-  if (!raw || typeof raw !== "object") return null;
-  if (Array.isArray(raw)) {
-    const first = raw.find((r) => r && typeof r === "object");
-    return first ? normalizeExternal(first) : null;
-  }
-  const obj = raw as Record<string, unknown>;
-  if (obj.github && typeof obj.github === "object") {
-    const gh = obj.github as Record<string, unknown>;
-    return { system: "github", key: gh.key as string | number | undefined, url: gh.url as string | undefined };
-  }
-  if ("key" in obj || "number" in obj || "url" in obj) {
-    return {
-      system: obj.system as string | undefined,
-      key: (obj.key ?? obj.number) as string | number | undefined,
-      url: obj.url as string | undefined,
-    };
-  }
-  return null;
-}
 
 /** Buckets items into the four board columns. "recently done" = closed in
  * the last 14 days (by the newest `close` event ts for that item); if none
@@ -103,7 +69,7 @@ function ItemCard({
   return (
     <button
       onClick={onClick}
-      className="glass w-full rounded-lg p-3 text-left transition hover:border-accent/50"
+      className="focus-ring glass w-full rounded-lg p-3 text-left transition hover:border-accent/50"
     >
       <p className="mb-2 text-sm font-medium leading-snug text-slate-100">{item.title}</p>
       <div className="flex flex-wrap items-center gap-1.5">
@@ -131,7 +97,7 @@ function ItemCard({
             target="_blank"
             rel="noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="rounded-full border border-slate-700 px-2 py-0.5 text-[11px] text-accent hover:underline"
+            className="focus-ring rounded-full border border-slate-700 px-2 py-0.5 text-[11px] text-accent hover:underline"
           >
             #{ext.key}
           </a>
@@ -160,7 +126,7 @@ function ItemDrawer({
       <aside className="glass relative z-50 h-full w-full max-w-md overflow-auto p-4">
         <div className="mb-3 flex items-center justify-between">
           <h2 className="text-sm font-semibold text-slate-100">{item.title}</h2>
-          <button onClick={onClose} className="text-xs text-slate-400 hover:text-slate-200">
+          <button onClick={onClose} className="focus-ring rounded text-xs text-slate-400 hover:text-slate-200">
             Close
           </button>
         </div>

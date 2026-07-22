@@ -3,7 +3,7 @@
 _The evidence chain: plan → item → ticket → code → release, forward and backward. Generated from `docs/.index/_graph.json`; do not edit._
 
 ### Polish pass to the visually-stunning bar; README screenshots; tag v0.1.0
-`01KY5ZZX8ZYPXTMVCGX4AAZQSG` · status: in_progress
+`01KY5ZZX8ZYPXTMVCGX4AAZQSG` · status: done
 - belongs-to: WikiTicket UI — IA-aware dashboard (supersedes wiki-ticket-ui)
 - references: [github#8](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/8)
 - produced-by: [[Plan-wiki-ticket-ui-ia]]
