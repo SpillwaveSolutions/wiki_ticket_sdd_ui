@@ -1,0 +1,12 @@
+name: worklog-invariants
+on: [push, pull_request]
+
+jobs:
+  invariants:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Same script as the local hook: trailing newline, event schema,
+      # roadmap freshness. A dev can --no-verify past the local hook; not this.
+      - name: log invariants
+        run: hooks/pre-commit

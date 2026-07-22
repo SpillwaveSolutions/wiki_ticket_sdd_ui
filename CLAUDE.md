@@ -11,10 +11,11 @@ before doing anything.
   published as
   [Plan-wiki-ticket-ui-ia](https://github.com/SpillwaveSolutions/wiki_ticket_sdd/wiki/Plan-wiki-ticket-ui-ia).
   Read it before implementing anything here.
-- **Work tracking:** ALL work on this UI is tracked in the MAIN repo's worklog
-  (`../wiki_ticket_sdd/.work/todo.jsonl`, epic `01KY5VY0TDSWJE6W80CNCWA8QA`,
-  GitHub epic #113, items #114–#121). This repo is not a second tracker — do
-  not add a `.work/` here. Record items with `../wiki_ticket_sdd/bin/worklog`.
+- **Work tracking:** tracked HERE, in this repo's own worklog
+  (`.work/todo.jsonl`, via `bin/worklog`) with GitHub issues on
+  `SpillwaveSolutions/wiki_ticket_sdd_ui`. (Originally tracked in the main
+  repo — Rick moved tracking here on 2026-07-22 when the build started; the
+  main repo's epic #113/items #114–#121 are closed as moved.)
 - **Design changes:** plans are frozen. If the design must change, write a NEW
   superseding plan in the main repo (see its CLAUDE.md), never edit the plan
   or fork the design here. `docs/plans/` in this repo holds pointers only.
@@ -39,3 +40,16 @@ before doing anything.
 Develop and verify against `../wiki_ticket_sdd` (the real repo this was born
 from), plus a fresh `init.sh`-scaffolded throwaway repo for the generic-repo
 proof. The plan's Verification section lists the acceptance checks.
+
+<!-- worklog:policy:start -->
+## Work tracking policy
+
+- Every plan MUST end by running `worklog plan-capture` — it writes
+  `docs/plans/<date>-<slug>.md` and appends the plan's steps as work items.
+- Work discovered mid-flight that wasn't in the plan: run
+  `worklog add --unplanned --discovered-during <item>` BEFORE doing the work.
+- Never hand-edit `.work/*.jsonl` (use `worklog`) or `docs/roadmap.md`
+  (it is generated; change the work items instead).
+- After changing work items, run `worklog roadmap-render` and commit the log
+  and roadmap together.
+<!-- worklog:policy:end -->
