@@ -1,0 +1,282 @@
+{
+ "edges": [
+  {
+   "from": "item/01KY5ZZX8Y6N7E5YQYP4X1V7VA",
+   "to": "item/01KY5ZZX8YXD5YDJKQGJ3VCCHN",
+   "type": "belongs-to"
+  },
+  {
+   "from": "item/01KY5ZZX8Y6N7E5YQYP4X1V7VA",
+   "to": "ticket/github#2",
+   "type": "references"
+  },
+  {
+   "from": "item/01KY5ZZX8YBZ3FS5QP06RF4PT6",
+   "to": "item/01KY5ZZX8YXD5YDJKQGJ3VCCHN",
+   "type": "belongs-to"
+  },
+  {
+   "from": "item/01KY5ZZX8YBZ3FS5QP06RF4PT6",
+   "to": "ticket/github#3",
+   "type": "references"
+  },
+  {
+   "from": "item/01KY5ZZX8YXD5YDJKQGJ3VCCHN",
+   "to": "ticket/github#1",
+   "type": "references"
+  },
+  {
+   "from": "item/01KY5ZZX8Z46K7BCSPPFKN23JZ",
+   "to": "item/01KY5ZZX8YXD5YDJKQGJ3VCCHN",
+   "type": "belongs-to"
+  },
+  {
+   "from": "item/01KY5ZZX8Z46K7BCSPPFKN23JZ",
+   "to": "ticket/github#9",
+   "type": "references"
+  },
+  {
+   "from": "item/01KY5ZZX8ZBF099JH8N2ZRJKKE",
+   "to": "item/01KY5ZZX8YXD5YDJKQGJ3VCCHN",
+   "type": "belongs-to"
+  },
+  {
+   "from": "item/01KY5ZZX8ZBF099JH8N2ZRJKKE",
+   "to": "ticket/github#6",
+   "type": "references"
+  },
+  {
+   "from": "item/01KY5ZZX8ZJJX208WYH58MY9WS",
+   "to": "item/01KY5ZZX8YXD5YDJKQGJ3VCCHN",
+   "type": "belongs-to"
+  },
+  {
+   "from": "item/01KY5ZZX8ZJJX208WYH58MY9WS",
+   "to": "ticket/github#7",
+   "type": "references"
+  },
+  {
+   "from": "item/01KY5ZZX8ZTV1ZYR8FYGBEWKJV",
+   "to": "item/01KY5ZZX8YXD5YDJKQGJ3VCCHN",
+   "type": "belongs-to"
+  },
+  {
+   "from": "item/01KY5ZZX8ZTV1ZYR8FYGBEWKJV",
+   "to": "ticket/github#5",
+   "type": "references"
+  },
+  {
+   "from": "item/01KY5ZZX8ZX1T0SD6S60CQD5Z0",
+   "to": "item/01KY5ZZX8YXD5YDJKQGJ3VCCHN",
+   "type": "belongs-to"
+  },
+  {
+   "from": "item/01KY5ZZX8ZX1T0SD6S60CQD5Z0",
+   "to": "ticket/github#4",
+   "type": "references"
+  },
+  {
+   "from": "item/01KY5ZZX8ZYPXTMVCGX4AAZQSG",
+   "to": "item/01KY5ZZX8YXD5YDJKQGJ3VCCHN",
+   "type": "belongs-to"
+  },
+  {
+   "from": "item/01KY5ZZX8ZYPXTMVCGX4AAZQSG",
+   "to": "ticket/github#8",
+   "type": "references"
+  },
+  {
+   "from": "plan/2026-07-21-wiki-ticket-ui",
+   "to": "item/01KY111BC71KJGNH55CB2DWMKN",
+   "type": "produces"
+  },
+  {
+   "from": "plan/2026-07-21-wiki-ticket-ui",
+   "to": "item/01KY111BC7B70C7M2RF1E57G17",
+   "type": "produces"
+  },
+  {
+   "from": "plan/2026-07-21-wiki-ticket-ui",
+   "to": "item/01KY111BC7NJ4BE7JBDK2P6Y56",
+   "type": "produces"
+  },
+  {
+   "from": "plan/2026-07-21-wiki-ticket-ui",
+   "to": "item/01KY111BC842N3J7Y7H85NHSEG",
+   "type": "produces"
+  },
+  {
+   "from": "plan/2026-07-21-wiki-ticket-ui",
+   "to": "item/01KY111BC88FS6QD49JADZ9CJ5",
+   "type": "produces"
+  },
+  {
+   "from": "plan/2026-07-21-wiki-ticket-ui",
+   "to": "item/01KY111BC8F9BH0T3TERYEFC3C",
+   "type": "produces"
+  },
+  {
+   "from": "plan/2026-07-21-wiki-ticket-ui",
+   "to": "item/01KY111BC8QJAS9KH7N368N6RF",
+   "type": "produces"
+  },
+  {
+   "from": "plan/2026-07-22-wiki-ticket-ui-ia",
+   "to": "item/01KY5ZZX8Y6N7E5YQYP4X1V7VA",
+   "type": "produces"
+  },
+  {
+   "from": "plan/2026-07-22-wiki-ticket-ui-ia",
+   "to": "item/01KY5ZZX8YBZ3FS5QP06RF4PT6",
+   "type": "produces"
+  },
+  {
+   "from": "plan/2026-07-22-wiki-ticket-ui-ia",
+   "to": "item/01KY5ZZX8YXD5YDJKQGJ3VCCHN",
+   "type": "produces"
+  },
+  {
+   "from": "plan/2026-07-22-wiki-ticket-ui-ia",
+   "to": "item/01KY5ZZX8Z46K7BCSPPFKN23JZ",
+   "type": "produces"
+  },
+  {
+   "from": "plan/2026-07-22-wiki-ticket-ui-ia",
+   "to": "item/01KY5ZZX8ZBF099JH8N2ZRJKKE",
+   "type": "produces"
+  },
+  {
+   "from": "plan/2026-07-22-wiki-ticket-ui-ia",
+   "to": "item/01KY5ZZX8ZJJX208WYH58MY9WS",
+   "type": "produces"
+  },
+  {
+   "from": "plan/2026-07-22-wiki-ticket-ui-ia",
+   "to": "item/01KY5ZZX8ZTV1ZYR8FYGBEWKJV",
+   "type": "produces"
+  },
+  {
+   "from": "plan/2026-07-22-wiki-ticket-ui-ia",
+   "to": "item/01KY5ZZX8ZX1T0SD6S60CQD5Z0",
+   "type": "produces"
+  },
+  {
+   "from": "plan/2026-07-22-wiki-ticket-ui-ia",
+   "to": "item/01KY5ZZX8ZYPXTMVCGX4AAZQSG",
+   "type": "produces"
+  },
+  {
+   "from": "plan/2026-07-22-wiki-ticket-ui-ia",
+   "to": "plan/wiki-ticket-ui",
+   "type": "supersedes"
+  }
+ ],
+ "nodes": {
+  "item/01KY5ZZX8Y6N7E5YQYP4X1V7VA": {
+   "doc_type": "item",
+   "status": "in_progress",
+   "title": "Scaffold public repo wiki_ticket_sdd_ui: README, LICENSE, npm workspaces, CI"
+  },
+  "item/01KY5ZZX8YBZ3FS5QP06RF4PT6": {
+   "doc_type": "item",
+   "status": "todo",
+   "title": "Server: Hono JSON API over any worklog repo \u2014 fold, events, docs, index plane, git, gh, ledger, sync state"
+  },
+  "item/01KY5ZZX8YXD5YDJKQGJ3VCCHN": {
+   "doc_type": "item",
+   "status": "todo",
+   "title": "WikiTicket UI \u2014 IA-aware dashboard (supersedes wiki-ticket-ui)"
+  },
+  "item/01KY5ZZX8Z46K7BCSPPFKN23JZ": {
+   "doc_type": "item",
+   "status": "todo",
+   "title": "Tauri 2 desktop shell wrapping the same frontend"
+  },
+  "item/01KY5ZZX8ZBF099JH8N2ZRJKKE": {
+   "doc_type": "item",
+   "status": "todo",
+   "title": "Panels wave 2: Releases, Docs browser (inventory-driven), Publish plane (3-way drift), Sync health, Charts"
+  },
+  "item/01KY5ZZX8ZJJX208WYH58MY9WS": {
+   "doc_type": "item",
+   "status": "todo",
+   "title": "Traceability panel: interactive _graph.json explorer with trace-check integrity checklist"
+  },
+  "item/01KY5ZZX8ZTV1ZYR8FYGBEWKJV": {
+   "doc_type": "item",
+   "status": "todo",
+   "title": "Panels wave 1: Overview, Board, Roadmap (Mermaid), Activity feed"
+  },
+  "item/01KY5ZZX8ZX1T0SD6S60CQD5Z0": {
+   "doc_type": "item",
+   "status": "todo",
+   "title": "Web shell: Vite + React + Tailwind dark dashboard chrome with repo picker"
+  },
+  "item/01KY5ZZX8ZYPXTMVCGX4AAZQSG": {
+   "doc_type": "item",
+   "status": "todo",
+   "title": "Polish pass to the visually-stunning bar; README screenshots; tag v0.1.0"
+  },
+  "plan/2026-07-21-wiki-ticket-ui": {
+   "doc_type": "plan",
+   "source": "docs/plans/2026-07-21-wiki-ticket-ui.md",
+   "title": "WikiTicket UI \u2014 project status dashboard (wiki_ticket_sdd_ui)",
+   "truth_state": "current"
+  },
+  "plan/2026-07-22-wiki-ticket-ui-ia": {
+   "doc_type": "plan",
+   "source": "docs/plans/2026-07-22-wiki-ticket-ui-ia.md",
+   "title": "WikiTicket UI \u2014 IA-aware dashboard (supersedes wiki-ticket-ui)",
+   "truth_state": "current"
+  },
+  "plan/README": {
+   "doc_type": "plan",
+   "source": "docs/plans/README.md",
+   "title": "Plans live in the main repo",
+   "truth_state": "current"
+  },
+  "roadmap": {
+   "doc_type": "roadmap",
+   "source": "docs/roadmap.md",
+   "title": "Roadmap",
+   "truth_state": "current"
+  },
+  "ticket/github#1": {
+   "doc_type": "ticket",
+   "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/1"
+  },
+  "ticket/github#2": {
+   "doc_type": "ticket",
+   "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/2"
+  },
+  "ticket/github#3": {
+   "doc_type": "ticket",
+   "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/3"
+  },
+  "ticket/github#4": {
+   "doc_type": "ticket",
+   "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/4"
+  },
+  "ticket/github#5": {
+   "doc_type": "ticket",
+   "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/5"
+  },
+  "ticket/github#6": {
+   "doc_type": "ticket",
+   "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/6"
+  },
+  "ticket/github#7": {
+   "doc_type": "ticket",
+   "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/7"
+  },
+  "ticket/github#8": {
+   "doc_type": "ticket",
+   "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/8"
+  },
+  "ticket/github#9": {
+   "doc_type": "ticket",
+   "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/9"
+  }
+ },
+ "version": 1
+}

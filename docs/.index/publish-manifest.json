@@ -1,0 +1,103 @@
+{
+ "pages": [
+  {
+   "frozen": false,
+   "page_name": "Home",
+   "render": "as-is",
+   "render_hash": "9a8ac9215bae",
+   "source": "docs/.index/rendered/home.md",
+   "title": "Home",
+   "truth_state": "current",
+   "wiki_key": "home"
+  },
+  {
+   "frozen": false,
+   "page_name": "Index-Decisions",
+   "render": "as-is",
+   "render_hash": "a4e29ad24b7d",
+   "source": "docs/.index/rendered/decisions.md",
+   "title": "Decisions Index",
+   "truth_state": "current",
+   "wiki_key": "index/decisions"
+  },
+  {
+   "frozen": false,
+   "page_name": "Index-Releases",
+   "render": "as-is",
+   "render_hash": "f45668ba0034",
+   "source": "docs/.index/rendered/releases.md",
+   "title": "Releases Index",
+   "truth_state": "current",
+   "wiki_key": "index/releases"
+  },
+  {
+   "frozen": false,
+   "page_name": "Index-Status",
+   "render": "as-is",
+   "render_hash": "b8bcebbbbe23",
+   "source": "docs/.index/rendered/status.md",
+   "title": "Status Archive",
+   "truth_state": "current",
+   "wiki_key": "index/status"
+  },
+  {
+   "frozen": false,
+   "page_name": "Index-Traceability",
+   "render": "as-is",
+   "render_hash": "a6fa294a22a3",
+   "source": "docs/.index/rendered/traceability.md",
+   "title": "Traceability Index",
+   "truth_state": "current",
+   "wiki_key": "index/traceability"
+  },
+  {
+   "banner": "> **Current** \u2014 the latest status report. Reports freeze once published; corrections appear in later reports.",
+   "frozen": true,
+   "page_name": "Plan-wiki-ticket-ui",
+   "render": "doc+banner",
+   "render_hash": "50df458ae989",
+   "source": "docs/plans/2026-07-21-wiki-ticket-ui.md",
+   "title": "WikiTicket UI \u2014 project status dashboard (wiki_ticket_sdd_ui)",
+   "truth_state": "current",
+   "wiki_key": "plan/2026-07-21-wiki-ticket-ui"
+  },
+  {
+   "banner": "> **Current** \u2014 the latest status report. Reports freeze once published; corrections appear in later reports.",
+   "frozen": true,
+   "page_name": "Plan-wiki-ticket-ui-ia",
+   "render": "doc+banner",
+   "render_hash": "ea5ca2951710",
+   "source": "docs/plans/2026-07-22-wiki-ticket-ui-ia.md",
+   "title": "WikiTicket UI \u2014 IA-aware dashboard (supersedes wiki-ticket-ui)",
+   "truth_state": "current",
+   "wiki_key": "plan/2026-07-22-wiki-ticket-ui-ia"
+  },
+  {
+   "banner": "> **Current** \u2014 the latest status report. Reports freeze once published; corrections appear in later reports.",
+   "frozen": true,
+   "page_name": "Plan-README",
+   "render": "doc+banner",
+   "render_hash": "a0f6e5ce765a",
+   "source": "docs/plans/README.md",
+   "title": "Plans live in the main repo",
+   "truth_state": "current",
+   "wiki_key": "plan/README"
+  },
+  {
+   "banner": "> **Current** \u2014 this is the living version; regenerated at 2026-07-22T22:44:46Z. Historical snapshots are linked from [[Index-Releases]].",
+   "frozen": false,
+   "page_name": "Roadmap",
+   "render": "doc+banner",
+   "render_hash": "afa60020e6bf",
+   "source": "docs/roadmap.md",
+   "title": "Roadmap",
+   "truth_state": "current",
+   "wiki_key": "roadmap"
+  }
+ ],
+ "sidebar": {
+  "render_hash": "6334f0a66f9f",
+  "source": "docs/.index/rendered/_Sidebar.md"
+ },
+ "version": 1
+}

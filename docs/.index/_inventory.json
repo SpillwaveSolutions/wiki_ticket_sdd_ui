@@ -1,0 +1,71 @@
+{
+ "docs": [
+  {
+   "canonical_key": "plan/2026-07-21-wiki-ticket-ui",
+   "date": "2026-07-21",
+   "doc_type": "plan",
+   "epic": "01KY111BC7PABV8W6SDNVQACSN",
+   "items": [
+    "01KY111BC7NJ4BE7JBDK2P6Y56",
+    "01KY111BC71KJGNH55CB2DWMKN",
+    "01KY111BC7B70C7M2RF1E57G17",
+    "01KY111BC8QJAS9KH7N368N6RF",
+    "01KY111BC88FS6QD49JADZ9CJ5",
+    "01KY111BC8F9BH0T3TERYEFC3C",
+    "01KY111BC842N3J7Y7H85NHSEG"
+   ],
+   "slug": "wiki-ticket-ui",
+   "source": "docs/plans/2026-07-21-wiki-ticket-ui.md",
+   "status": "planned",
+   "title": "WikiTicket UI \u2014 project status dashboard (wiki_ticket_sdd_ui)",
+   "truth_state": "current",
+   "wiki_key": "plan/2026-07-21-wiki-ticket-ui"
+  },
+  {
+   "canonical_key": "plan/2026-07-22-wiki-ticket-ui-ia",
+   "date": "2026-07-22",
+   "doc_type": "plan",
+   "epic": "01KY5ZZX8YXD5YDJKQGJ3VCCHN",
+   "items": [
+    "01KY5ZZX8Y6N7E5YQYP4X1V7VA",
+    "01KY5ZZX8YBZ3FS5QP06RF4PT6",
+    "01KY5ZZX8ZX1T0SD6S60CQD5Z0",
+    "01KY5ZZX8ZTV1ZYR8FYGBEWKJV",
+    "01KY5ZZX8ZBF099JH8N2ZRJKKE",
+    "01KY5ZZX8ZJJX208WYH58MY9WS",
+    "01KY5ZZX8ZYPXTMVCGX4AAZQSG",
+    "01KY5ZZX8Z46K7BCSPPFKN23JZ"
+   ],
+   "slug": "wiki-ticket-ui-ia",
+   "source": "docs/plans/2026-07-22-wiki-ticket-ui-ia.md",
+   "status": "active",
+   "supersedes": "plan/wiki-ticket-ui",
+   "title": "WikiTicket UI \u2014 IA-aware dashboard (supersedes wiki-ticket-ui)",
+   "truth_state": "current",
+   "wiki_key": "plan/2026-07-22-wiki-ticket-ui-ia"
+  },
+  {
+   "canonical_key": "plan/README",
+   "doc_type": "plan",
+   "items": [],
+   "slug": "README",
+   "source": "docs/plans/README.md",
+   "status": "completed",
+   "title": "Plans live in the main repo",
+   "truth_state": "current",
+   "wiki_key": "plan/README"
+  },
+  {
+   "canonical_key": "roadmap",
+   "doc_type": "roadmap",
+   "generated_at": "2026-07-22T22:44:46Z",
+   "slug": "roadmap",
+   "source": "docs/roadmap.md",
+   "source_hash": "13c08070",
+   "title": "Roadmap",
+   "truth_state": "current",
+   "wiki_key": "roadmap"
+  }
+ ],
+ "version": 1
+}
