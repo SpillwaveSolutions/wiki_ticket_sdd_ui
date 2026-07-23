@@ -2,6 +2,9 @@
 
 _The evidence chain: plan → item → ticket → code → release, forward and backward. Generated from `docs/.index/_graph.json`; do not edit._
 
+### E2E browser pass: drive all 10 panels in a real browser via Vercel agent-browser against the dogfood repo; record findings
+`01KY659FMF8BB293744Q4X2V6G` · status: in_progress
+
 ### Polish pass to the visually-stunning bar; README screenshots; tag v0.1.0
 `01KY5ZZX8ZYPXTMVCGX4AAZQSG` · status: done
 - belongs-to: WikiTicket UI — IA-aware dashboard (supersedes wiki-ticket-ui)

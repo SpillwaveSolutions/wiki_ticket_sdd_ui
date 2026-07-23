@@ -29,3 +29,5 @@
 {"actor":"richardhightower","ev":"01KY627NNSTHVGAWPC8YRMBYP8","item":"01KY5ZZX8ZBF099JH8N2ZRJKKE","op":"close","set":{"status":"done"},"ts":"2026-07-22T23:23:06Z"}
 {"actor":"richardhightower","ev":"01KY627NV993BS450KADAGRV9D","item":"01KY5ZZX8ZYPXTMVCGX4AAZQSG","op":"update","set":{"status":"in_progress"},"ts":"2026-07-22T23:23:06Z"}
 {"actor":"richardhightower","ev":"01KY63E1E126XPM3XBC59HN2Q3","item":"01KY5ZZX8ZYPXTMVCGX4AAZQSG","op":"close","set":{"status":"done"},"ts":"2026-07-22T23:44:04Z"}
+{"actor":"richardhightower","ev":"01KY659FMF2QDGDP5PDDA1MS7Z","item":"01KY659FMF8BB293744Q4X2V6G","op":"create","set":{"kind":"ops","level":"task","priority":"P1","status":"todo","title":"E2E browser pass: drive all 10 panels in a real browser via Vercel agent-browser against the dogfood repo; record findings"},"ts":"2026-07-23T00:16:31Z"}
+{"actor":"richardhightower","ev":"01KY659XSCHHPSANJKNWK45E2T","item":"01KY659FMF8BB293744Q4X2V6G","op":"update","set":{"status":"in_progress"},"ts":"2026-07-23T00:16:46Z"}

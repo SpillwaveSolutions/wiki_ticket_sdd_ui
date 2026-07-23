@@ -217,6 +217,11 @@
    "status": "done",
    "title": "Polish pass to the visually-stunning bar; README screenshots; tag v0.1.0"
   },
+  "item/01KY659FMF8BB293744Q4X2V6G": {
+   "doc_type": "item",
+   "status": "in_progress",
+   "title": "E2E browser pass: drive all 10 panels in a real browser via Vercel agent-browser against the dogfood repo; record findings"
+  },
   "plan/2026-07-21-wiki-ticket-ui": {
    "doc_type": "plan",
    "source": "docs/plans/2026-07-21-wiki-ticket-ui.md",
