@@ -31,3 +31,5 @@
 {"actor":"richardhightower","ev":"01KY63E1E126XPM3XBC59HN2Q3","item":"01KY5ZZX8ZYPXTMVCGX4AAZQSG","op":"close","set":{"status":"done"},"ts":"2026-07-22T23:44:04Z"}
 {"actor":"richardhightower","ev":"01KY659FMF2QDGDP5PDDA1MS7Z","item":"01KY659FMF8BB293744Q4X2V6G","op":"create","set":{"kind":"ops","level":"task","priority":"P1","status":"todo","title":"E2E browser pass: drive all 10 panels in a real browser via Vercel agent-browser against the dogfood repo; record findings"},"ts":"2026-07-23T00:16:31Z"}
 {"actor":"richardhightower","ev":"01KY659XSCHHPSANJKNWK45E2T","item":"01KY659FMF8BB293744Q4X2V6G","op":"update","set":{"status":"in_progress"},"ts":"2026-07-23T00:16:46Z"}
+{"actor":"richardhightower","ev":"01KY65GZ8XWKB11N6HZZNP2CGZ","item":"01KY659FMF8BB293744Q4X2V6G","op":"close","set":{"status":"done"},"ts":"2026-07-23T00:20:37Z"}
+{"actor":"richardhightower","ev":"01KY65H0WEP6R4ZBCQBAF8YVN3","item":"01KY659FMF8BB293744Q4X2V6G","op":"link","set":{"external":{"key":"10","synced_at":"2026-07-23T00:20:38Z","system":"github","url":"https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/10"}},"ts":"2026-07-23T00:20:38Z"}

@@ -86,6 +86,11 @@
    "type": "references"
   },
   {
+   "from": "item/01KY659FMF8BB293744Q4X2V6G",
+   "to": "ticket/github#10",
+   "type": "references"
+  },
+  {
    "from": "plan/2026-07-21-wiki-ticket-ui",
    "to": "item/01KY111BC71KJGNH55CB2DWMKN",
    "type": "produces"
@@ -219,7 +224,7 @@
   },
   "item/01KY659FMF8BB293744Q4X2V6G": {
    "doc_type": "item",
-   "status": "in_progress",
+   "status": "done",
    "title": "E2E browser pass: drive all 10 panels in a real browser via Vercel agent-browser against the dogfood repo; record findings"
   },
   "plan/2026-07-21-wiki-ticket-ui": {
@@ -243,6 +248,10 @@
   "ticket/github#1": {
    "doc_type": "ticket",
    "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/1"
+  },
+  "ticket/github#10": {
+   "doc_type": "ticket",
+   "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/10"
   },
   "ticket/github#2": {
    "doc_type": "ticket",
