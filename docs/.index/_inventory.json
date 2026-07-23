@@ -47,10 +47,10 @@
   {
    "canonical_key": "roadmap",
    "doc_type": "roadmap",
-   "generated_at": "2026-07-23T00:57:35Z",
+   "generated_at": "2026-07-23T01:31:58Z",
    "slug": "roadmap",
    "source": "docs/roadmap.md",
-   "source_hash": "35c22ce8",
+   "source_hash": "836c66c7",
    "title": "Roadmap",
    "truth_state": "current",
    "wiki_key": "roadmap"
