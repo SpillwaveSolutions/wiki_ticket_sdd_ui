@@ -177,6 +177,11 @@
   }
  ],
  "nodes": {
+  "item/01KY5ZZX": {
+   "doc_type": "item",
+   "status": "in_progress",
+   "title": "01KY5ZZX"
+  },
   "item/01KY5ZZX8Y6N7E5YQYP4X1V7VA": {
    "doc_type": "item",
    "status": "in_progress",
@@ -226,6 +231,21 @@
    "doc_type": "item",
    "status": "done",
    "title": "E2E browser pass: drive all 10 panels in a real browser via Vercel agent-browser against the dogfood repo; record findings"
+  },
+  "item/01KY67CQ8NTJT4XRPEDAKGC602": {
+   "doc_type": "item",
+   "status": "done",
+   "title": "Acceptance round 2: generic fresh-repo proof, offline degradation, amber/red drift states seen live in browser"
+  },
+  "item/01KY67G9MGNEP5HF5ND4M6VP0W": {
+   "doc_type": "item",
+   "status": "done",
+   "title": "version_skew always true: /api/repo compares config installed version to raw 'worklog X.Y.Z' string without stripping the prefix"
+  },
+  "item/01KY67KXG4E4D2P1FJ6JPKTYX3": {
+   "doc_type": "item",
+   "status": "todo",
+   "title": "Friendlier empty states when docs/.index is absent: Docs/Traceability show raw 'not found' error banner \u2014 suggest 'run worklog ia-index' guidance instead"
   },
   "plan/2026-07-21-wiki-ticket-ui": {
    "doc_type": "plan",

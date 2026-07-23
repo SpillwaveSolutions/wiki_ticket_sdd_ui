@@ -63,7 +63,11 @@ export function registerRoutes(app: Hono<Env>) {
     const dirty = statusRes.status === 0 ? statusRes.stdout.trim().length > 0 : false;
 
     const versionRes = run("python3", ["bin/worklog", "--version"], repoPath);
-    const worklogVersion = versionRes.status === 0 ? versionRes.stdout.trim() : null;
+    // CLI prints "worklog X.Y.Z"; config.installed holds bare "X.Y.Z"
+    const worklogVersion =
+      versionRes.status === 0
+        ? versionRes.stdout.trim().replace(/^worklog\s+/, "")
+        : null;
     const installedVersion = typeof config.installed === "string" ? config.installed : null;
     const versionSkew = Boolean(
       installedVersion && worklogVersion && installedVersion !== worklogVersion,

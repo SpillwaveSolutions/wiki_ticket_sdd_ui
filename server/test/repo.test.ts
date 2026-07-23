@@ -29,6 +29,18 @@ describe("target repo resolution", () => {
   });
 });
 
+describe("/api/repo version skew", () => {
+  it("no skew when CLI 'worklog X.Y.Z' matches config installed X.Y.Z", async () => {
+    const dir = buildFixtureRepo();
+    const app = createApp(dir);
+    const res = await app.request("/api/repo");
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body.worklog_version).toBe("0.1.0");
+    expect(body.drift.version_skew).toBe(false);
+  });
+});
+
 describe("app-level rejection of non-worklog repos", () => {
   it("returns a 400 JSON error instead of crashing", async () => {
     const dir = fs.mkdtempSync(path.join(os.tmpdir(), "wt-not-a-repo-"));

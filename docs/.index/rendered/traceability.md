@@ -2,6 +2,15 @@
 
 _The evidence chain: plan → item → ticket → code → release, forward and backward. Generated from `docs/.index/_graph.json`; do not edit._
 
+### Friendlier empty states when docs/.index is absent: Docs/Traceability show raw 'not found' error banner — suggest 'run worklog ia-index' guidance instead
+`01KY67KXG4E4D2P1FJ6JPKTYX3` · status: todo
+
+### version_skew always true: /api/repo compares config installed version to raw 'worklog X.Y.Z' string without stripping the prefix
+`01KY67G9MGNEP5HF5ND4M6VP0W` · status: done
+
+### Acceptance round 2: generic fresh-repo proof, offline degradation, amber/red drift states seen live in browser
+`01KY67CQ8NTJT4XRPEDAKGC602` · status: done
+
 ### E2E browser pass: drive all 10 panels in a real browser via Vercel agent-browser against the dogfood repo; record findings
 `01KY659FMF8BB293744Q4X2V6G` · status: done
 - references: [github#10](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/10)
@@ -66,4 +75,7 @@ _The evidence chain: plan → item → ticket → code → release, forward and 
 - belongs-to: WikiTicket UI — IA-aware dashboard (supersedes wiki-ticket-ui)
 - references: [github#2](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/2)
 - produced-by: [[Plan-wiki-ticket-ui-ia]]
+
+### 01KY5ZZX
+`01KY5ZZX` · status: in_progress
 

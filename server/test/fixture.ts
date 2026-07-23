@@ -88,7 +88,7 @@ elif cmd == "trace-check":
     print("01KXS7W15SHYS5PSGGWHYMFKYM (open): no external ticket")
     sys.exit(1)
 elif cmd == "--version":
-    print("0.1.0")
+    print("worklog 0.1.0")
 `,
     { mode: 0o755 },
   );
