@@ -91,6 +91,11 @@
    "type": "references"
   },
   {
+   "from": "item/01KY67KXG4E4D2P1FJ6JPKTYX3",
+   "to": "ticket/github#11",
+   "type": "references"
+  },
+  {
    "from": "plan/2026-07-21-wiki-ticket-ui",
    "to": "item/01KY111BC71KJGNH55CB2DWMKN",
    "type": "produces"
@@ -272,6 +277,10 @@
   "ticket/github#10": {
    "doc_type": "ticket",
    "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/10"
+  },
+  "ticket/github#11": {
+   "doc_type": "ticket",
+   "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/11"
   },
   "ticket/github#2": {
    "doc_type": "ticket",

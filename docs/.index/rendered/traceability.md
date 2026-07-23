@@ -4,6 +4,7 @@ _The evidence chain: plan → item → ticket → code → release, forward and 
 
 ### Friendlier empty states when docs/.index is absent: Docs/Traceability show raw 'not found' error banner — suggest 'run worklog ia-index' guidance instead
 `01KY67KXG4E4D2P1FJ6JPKTYX3` · status: todo
+- references: [github#11](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/11)
 
 ### version_skew always true: /api/repo compares config installed version to raw 'worklog X.Y.Z' string without stripping the prefix
 `01KY67G9MGNEP5HF5ND4M6VP0W` · status: done
