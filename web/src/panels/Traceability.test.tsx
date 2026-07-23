@@ -190,4 +190,22 @@ describe("Traceability panel", () => {
     expect(await screen.findByText("trace: 1 unlinked-evidence gap(s)")).toBeInTheDocument();
     expect(screen.getByText("01ABC (closed): no plan link")).toBeInTheDocument();
   });
+  it("shows ia-index guidance when the graph is missing (404)", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () =>
+        new Response(JSON.stringify({ error: "not found: _graph.json" }), {
+          status: 404,
+          headers: { "Content-Type": "application/json" },
+        }),
+      ),
+    );
+    render(
+      <MemoryRouter initialEntries={["/traceability"]}>
+        <Traceability />
+      </MemoryRouter>,
+    );
+    expect(await screen.findByText("No traceability graph yet")).toBeInTheDocument();
+    expect(await screen.findByText(/worklog ia-index/)).toBeInTheDocument();
+  });
 });

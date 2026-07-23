@@ -42,3 +42,5 @@
 {"actor":"richardhightower","ev":"01KY67KXVFZP7CA68SJQPX3H30","item":"01KY67CQ8NTJT4XRPEDAKGC602","op":"close","set":{"status":"done"},"ts":"2026-07-23T00:57:11Z"}
 {"actor":"richardhightower","ev":"01KY67MN8YEEHZSRSX79ZG32VB","item":"01KY67KXG4E4D2P1FJ6JPKTYX3","op":"link","set":{"external":{"key":"11","synced_at":"2026-07-23T00:57:35Z","system":"github","url":"https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/11"}},"ts":"2026-07-23T00:57:35Z"}
 {"actor":"richardhightower","ev":"01KY69KKXKAD5C37SR3ADDS25A","item":"01KY5ZZX8Y6N7E5YQYP4X1V7VA","op":"close","set":{"status":"done"},"ts":"2026-07-23T01:31:58Z"}
+{"actor":"richardhightower","ev":"01KY69TWTF3H7HFFP4NQ8PT3SN","item":"01KY67KXG4E4D2P1FJ6JPKTYX3","op":"update","set":{"status":"in_progress"},"ts":"2026-07-23T01:35:56Z"}
+{"actor":"richardhightower","ev":"01KY69YXQPSHAQHR1BSJZ2YS88","item":"01KY67KXG4E4D2P1FJ6JPKTYX3","op":"close","set":{"status":"done"},"ts":"2026-07-23T01:38:08Z"}

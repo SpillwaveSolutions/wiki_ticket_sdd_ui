@@ -93,4 +93,22 @@ describe("Docs panel", () => {
 
     expect(await screen.findByText("Body text.")).toBeInTheDocument();
   });
+  it("shows ia-index guidance when the inventory is missing (404)", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () =>
+        new Response(JSON.stringify({ error: "not found: _inventory.json" }), {
+          status: 404,
+          headers: { "Content-Type": "application/json" },
+        }),
+      ),
+    );
+    render(
+      <MemoryRouter initialEntries={["/docs"]}>
+        <Docs />
+      </MemoryRouter>,
+    );
+    expect(await screen.findByText("No document inventory yet")).toBeInTheDocument();
+    expect(screen.getByText(/worklog ia-index/)).toBeInTheDocument();
+  });
 });

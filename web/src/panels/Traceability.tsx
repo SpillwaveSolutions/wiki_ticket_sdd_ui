@@ -202,7 +202,15 @@ export default function Traceability() {
   return (
     <Panel title="Traceability">
       {graph.status === "loading" && <Spinner label="Loading /api/index/graph…" />}
-      {graph.status === "error" && <ErrorState message={graph.error} />}
+      {graph.status === "error" &&
+        (graph.httpStatus === 404 ? (
+          <EmptyState
+            title="No traceability graph yet"
+            detail="This repo has no docs/.index plane. Run `worklog ia-index` in the target repo and reload."
+          />
+        ) : (
+          <ErrorState message={graph.error} />
+        ))}
       {graph.status === "ok" && nodes && edges && (
         <div className="flex h-full min-h-0 flex-col gap-4">
           <div className="flex min-h-0 flex-1 gap-4">

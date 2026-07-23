@@ -177,7 +177,15 @@ export default function Docs() {
       }
     >
       {docs.status === "loading" && <Spinner label="Loading /api/docs…" />}
-      {docs.status === "error" && <ErrorState message={docs.error} />}
+      {docs.status === "error" &&
+        (docs.httpStatus === 404 ? (
+          <EmptyState
+            title="No document inventory yet"
+            detail="This repo has no docs/.index plane. Run `worklog ia-index` in the target repo and reload."
+          />
+        ) : (
+          <ErrorState message={docs.error} />
+        ))}
       {docs.status === "ok" && (
         <div className="flex h-full min-h-0 gap-4">
           <div className="w-72 shrink-0 overflow-auto">

@@ -249,7 +249,7 @@
   },
   "item/01KY67KXG4E4D2P1FJ6JPKTYX3": {
    "doc_type": "item",
-   "status": "todo",
+   "status": "done",
    "title": "Friendlier empty states when docs/.index is absent: Docs/Traceability show raw 'not found' error banner \u2014 suggest 'run worklog ia-index' guidance instead"
   },
   "plan/2026-07-21-wiki-ticket-ui": {

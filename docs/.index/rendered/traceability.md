@@ -3,7 +3,7 @@
 _The evidence chain: plan → item → ticket → code → release, forward and backward. Generated from `docs/.index/_graph.json`; do not edit._
 
 ### Friendlier empty states when docs/.index is absent: Docs/Traceability show raw 'not found' error banner — suggest 'run worklog ia-index' guidance instead
-`01KY67KXG4E4D2P1FJ6JPKTYX3` · status: todo
+`01KY67KXG4E4D2P1FJ6JPKTYX3` · status: done
 - references: [github#11](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/11)
 
 ### version_skew always true: /api/repo compares config installed version to raw 'worklog X.Y.Z' string without stripping the prefix
