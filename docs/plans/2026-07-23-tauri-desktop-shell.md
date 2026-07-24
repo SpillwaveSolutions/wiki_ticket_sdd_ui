@@ -73,17 +73,33 @@ to enable.
   deliberately-flat subset per the Node code's own comment, (b) a real YAML parser could handle
   edge cases differently than the hand-rolled one, which would itself be the exact kind of
   Rust/Node drift this port must avoid, (c) `serde_yaml` is unmaintained.
-- `commands.rs` — the 13 `#[tauri::command]` fns plus shared `run()` (mirrors `routes.ts`'s
-  `run()`) and `sha256_12()`. Only the 7 handlers that build new response shapes (repo, roadmap,
-  git-log, releases, trace-check, wiki-ledger, events) get `#[derive(Serialize)]` structs. The 5
-  raw-passthrough endpoints (`docs`, `index/graph`, `index/manifest`, `sync`, `docs/content`)
-  return the raw file string/`serde_json::Value` untouched — no reparse, matching Node's
-  `readJsonVerbatim` which never reparses either. Do not pre-build typed structs for these; that
-  would be more code than Node needs and risks silently dropping/reordering fields.
+- `ulid.rs` — port `server/src/ulid.ts` (`ulid_timestamp_ms` / `ulid_timestamp_iso`). Required by
+  `get_events`: events without an explicit `ts` derive it from the ULID in `ev`. Match the TS
+  implementation byte-for-byte (fixture/test vector `01ARZ3NDEKTSV4RRFFQ69G5FAV` →
+  `2016-07-30T23:54:10.259Z` per `server/test/events.test.ts` — ignore the outdated comment in
+  `fixture.ts` that cites a different ULID-spec example timestamp).
+- `commands.rs` — the 13 `#[tauri::command]` fns plus shared helpers: `run()` (mirrors
+  `routes.ts`'s `run()`), `sha256_12()`, `count_trace_check_gaps()` (mirrors
+  `countTraceCheckGaps`), and `read_jsonl_events()`. Command classification (13 total):
+  - **7 shaped responses** (own `#[derive(Serialize)]` structs): `get_repo`, `get_roadmap`,
+    `get_git_log`, `get_releases`, `get_trace_check`, `get_wiki_ledger`, `get_events`.
+  - **1 shell-out JSON passthrough**: `get_items` — parse `bin/worklog fold` stdout into
+    `serde_json::Value` and return it untouched (no `WorklogItem` struct).
+  - **5 raw file passthroughs**: `get_docs`, `get_graph`, `get_manifest`, `get_sync` return
+    `serde_json::Value` from file bytes via `serde_json::from_str` only so Tauri can ship JSON
+    (semantically equivalent to Node's `readJsonVerbatim` — do not reshape fields);
+    `get_doc_content` returns `String`. Missing files → `CmdError` status 404 with the same
+    `not found: <basename>` message Node uses.
+  Do not pre-build typed structs for inventory/graph/manifest/sync/items; that would be more
+  code than Node needs and risks silently dropping/reordering fields.
 - `state.rs` — `AppState { repo: Mutex<Option<PathBuf>> }`, starts **empty** (no cwd fallback —
-  a GUI app has no meaningful cwd; show the picker instead).
-- `error.rs` — `CmdError { status: u16, message: String }`, returned by every command's
-  `Result<T, CmdError>`. This is what makes `ApiError.status` parity possible client-side.
+  a GUI app has no meaningful cwd; show the picker instead). Optional: if `WORKLOG_REPO` is set
+  and validates, seed state from it at startup (mirrors Node's env fallback; useful for
+  `tauri dev` dogfood) — never a hardcoded path.
+- `error.rs` — `CmdError { status: u16, message: String }` with `#[derive(Serialize)]` (and
+  `Debug`/`Display` as Tauri requires), returned by every command's `Result<T, CmdError>`.
+  Serialized shape on the wire must be `{ status, message }` so `toApiError` can rebuild
+  `ApiError` — this is what makes the 4 panels' 404-as-empty-state branches work under Tauri.
 - `main.rs` — wires the dialog plugin, manages `AppState`, registers all commands.
 
 ### 3. Repo selection
@@ -92,19 +108,28 @@ to enable.
   `repo::load_target_repo`, stores path in `AppState`, returns `RepoInfo`) and `set_repo(path)`
   (same validate+store without the dialog, for re-selecting a remembered path) both call one
   shared `apply_repo_path()` helper.
-- All 12 read commands pull the current path via a `require_repo(&state)` helper — same shape as
-  Hono's per-request `c.get("repoPath")` middleware, just triggered by "nothing picked yet"
-  instead of "config.yml missing at cwd."
+- All 13 read commands (including `get_repo`) pull the current path via a `require_repo(&state)`
+  helper — same shape as Hono's per-request `c.get("repoPath")` middleware, just triggered by
+  "nothing picked yet" instead of "config.yml missing at cwd." When empty, return
+  `CmdError { status: 400, message: "no repo selected" }` (or similar fixed string).
+- **First-launch UX (Tauri only):** TopBar currently opens the picker only on button click. With
+  empty `AppState`, every panel would error until the user finds "Repo". In Tauri mode, auto-open
+  `RepoPickerModal` when `getRepo()` fails with the no-repo-selected error (or when
+  `repoState.status === "error"` on first load). Browser mode stays click-to-open.
 
 ### 4. `web/src/lib/api.ts` transport branch
 
 - `export const isTauri = () => "__TAURI_INTERNALS__" in window;`
-- `getJson`/`getText` gain a Tauri-command-name parameter and branch: `invoke(cmd, args)` under
-  Tauri, existing `fetch()` logic otherwise. Every `api.getX()` call site changes only by adding
-  one string argument — the public surface panels call is unchanged.
+- `getJson`/`getText` gain a Tauri command name (+ optional `args` object) and branch:
+  `invoke(cmd, args)` under Tauri, existing `fetch()` logic otherwise. Mapping (command name →
+  args): most take none; `get_doc_content` → `{ path }`; `get_git_log` → `{ limit }` (optional);
+  `set_repo` → `{ path }`. Public `api.getX()` surface panels call stays unchanged — only the
+  internals of each method and the two new Tauri-only methods (`pickRepo`, `setRepo`) change.
 - `toApiError(e)` translates a rejected `invoke()` (Rust's serialized `CmdError`) back into
   `ApiError(message, status)` — **do not skip this**, it's the only reason the 4 panels' 404-as-
-  empty-state branches keep working in the desktop build.
+  empty-state branches keep working in the desktop build. Handle both object payloads
+  (`{ status, message }`) and stringified JSON (Tauri versions differ in how they surface
+  serialized errors).
 - No new client-side repo-path variable — `RepoInfo.repo_path` (already in `types.ts`) is the
   only place the UI shows it, sourced fresh from each `get_repo()`/`pick_repo()` response.
 - After `pick_repo`/`set_repo` succeeds: `window.location.reload()` (Tauri-mode only) to remount
@@ -117,45 +142,62 @@ to enable.
 Branch on `isTauri()`. Browser mode: unchanged (display + localStorage "remember" as today).
 Tauri mode: a `Choose folder…` button calling a new `api.pickRepo()` (wraps `invoke("pick_repo")`,
 Tauri-only, no fetch equivalent needed); on success, `rememberRepo(path)` + reload. Recent-list
-entries become clickable (`api.setRepo(path)`) in Tauri mode only.
+entries become clickable (`api.setRepo(path)`) in Tauri mode only. Copy in the modal should
+reflect live switching under Tauri (drop the "set at server launch" wording when `isTauri()`).
 
 ### 6. Build order (each step's runnable check — don't skip)
 
 1. Scaffold → `npm run tauri dev` opens a window showing the Vite app (no commands wired yet).
-2. `repo.rs` → `cargo test` against the literal fixture string from `server/test/fixture.ts`,
-   plus a missing-config.yml rejection case (mirrors `server/test/repo.test.ts`).
-3. `error.rs`/`run()`/`state.rs` → a throwaway `ping` command proves the IPC round trip.
+   Ensure `src-tauri/target/` is gitignored (Tauri's own `.gitignore` or root `.gitignore`).
+2. `repo.rs` (+ unit tests in the same file or `repo` mod tests) → `cargo test` against the
+   literal fixture config string from `server/test/fixture.ts`, plus a missing-config.yml
+   rejection case and the quoted-`#`-not-a-comment case (mirrors `server/test/repo.test.ts`).
+3. `error.rs` / `run()` / `state.rs` / `ulid.rs` → unit-test ULID vector against
+   `server/test/events.test.ts`; a throwaway `ping` command proves the IPC round trip.
 4. `get_repo` + `pick_repo`/`set_repo` first (unlocks testing everything else through the real
    UI) → compare returned `RepoInfo` field-for-field against Node's `/api/repo` for the same repo.
-5. The 4 raw-passthrough commands → byte-diff against Node's equivalent responses.
-6. `get_doc_content` → confirm a traversal attempt is rejected with the same 400 shape.
+5. The 4 raw JSON passthroughs (`get_docs`, `get_graph`, `get_manifest`, `get_sync`) →
+   field-equal against Node's equivalent responses (404 shape when file missing).
+6. `get_doc_content` → confirm a traversal attempt is rejected with the same 400 shape
+   (`Path escapes docs/: …`).
 7. `get_items`, `get_events`, `get_roadmap`, `get_git_log`, `get_trace_check` → check against
-   fixture-repo expectations already asserted in `server/test/*.test.ts`.
+   fixture-repo expectations already asserted in `server/test/*.test.ts`. Note: the fixture is
+   not a git repo, so `get_git_log` / branch fields need either a one-line `git init`+commit in
+   the Rust test setup or assertion only against a real dogfood path — don't invent a second
+   fixture format.
 8. `get_wiki_ledger` last among reads (real join/hash logic) → all three drift states
-   (in-sync/pending/source-drift) come out correctly against the fixture.
+   (in-sync/pending/source-drift) come out correctly against the fixture
+   (`server/test/wiki-ledger.test.ts` oracle).
 9. `get_releases` → confirm `gh`-missing triggers the `ureq` fallback, and confirm full-offline
-   returns `{offline: true, releases: []}`.
+   returns `{offline: true, releases: []}`. When `ticketing.project` is absent, same offline
+   empty response (matches Node).
 10. Wire `api.ts` transport branch → existing `web/src/lib/api.test.ts` still passes unmodified
     (confirms `isTauri()` is false under Vitest/jsdom).
-11. `RepoPickerModal.tsx` native-dialog wiring.
+11. `RepoPickerModal.tsx` + TopBar first-launch auto-open (Tauri mode only).
 12. `npm run tauri dev` end-to-end against the dogfood repo `../wiki_ticket_sdd` via the picker —
     walk all 10 panels, compare against `npm run dev` (browser flow) for the same repo.
 13. `npm run tauri build` — confirm the bundle launches, the picker works, and confirm via
     `git status --porcelain` on `../wiki_ticket_sdd` before/after a full session that nothing was
-    written (the read-only guarantee's acceptance check, not optional).
-14. CI: at minimum `cargo test` should run in CI; full `tauri build` bundling can stay a manual
-    release-time step to keep CI fast.
+    written (the read-only guarantee's acceptance check, not optional). Final review gate:
+    `rg 'fs::write|fs::remove_|Command::new\("(git|gh)"' src-tauri/src` should show only
+    read-only git/gh invocations (status, log, rev-parse, describe, `gh api` GET).
+14. CI: add a `rust` job (or step after Node) in `.github/workflows/ci.yml` that installs the
+    stable toolchain via `dtolnay/rust-toolchain@stable` and runs
+    `cargo test --manifest-path src-tauri/Cargo.toml`. Full `tauri build` bundling stays a
+    manual release-time step to keep CI fast (no Linux system-deps for WebKit in CI unless we
+    later need them).
 
 ### 7. Parity verification
 
 Reuse `server/test/fixture.ts`'s `buildFixtureRepo()` — don't build a second fixture or a live
-two-servers-diffing-JSON harness. Add a 3-line `server/test/build-fixture.ts` CLI shim
-(`console.log(buildFixtureRepo())`) so Rust integration tests (`src-tauri/tests/parity.rs`) can
-shell out to get a fresh fixture path, call the Rust command functions directly (as plain
-testable functions wrapped by thin `#[tauri::command]`s — good Rust hygiene independent of this
-task), and assert the same concrete values the existing vitest files already assert. Beyond the
-synthetic fixture, do one manual side-by-side pass against the real dogfood repo per this repo's
-own "Dogfood target" convention — nothing new to invent there either.
+two-servers-diffing-JSON harness. Add a small `server/test/build-fixture.ts` CLI shim
+(`console.log(buildFixtureRepo())`, run via `npx tsx server/test/build-fixture.ts`) so Rust
+integration tests (`src-tauri/tests/parity.rs`) can shell out to get a fresh fixture path, call
+the Rust command functions directly (as plain testable functions wrapped by thin
+`#[tauri::command]`s — good Rust hygiene independent of this task), and assert the same concrete
+values the existing vitest files already assert. Beyond the synthetic fixture, do one manual
+side-by-side pass against the real dogfood repo per this repo's own "Dogfood target"
+convention — nothing new to invent there either.
 
 ### CLAUDE.md rules that constrain shortcuts (explicit, don't relitigate under time pressure)
 
@@ -178,10 +220,14 @@ own "Dogfood target" convention — nothing new to invent there either.
 
 - `server/src/routes.ts` — the 13-endpoint spec every Rust command must match
 - `server/src/repo.ts` — config/YAML/sandbox logic to port into `src-tauri/src/repo.rs`
+- `server/src/ulid.ts` — ULID timestamp decode for `get_events` → `src-tauri/src/ulid.rs`
 - `web/src/lib/api.ts` — the transport-branch seam
 - `web/src/lib/types.ts` — the wire-shape contract (do not fork)
+- `web/src/lib/useApi.ts` — `httpStatus` forwarding; do not change, just preserve `ApiError.status`
+- `web/src/components/TopBar.tsx` — Tauri first-launch auto-open of the picker
 - `server/test/fixture.ts` — the parity fixture to reuse via `server/test/build-fixture.ts`
 - `web/src/components/RepoPickerModal.tsx` — needs the Tauri-mode branch
+- `.github/workflows/ci.yml` — add `cargo test` job
 - `CLAUDE.md` — the four non-negotiable rules above
 
 ## Next step
