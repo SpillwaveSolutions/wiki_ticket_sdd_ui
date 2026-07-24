@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { api } from "../lib/api";
+import { useEffect, useState } from "react";
+import { api, isTauri } from "../lib/api";
 import { useApi } from "../lib/useApi";
 import Spinner from "./Spinner";
 import RepoPickerModal from "./RepoPickerModal";
@@ -7,6 +7,17 @@ import RepoPickerModal from "./RepoPickerModal";
 export default function TopBar() {
   const repoState = useApi(() => api.getRepo(), []);
   const [pickerOpen, setPickerOpen] = useState(false);
+
+  // Tauri first-launch: auto-open the picker when no repo is selected yet so
+  // the user isn't left staring at red panel errors.
+  useEffect(() => {
+    if (!isTauri()) return;
+    if (repoState.status !== "error") return;
+    const msg = repoState.error ?? "";
+    if (/no repo selected/i.test(msg) || /not a worklog repo/i.test(msg)) {
+      setPickerOpen(true);
+    }
+  }, [repoState]);
 
   return (
     <header className="glass flex items-center justify-between rounded-xl px-4 py-3">
