@@ -49,11 +49,29 @@ Override the port with `--port <n>` or `PORT=<n>`.
 Design record: [`docs/plans/2026-07-22-wiki-ticket-ui-ia.md`](docs/plans/2026-07-22-wiki-ticket-ui-ia.md)
 (pointer only — the frozen plan lives in the main repo; see `CLAUDE.md`).
 
+## Desktop app (Tauri 2)
+
+Same React UI, with the API ported to Rust (`src-tauri/`) and invoked over
+Tauri IPC instead of HTTP. Pick a worklog repo with the native folder dialog
+(or set `WORKLOG_REPO` before launch).
+
+```sh
+npm install
+npm run tauri dev     # Vite + Rust shell, hot reload
+npm run tauri build   # produces .app / .dmg under src-tauri/target/release/bundle/
+```
+
+`cargo test --manifest-path src-tauri/Cargo.toml` runs the Rust unit +
+fixture parity suite (also in CI). The desktop shell never writes to the
+target repo — same read-only guarantee as the Node server.
+
 ## Architecture
 
 One Hono JSON API server (`server/`) plus one Vite/React/Tailwind front end
-(`web/`), built as an npm workspace. The server binds to exactly one target
-repo per process (`--repo`) and only ever *reads* it:
+(`web/`), built as an npm workspace. Optionally wrapped by a Tauri 2 desktop
+shell (`src-tauri/`) that reimplements the same 13 endpoints in Rust. The
+server (or Tauri state) binds to exactly one target repo at a time and only
+ever *reads* it:
 
 - Shells out to the target's own `bin/worklog` (`fold`, `trace-check`) —
   never reimplements worklog or IA semantics.

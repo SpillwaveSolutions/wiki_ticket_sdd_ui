@@ -12,6 +12,10 @@
     "dev": "npm run -w server dev & npm run -w web dev",
     "build": "npm run -w web build && npm run -w server build",
     "typecheck": "npm run -w server typecheck && npm run -w web typecheck",
-    "test": "npm run -w server test && npm run -w web test"
+    "test": "npm run -w server test && npm run -w web test",
+    "tauri": "tauri"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.4"
   }
 }
