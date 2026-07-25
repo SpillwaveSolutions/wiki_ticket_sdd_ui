@@ -1,6 +1,36 @@
 {
  "edges": [
   {
+   "from": "design/2026-07-25_v0.2.0-release-code-walkthrough",
+   "to": "design/current-code-walkthrough",
+   "type": "snapshot-of"
+  },
+  {
+   "from": "design/2026-07-25_v0.2.0-release-code-walkthrough",
+   "to": "release/v0.2.0",
+   "type": "targets"
+  },
+  {
+   "from": "design/2026-07-25_v0.2.0-release-design-doc",
+   "to": "design/current-design-doc",
+   "type": "snapshot-of"
+  },
+  {
+   "from": "design/2026-07-25_v0.2.0-release-design-doc",
+   "to": "release/v0.2.0",
+   "type": "targets"
+  },
+  {
+   "from": "design/current-code-walkthrough",
+   "to": "release/v0.2.0",
+   "type": "targets"
+  },
+  {
+   "from": "design/current-design-doc",
+   "to": "release/v0.2.0",
+   "type": "targets"
+  },
+  {
    "from": "item/01KY5ZZX8Y6N7E5YQYP4X1V7VA",
    "to": "item/01KY5ZZX8YXD5YDJKQGJ3VCCHN",
    "type": "belongs-to"
@@ -202,6 +232,30 @@
   }
  ],
  "nodes": {
+  "design/2026-07-25_v0.2.0-release-code-walkthrough": {
+   "doc_type": "design",
+   "source": "docs/designs/2026-07-25_v0.2.0-release_code_walkthrough.md",
+   "title": "WikiTicket UI \u2014 Code Walkthrough",
+   "truth_state": "snapshot"
+  },
+  "design/2026-07-25_v0.2.0-release-design-doc": {
+   "doc_type": "design",
+   "source": "docs/designs/2026-07-25_v0.2.0-release_design_doc.md",
+   "title": "WikiTicket UI \u2014 Software Design Document",
+   "truth_state": "snapshot"
+  },
+  "design/current-code-walkthrough": {
+   "doc_type": "design",
+   "source": "docs/designs/current_code_walkthrough.md",
+   "title": "WikiTicket UI \u2014 Code Walkthrough",
+   "truth_state": "current"
+  },
+  "design/current-design-doc": {
+   "doc_type": "design",
+   "source": "docs/designs/current_design_doc.md",
+   "title": "WikiTicket UI \u2014 Software Design Document",
+   "truth_state": "current"
+  },
   "guide/user-guide": {
    "doc_type": "guide",
    "source": "docs/user_guide/user-guide.md",
