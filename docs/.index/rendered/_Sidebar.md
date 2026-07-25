@@ -2,6 +2,7 @@
 
 - [[Roadmap]]
 - [[Design-Doc]] · [[Code-Walkthrough]]
+- Plan: [[Plan-tauri-desktop-shell]]
 - Plan: [[Plan-wiki-ticket-ui-ia]]
 - Plan: [[Plan-wiki-ticket-ui]]
 

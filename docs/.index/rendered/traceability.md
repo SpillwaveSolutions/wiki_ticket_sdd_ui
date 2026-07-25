@@ -2,6 +2,10 @@
 
 _The evidence chain: plan → item → ticket → code → release, forward and backward. Generated from `docs/.index/_graph.json`; do not edit._
 
+### Refresh docs/.index plane — clear doc metadata drift, stale inventory, stale rendered pages warnings
+`01KYAH5VKVZZF2Q4T0AF2ZYJG0` · status: todo
+- references: ticket/github#14
+
 ### Friendlier empty states when docs/.index is absent: Docs/Traceability show raw 'not found' error banner — suggest 'run worklog ia-index' guidance instead
 `01KY67KXG4E4D2P1FJ6JPKTYX3` · status: done
 - references: [github#11](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/11)
@@ -51,6 +55,7 @@ _The evidence chain: plan → item → ticket → code → release, forward and 
 - belongs-to: WikiTicket UI — IA-aware dashboard (supersedes wiki-ticket-ui)
 - references: [github#9](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/9)
 - produced-by: [[Plan-wiki-ticket-ui-ia]]
+- produced-by: [[Plan-tauri-desktop-shell]]
 
 ### WikiTicket UI — IA-aware dashboard (supersedes wiki-ticket-ui)
 `01KY5ZZX8YXD5YDJKQGJ3VCCHN` · status: todo

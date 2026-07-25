@@ -7,7 +7,7 @@
 
 ## What are we working on now?
 [[Roadmap]]
-Active plans: [[Plan-wiki-ticket-ui-ia]], [[Plan-wiki-ticket-ui]]
+Active plans: [[Plan-tauri-desktop-shell]], [[Plan-wiki-ticket-ui-ia]], [[Plan-wiki-ticket-ui]]
 
 ## Why was it built this way?
 [[Index-Decisions]] — ADRs and plans, with supersede chains

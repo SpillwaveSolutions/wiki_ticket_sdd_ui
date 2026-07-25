@@ -96,6 +96,11 @@
    "type": "references"
   },
   {
+   "from": "item/01KYAH5VKVZZF2Q4T0AF2ZYJG0",
+   "to": "ticket/github#14",
+   "type": "references"
+  },
+  {
    "from": "plan/2026-07-21-wiki-ticket-ui",
    "to": "item/01KY111BC71KJGNH55CB2DWMKN",
    "type": "produces"
@@ -179,6 +184,11 @@
    "from": "plan/2026-07-22-wiki-ticket-ui-ia",
    "to": "plan/wiki-ticket-ui",
    "type": "supersedes"
+  },
+  {
+   "from": "plan/2026-07-23-tauri-desktop-shell",
+   "to": "item/01KY5ZZX8Z46K7BCSPPFKN23JZ",
+   "type": "produces"
   }
  ],
  "nodes": {
@@ -252,6 +262,11 @@
    "status": "done",
    "title": "Friendlier empty states when docs/.index is absent: Docs/Traceability show raw 'not found' error banner \u2014 suggest 'run worklog ia-index' guidance instead"
   },
+  "item/01KYAH5VKVZZF2Q4T0AF2ZYJG0": {
+   "doc_type": "item",
+   "status": "todo",
+   "title": "Refresh docs/.index plane \u2014 clear doc metadata drift, stale inventory, stale rendered pages warnings"
+  },
   "plan/2026-07-21-wiki-ticket-ui": {
    "doc_type": "plan",
    "source": "docs/plans/2026-07-21-wiki-ticket-ui.md",
@@ -262,6 +277,12 @@
    "doc_type": "plan",
    "source": "docs/plans/2026-07-22-wiki-ticket-ui-ia.md",
    "title": "WikiTicket UI \u2014 IA-aware dashboard (supersedes wiki-ticket-ui)",
+   "truth_state": "current"
+  },
+  "plan/2026-07-23-tauri-desktop-shell": {
+   "doc_type": "plan",
+   "source": "docs/plans/2026-07-23-tauri-desktop-shell.md",
+   "title": "Tauri 2 desktop shell wrapping the same frontend",
    "truth_state": "current"
   },
   "roadmap": {
@@ -281,6 +302,10 @@
   "ticket/github#11": {
    "doc_type": "ticket",
    "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/11"
+  },
+  "ticket/github#14": {
+   "doc_type": "ticket",
+   "url": ""
   },
   "ticket/github#2": {
    "doc_type": "ticket",

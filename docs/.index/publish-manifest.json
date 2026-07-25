@@ -4,7 +4,7 @@
    "frozen": false,
    "page_name": "Home",
    "render": "as-is",
-   "render_hash": "9a8ac9215bae",
+   "render_hash": "280d48eee76a",
    "source": "docs/.index/rendered/home.md",
    "title": "Home",
    "truth_state": "current",
@@ -14,7 +14,7 @@
    "frozen": false,
    "page_name": "Index-Decisions",
    "render": "as-is",
-   "render_hash": "9f871c53e32e",
+   "render_hash": "f710fc333813",
    "source": "docs/.index/rendered/decisions.md",
    "title": "Decisions Index",
    "truth_state": "current",
@@ -44,7 +44,7 @@
    "frozen": false,
    "page_name": "Index-Traceability",
    "render": "as-is",
-   "render_hash": "8ac620c9d608",
+   "render_hash": "9f84badeaa43",
    "source": "docs/.index/rendered/traceability.md",
    "title": "Traceability Index",
    "truth_state": "current",
@@ -73,11 +73,22 @@
    "wiki_key": "plan/2026-07-22-wiki-ticket-ui-ia"
   },
   {
-   "banner": "> **Current** \u2014 this is the living version; regenerated at 2026-07-23T01:38:08Z. Historical snapshots are linked from [[Index-Releases]].",
+   "banner": "> **Current** \u2014 the latest status report. Reports freeze once published; corrections appear in later reports.",
+   "frozen": true,
+   "page_name": "Plan-tauri-desktop-shell",
+   "render": "doc+banner",
+   "render_hash": "f49d14960beb",
+   "source": "docs/plans/2026-07-23-tauri-desktop-shell.md",
+   "title": "Tauri 2 desktop shell wrapping the same frontend",
+   "truth_state": "current",
+   "wiki_key": "plan/2026-07-23-tauri-desktop-shell"
+  },
+  {
+   "banner": "> **Current** \u2014 this is the living version; regenerated at 2026-07-24T17:02:05Z. Historical snapshots are linked from [[Index-Releases]].",
    "frozen": false,
    "page_name": "Roadmap",
    "render": "doc+banner",
-   "render_hash": "6f65f5dd0180",
+   "render_hash": "41b5c10722fb",
    "source": "docs/roadmap.md",
    "title": "Roadmap",
    "truth_state": "current",
@@ -85,7 +96,7 @@
   }
  ],
  "sidebar": {
-  "render_hash": "6334f0a66f9f",
+  "render_hash": "aab1878386e5",
   "source": "docs/.index/rendered/_Sidebar.md"
  },
  "version": 1

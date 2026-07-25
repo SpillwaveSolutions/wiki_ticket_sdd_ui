@@ -45,12 +45,27 @@
    "wiki_key": "plan/2026-07-22-wiki-ticket-ui-ia"
   },
   {
+   "canonical_key": "plan/2026-07-23-tauri-desktop-shell",
+   "date": "2026-07-23",
+   "doc_type": "plan",
+   "epic": "01KY5ZZX8YXD5YDJKQGJ3VCCHN",
+   "items": [
+    "01KY5ZZX8Z46K7BCSPPFKN23JZ"
+   ],
+   "slug": "tauri-desktop-shell",
+   "source": "docs/plans/2026-07-23-tauri-desktop-shell.md",
+   "status": "planned",
+   "title": "Tauri 2 desktop shell wrapping the same frontend",
+   "truth_state": "current",
+   "wiki_key": "plan/2026-07-23-tauri-desktop-shell"
+  },
+  {
    "canonical_key": "roadmap",
    "doc_type": "roadmap",
-   "generated_at": "2026-07-23T01:38:08Z",
+   "generated_at": "2026-07-24T17:02:05Z",
    "slug": "roadmap",
    "source": "docs/roadmap.md",
-   "source_hash": "823c7dd6",
+   "source_hash": "ad1bce60",
    "title": "Roadmap",
    "truth_state": "current",
    "wiki_key": "roadmap"
