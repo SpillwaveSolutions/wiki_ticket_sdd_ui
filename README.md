@@ -13,6 +13,8 @@ sync health, charts, and an interactive traceability graph
 
 ![Overview panel](docs/images/overview.jpg)
 
+Full walkthrough of both run modes: [`docs/user_guide/user-guide.md`](docs/user_guide/user-guide.md).
+
 ## Quickstart
 
 ```sh
@@ -53,7 +55,9 @@ Design record: [`docs/plans/2026-07-22-wiki-ticket-ui-ia.md`](docs/plans/2026-07
 
 Same React UI, with the API ported to Rust (`src-tauri/`) and invoked over
 Tauri IPC instead of HTTP. Pick a worklog repo with the native folder dialog
-(or set `WORKLOG_REPO` before launch).
+(or set `WORKLOG_REPO` before launch, as an optional seed). No repo selected
+yet? The picker opens automatically on first launch instead of leaving every
+panel showing an error.
 
 ```sh
 npm install

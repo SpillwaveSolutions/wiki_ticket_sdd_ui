@@ -202,6 +202,12 @@
   }
  ],
  "nodes": {
+  "guide/user-guide": {
+   "doc_type": "guide",
+   "source": "docs/user_guide/user-guide.md",
+   "title": "WikiTicket UI User Guide",
+   "truth_state": "current"
+  },
   "item/01KY5ZZX": {
    "doc_type": "item",
    "status": "in_progress",
@@ -276,6 +282,11 @@
    "doc_type": "item",
    "status": "done",
    "title": "Refresh docs/.index plane \u2014 clear doc metadata drift, stale inventory, stale rendered pages warnings"
+  },
+  "item/01KYDBD7Z9DD0P20962DJ5QS6V": {
+   "doc_type": "item",
+   "status": "done",
+   "title": "Refresh user guide + README for v0.2.0 release (Tauri desktop shell docs sync)"
   },
   "plan/2026-07-21-wiki-ticket-ui": {
    "doc_type": "plan",
