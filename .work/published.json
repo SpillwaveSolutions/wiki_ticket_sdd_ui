@@ -90,8 +90,8 @@
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Index-Status"
   },
   "index/traceability": {
-    "render_hash": "87dc1f75ffd2",
-    "rev": "3cf8f37",
+    "render_hash": "549011f88284",
+    "rev": "9c26ffe",
     "source": "docs/.index/rendered/traceability.md",
     "source_hash": "87dc1f75ffd2",
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Index-Traceability"
@@ -99,8 +99,8 @@
   "plan/2026-07-21-wiki-ticket-ui": {
     "canonical_key": "plan/2026-07-21-wiki-ticket-ui",
     "doc_type": "plan",
-    "render_hash": "50df458ae989",
-    "rev": "3cf8f37",
+    "render_hash": "ddb4c5a6a1e1",
+    "rev": "9c26ffe",
     "source": "docs/plans/2026-07-21-wiki-ticket-ui.md",
     "source_hash": "e71c38b1a5c8",
     "truth_state": "current",
@@ -110,8 +110,8 @@
   "plan/2026-07-22-wiki-ticket-ui-ia": {
     "canonical_key": "plan/2026-07-22-wiki-ticket-ui-ia",
     "doc_type": "plan",
-    "render_hash": "ea5ca2951710",
-    "rev": "3cf8f37",
+    "render_hash": "b10b6c25a746",
+    "rev": "9c26ffe",
     "source": "docs/plans/2026-07-22-wiki-ticket-ui-ia.md",
     "source_hash": "e9a832a956f6",
     "truth_state": "current",
@@ -121,8 +121,8 @@
   "plan/2026-07-23-tauri-desktop-shell": {
     "canonical_key": "plan/2026-07-23-tauri-desktop-shell",
     "doc_type": "plan",
-    "render_hash": "f49d14960beb",
-    "rev": "3cf8f37",
+    "render_hash": "7ba59d4ef6e0",
+    "rev": "9c26ffe",
     "source": "docs/plans/2026-07-23-tauri-desktop-shell.md",
     "source_hash": "eb1dddf43873",
     "truth_state": "current",
@@ -132,8 +132,8 @@
   "roadmap": {
     "canonical_key": "roadmap",
     "doc_type": "roadmap",
-    "render_hash": "9ef20520225b",
-    "rev": "3cf8f37",
+    "render_hash": "fdd4c136fef9",
+    "rev": "9c26ffe",
     "source": "docs/roadmap.md",
     "source_hash": "9f6c861b6a38",
     "truth_state": "current",
