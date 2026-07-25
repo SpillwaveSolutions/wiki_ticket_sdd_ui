@@ -14,6 +14,7 @@
    "tag": "v0.2.0",
    "title": "WikiTicket UI \u2014 Code Walkthrough",
    "truth_state": "snapshot",
+   "wiki": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Code-Walkthrough-2026-07-25_v0.2.0-release",
    "wiki_key": "design/2026-07-25_v0.2.0-release-code-walkthrough"
   },
   {
@@ -30,6 +31,7 @@
    "tag": "v0.2.0",
    "title": "WikiTicket UI \u2014 Software Design Document",
    "truth_state": "snapshot",
+   "wiki": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Design-Doc-2026-07-25_v0.2.0-release",
    "wiki_key": "design/2026-07-25_v0.2.0-release-design-doc"
   },
   {
@@ -45,6 +47,7 @@
    "tag": "v0.2.0",
    "title": "WikiTicket UI \u2014 Code Walkthrough",
    "truth_state": "current",
+   "wiki": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Code-Walkthrough",
    "wiki_key": "design/current-code-walkthrough"
   },
   {
@@ -60,6 +63,7 @@
    "tag": "v0.2.0",
    "title": "WikiTicket UI \u2014 Software Design Document",
    "truth_state": "current",
+   "wiki": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Design-Doc",
    "wiki_key": "design/current-design-doc"
   },
   {
@@ -69,6 +73,7 @@
    "source": "docs/user_guide/user-guide.md",
    "title": "WikiTicket UI User Guide",
    "truth_state": "current",
+   "wiki": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/WikiTicket-UI-User-Guide",
    "wiki_key": "guide/user-guide"
   },
   {
@@ -90,6 +95,7 @@
    "status": "planned",
    "title": "WikiTicket UI \u2014 project status dashboard (wiki_ticket_sdd_ui)",
    "truth_state": "current",
+   "wiki": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Plan-wiki-ticket-ui",
    "wiki_key": "plan/2026-07-21-wiki-ticket-ui"
   },
   {
@@ -113,6 +119,7 @@
    "supersedes": "plan/wiki-ticket-ui",
    "title": "WikiTicket UI \u2014 IA-aware dashboard (supersedes wiki-ticket-ui)",
    "truth_state": "current",
+   "wiki": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Plan-wiki-ticket-ui-ia",
    "wiki_key": "plan/2026-07-22-wiki-ticket-ui-ia"
   },
   {
@@ -128,6 +135,7 @@
    "status": "completed",
    "title": "Tauri 2 desktop shell wrapping the same frontend",
    "truth_state": "current",
+   "wiki": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Plan-tauri-desktop-shell",
    "wiki_key": "plan/2026-07-23-tauri-desktop-shell"
   },
   {
@@ -139,6 +147,7 @@
    "source_hash": "a8439711",
    "title": "Roadmap",
    "truth_state": "current",
+   "wiki": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Roadmap",
    "wiki_key": "roadmap"
   },
   {
@@ -153,6 +162,7 @@
    "source_hash": "70d151db",
    "title": "Roadmap",
    "truth_state": "snapshot",
+   "wiki": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Roadmap-2026-07-25_v0.2.0-release",
    "wiki_key": "roadmap-snapshot/2026-07-25_v0.2.0-release"
   }
  ],
