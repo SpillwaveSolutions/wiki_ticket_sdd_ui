@@ -264,7 +264,7 @@
   },
   "item/01KYAH5VKVZZF2Q4T0AF2ZYJG0": {
    "doc_type": "item",
-   "status": "todo",
+   "status": "done",
    "title": "Refresh docs/.index plane \u2014 clear doc metadata drift, stale inventory, stale rendered pages warnings"
   },
   "plan/2026-07-21-wiki-ticket-ui": {

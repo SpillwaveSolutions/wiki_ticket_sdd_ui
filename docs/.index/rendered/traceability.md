@@ -3,7 +3,7 @@
 _The evidence chain: plan → item → ticket → code → release, forward and backward. Generated from `docs/.index/_graph.json`; do not edit._
 
 ### Refresh docs/.index plane — clear doc metadata drift, stale inventory, stale rendered pages warnings
-`01KYAH5VKVZZF2Q4T0AF2ZYJG0` · status: todo
+`01KYAH5VKVZZF2Q4T0AF2ZYJG0` · status: done
 - references: ticket/github#14
 
 ### Friendlier empty states when docs/.index is absent: Docs/Traceability show raw 'not found' error banner — suggest 'run worklog ia-index' guidance instead
