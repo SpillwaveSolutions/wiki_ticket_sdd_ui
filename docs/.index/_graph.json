@@ -189,6 +189,16 @@
    "from": "plan/2026-07-23-tauri-desktop-shell",
    "to": "item/01KY5ZZX8Z46K7BCSPPFKN23JZ",
    "type": "produces"
+  },
+  {
+   "from": "roadmap-snapshot/2026-07-25_v0.2.0-release",
+   "to": "roadmap",
+   "type": "snapshot-of"
+  },
+  {
+   "from": "roadmap-snapshot/2026-07-25_v0.2.0-release",
+   "to": "release/v0.2.0",
+   "type": "targets"
   }
  ],
  "nodes": {
@@ -209,12 +219,12 @@
   },
   "item/01KY5ZZX8YXD5YDJKQGJ3VCCHN": {
    "doc_type": "item",
-   "status": "todo",
+   "status": "done",
    "title": "WikiTicket UI \u2014 IA-aware dashboard (supersedes wiki-ticket-ui)"
   },
   "item/01KY5ZZX8Z46K7BCSPPFKN23JZ": {
    "doc_type": "item",
-   "status": "todo",
+   "status": "done",
    "title": "Tauri 2 desktop shell wrapping the same frontend"
   },
   "item/01KY5ZZX8ZBF099JH8N2ZRJKKE": {
@@ -285,11 +295,20 @@
    "title": "Tauri 2 desktop shell wrapping the same frontend",
    "truth_state": "current"
   },
+  "release/v0.2.0": {
+   "doc_type": "release"
+  },
   "roadmap": {
    "doc_type": "roadmap",
    "source": "docs/roadmap.md",
    "title": "Roadmap",
    "truth_state": "current"
+  },
+  "roadmap-snapshot/2026-07-25_v0.2.0-release": {
+   "doc_type": "roadmap-snapshot",
+   "source": "docs/roadmap/2026-07-25_v0.2.0-release.md",
+   "title": "Roadmap",
+   "truth_state": "snapshot"
   },
   "ticket/github#1": {
    "doc_type": "ticket",

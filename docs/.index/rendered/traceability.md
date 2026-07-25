@@ -51,14 +51,14 @@ _The evidence chain: plan → item → ticket → code → release, forward and 
 - produced-by: [[Plan-wiki-ticket-ui-ia]]
 
 ### Tauri 2 desktop shell wrapping the same frontend
-`01KY5ZZX8Z46K7BCSPPFKN23JZ` · status: todo
+`01KY5ZZX8Z46K7BCSPPFKN23JZ` · status: done
 - belongs-to: WikiTicket UI — IA-aware dashboard (supersedes wiki-ticket-ui)
 - references: [github#9](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/9)
 - produced-by: [[Plan-wiki-ticket-ui-ia]]
 - produced-by: [[Plan-tauri-desktop-shell]]
 
 ### WikiTicket UI — IA-aware dashboard (supersedes wiki-ticket-ui)
-`01KY5ZZX8YXD5YDJKQGJ3VCCHN` · status: todo
+`01KY5ZZX8YXD5YDJKQGJ3VCCHN` · status: done
 - references: [github#1](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/1)
 - contains: Scaffold public repo wiki_ticket_sdd_ui: README, LICENSE, npm workspaces, CI
 - contains: Server: Hono JSON API over any worklog repo — fold, events, docs, index plane, git, gh, ledger, sync state

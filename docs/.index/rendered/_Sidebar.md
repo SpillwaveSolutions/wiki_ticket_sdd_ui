@@ -2,13 +2,12 @@
 
 - [[Roadmap]]
 - [[Design-Doc]] · [[Code-Walkthrough]]
-- Plan: [[Plan-tauri-desktop-shell]]
-- Plan: [[Plan-wiki-ticket-ui-ia]]
 - Plan: [[Plan-wiki-ticket-ui]]
 
 ### History
 
 - [[Index-Releases]]
+- Latest snapshot: [[Roadmap-2026-07-25_v0.2.0-release]]
 - [[Index-Status]]
 - [[Index-Decisions]]
 
