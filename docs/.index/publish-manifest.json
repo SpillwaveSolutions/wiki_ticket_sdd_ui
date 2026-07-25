@@ -44,7 +44,7 @@
    "frozen": false,
    "page_name": "Index-Traceability",
    "render": "as-is",
-   "render_hash": "87dc1f75ffd2",
+   "render_hash": "7f94b9bbc3fc",
    "source": "docs/.index/rendered/traceability.md",
    "title": "Traceability Index",
    "truth_state": "current",
@@ -139,11 +139,11 @@
    "wiki_key": "plan/2026-07-23-tauri-desktop-shell"
   },
   {
-   "banner": "> **Current** \u2014 this is the living version; regenerated at 2026-07-25T19:20:10Z. Historical snapshots are linked from [[Index-Releases]].",
+   "banner": "> **Current** \u2014 this is the living version; regenerated at 2026-07-25T20:53:05Z. Historical snapshots are linked from [[Index-Releases]].",
    "frozen": false,
    "page_name": "Roadmap",
    "render": "doc+banner",
-   "render_hash": "9ef20520225b",
+   "render_hash": "2be40df899d2",
    "source": "docs/roadmap.md",
    "title": "Roadmap",
    "truth_state": "current",

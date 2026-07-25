@@ -2,6 +2,14 @@
 
 _The evidence chain: plan → item → ticket → code → release, forward and backward. Generated from `docs/.index/_graph.json`; do not edit._
 
+### ia-normalize back-writes ledger refs into doc sidecars after wiki-publish, re-staling the inventory it just wrote
+`01KYDGTVE9YFP8S85WH00MB94W` · status: todo
+- references: ticket/github#16
+
+### banner() mislabels frozen plan docs as 'status report' — doc_type not checked in ia_render.py's current+frozen branch
+`01KYDGTV93N0Q1SZWNTE1GRMR2` · status: todo
+- references: ticket/github#15
+
 ### Refresh user guide + README for v0.2.0 release (Tauri desktop shell docs sync)
 `01KYDBD7Z9DD0P20962DJ5QS6V` · status: done
 
