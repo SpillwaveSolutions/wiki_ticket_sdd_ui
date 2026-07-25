@@ -52,4 +52,11 @@ proof. The plan's Verification section lists the acceptance checks.
   (it is generated; change the work items instead).
 - After changing work items, run `worklog roadmap-render` and commit the log
   and roadmap together.
+- After changing work items (`add`/`update`/`close`/`reopen`/`link`) OR the
+  wiki publish ledger (`.work/published.json`), also run `worklog ia-index`
+  before committing. `ia-normalize` back-writes ledger references into doc
+  sidecars, so a single pass immediately after one of these operations can
+  still leave `docs/.index/` stale — if `git status` still shows index files
+  changing after your first `ia-index` run, run it once more before you
+  commit (see #16).
 <!-- worklog:policy:end -->

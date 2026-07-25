@@ -66,6 +66,12 @@ def banner(rec, by_key):
     """Reader-visible truth banner (§6.1), one blockquote line."""
     ts = rec["truth_state"]
     if ts == "current" and ia.is_frozen(rec):
+        if rec["doc_type"] == "plan":
+            # the active plan: frozen at creation, never regenerated — a
+            # design change lands in a new superseding plan, not an edit here
+            return ("> **Current** — the active plan. Plans are frozen once "
+                    "written; a design change lands in a new superseding "
+                    "plan, never an edit to this one.")
         # e.g. the newest status report: current truth, but frozen — it will
         # be archived by its successor, never regenerated
         return ("> **Current** — the latest %s report. Reports freeze once "

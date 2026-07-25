@@ -354,12 +354,12 @@
   },
   "item/01KYDGTV93N0Q1SZWNTE1GRMR2": {
    "doc_type": "item",
-   "status": "todo",
+   "status": "done",
    "title": "banner() mislabels frozen plan docs as 'status report' \u2014 doc_type not checked in ia_render.py's current+frozen branch"
   },
   "item/01KYDGTVE9YFP8S85WH00MB94W": {
    "doc_type": "item",
-   "status": "todo",
+   "status": "done",
    "title": "ia-normalize back-writes ledger refs into doc sidecars after wiki-publish, re-staling the inventory it just wrote"
   },
   "plan/2026-07-21-wiki-ticket-ui": {
