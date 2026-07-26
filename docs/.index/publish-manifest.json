@@ -24,7 +24,7 @@
    "frozen": false,
    "page_name": "Index-Releases",
    "render": "as-is",
-   "render_hash": "d396af7f59ed",
+   "render_hash": "ab5b7246692c",
    "source": "docs/.index/rendered/releases.md",
    "title": "Releases Index",
    "truth_state": "current",
@@ -159,10 +159,21 @@
    "title": "Roadmap",
    "truth_state": "snapshot",
    "wiki_key": "roadmap-snapshot/2026-07-25_v0.2.0-release"
+  },
+  {
+   "banner": "> **Snapshot** of release v0.2.1 (2026-07-26) \u2014 frozen record. The current version is [[Roadmap]].",
+   "frozen": true,
+   "page_name": "Roadmap-2026-07-26_v0.2.1-release",
+   "render": "doc+banner",
+   "render_hash": "aff506999cea",
+   "source": "docs/roadmap/2026-07-26_v0.2.1-release.md",
+   "title": "Roadmap",
+   "truth_state": "snapshot",
+   "wiki_key": "roadmap-snapshot/2026-07-26_v0.2.1-release"
   }
  ],
  "sidebar": {
-  "render_hash": "ec16aa651d76",
+  "render_hash": "ebb00a999acb",
   "source": "docs/.index/rendered/_Sidebar.md"
  },
  "version": 1
