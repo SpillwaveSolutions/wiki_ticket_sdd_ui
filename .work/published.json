@@ -1,9 +1,9 @@
 {
   "_sidebar": {
-    "render_hash": "ec16aa651d76",
-    "rev": "3cf8f37",
+    "render_hash": "ebb00a999acb",
+    "rev": "eb92ebf",
     "source": "docs/.index/rendered/_Sidebar.md",
-    "source_hash": "ec16aa651d76",
+    "source_hash": "ebb00a999acb",
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/_Sidebar"
   },
   "design/2026-07-25_v0.2.0-release-code-walkthrough": {
@@ -76,10 +76,10 @@
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Index-Decisions"
   },
   "index/releases": {
-    "render_hash": "d396af7f59ed",
-    "rev": "3cf8f37",
+    "render_hash": "ab5b7246692c",
+    "rev": "eb92ebf",
     "source": "docs/.index/rendered/releases.md",
-    "source_hash": "d396af7f59ed",
+    "source_hash": "ab5b7246692c",
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Index-Releases"
   },
   "index/status": {
@@ -150,5 +150,16 @@
     "truth_state": "snapshot",
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Roadmap-2026-07-25_v0.2.0-release",
     "wiki_key": "roadmap-snapshot/2026-07-25_v0.2.0-release"
+  },
+  "roadmap-snapshot/2026-07-26_v0.2.1-release": {
+    "canonical_key": "roadmap-snapshot/2026-07-26_v0.2.1-release",
+    "doc_type": "roadmap-snapshot",
+    "render_hash": "aff506999cea",
+    "rev": "eb92ebf",
+    "source": "docs/roadmap/2026-07-26_v0.2.1-release.md",
+    "source_hash": "885767cb18ae",
+    "truth_state": "snapshot",
+    "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Roadmap-2026-07-26_v0.2.1-release",
+    "wiki_key": "roadmap-snapshot/2026-07-26_v0.2.1-release"
   }
 }
