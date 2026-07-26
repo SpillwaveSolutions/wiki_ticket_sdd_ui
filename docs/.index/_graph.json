@@ -281,6 +281,12 @@
    "title": "WikiTicket UI \u2014 Software Design Document",
    "truth_state": "current"
   },
+  "guide/graph-engineering": {
+   "doc_type": "guide",
+   "source": "docs/user_guide/graph-engineering.md",
+   "title": "How this codebase maps to \"graph engineering\"",
+   "truth_state": "current"
+  },
   "guide/user-guide": {
    "doc_type": "guide",
    "source": "docs/user_guide/user-guide.md",

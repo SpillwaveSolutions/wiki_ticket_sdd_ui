@@ -97,6 +97,17 @@
   {
    "banner": "> **Current** \u2014 this is the living version. Historical snapshots are linked from [[Index-Releases]].",
    "frozen": false,
+   "page_name": "How-this-codebase-maps-to-\"graph-engineering\"",
+   "render": "doc+banner",
+   "render_hash": "5bbd8e2b611f",
+   "source": "docs/user_guide/graph-engineering.md",
+   "title": "How this codebase maps to \"graph engineering\"",
+   "truth_state": "current",
+   "wiki_key": "guide/graph-engineering"
+  },
+  {
+   "banner": "> **Current** \u2014 this is the living version. Historical snapshots are linked from [[Index-Releases]].",
+   "frozen": false,
    "page_name": "WikiTicket-UI-User-Guide",
    "render": "doc+banner",
    "render_hash": "21a32174dee6",

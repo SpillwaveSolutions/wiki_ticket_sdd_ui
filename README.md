@@ -91,6 +91,10 @@ production (`npm start`), the server also serves the built `web/dist` static
 assets, so one process is the whole app; in development, Vite serves the
 front end and proxies `/api/*` to the server.
 
+For how this design maps to the "graph engineering" (nodes/typed edges/index/router/
+state) pattern currently being discussed for agent systems, see
+[`docs/user_guide/graph-engineering.md`](docs/user_guide/graph-engineering.md).
+
 ## Development
 
 ```sh
