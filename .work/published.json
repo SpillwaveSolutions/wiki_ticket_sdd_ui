@@ -1,9 +1,9 @@
 {
   "_sidebar": {
-    "render_hash": "ebb00a999acb",
-    "rev": "eb92ebf",
+    "render_hash": "ecee717811a3",
+    "rev": "4efa9d9",
     "source": "docs/.index/rendered/_Sidebar.md",
-    "source_hash": "ebb00a999acb",
+    "source_hash": "ecee717811a3",
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/_Sidebar"
   },
   "design/2026-07-25_v0.2.0-release-code-walkthrough": {
@@ -62,17 +62,17 @@
     "wiki_key": "guide/user-guide"
   },
   "home": {
-    "render_hash": "009e156a6f21",
-    "rev": "3cf8f37",
+    "render_hash": "31ac7596e8bd",
+    "rev": "4efa9d9",
     "source": "docs/.index/rendered/home.md",
-    "source_hash": "009e156a6f21",
+    "source_hash": "31ac7596e8bd",
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Home"
   },
   "index/decisions": {
-    "render_hash": "42d1ebd38b3b",
-    "rev": "3cf8f37",
+    "render_hash": "5a19910984d9",
+    "rev": "4efa9d9",
     "source": "docs/.index/rendered/decisions.md",
-    "source_hash": "42d1ebd38b3b",
+    "source_hash": "5a19910984d9",
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Index-Decisions"
   },
   "index/releases": {
@@ -90,10 +90,10 @@
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Index-Status"
   },
   "index/traceability": {
-    "render_hash": "549011f88284",
-    "rev": "9c26ffe",
+    "render_hash": "eb1016ebcd32",
+    "rev": "4efa9d9",
     "source": "docs/.index/rendered/traceability.md",
-    "source_hash": "87dc1f75ffd2",
+    "source_hash": "eb1016ebcd32",
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Index-Traceability"
   },
   "plan/2026-07-21-wiki-ticket-ui": {
@@ -132,13 +132,24 @@
   "roadmap": {
     "canonical_key": "roadmap",
     "doc_type": "roadmap",
-    "render_hash": "fdd4c136fef9",
-    "rev": "9c26ffe",
+    "render_hash": "037e46262a41",
+    "rev": "4efa9d9",
     "source": "docs/roadmap.md",
-    "source_hash": "9f6c861b6a38",
+    "source_hash": "4c54afad340a",
     "truth_state": "current",
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Roadmap",
     "wiki_key": "roadmap"
+  },
+  "plan/2026-07-27-repo-picker-discovery": {
+    "canonical_key": "plan/2026-07-27-repo-picker-discovery",
+    "doc_type": "plan",
+    "render_hash": "6bc5c845bf65",
+    "rev": "4efa9d9",
+    "source": "docs/plans/2026-07-27-repo-picker-discovery.md",
+    "source_hash": "ee7a9f9e94ef",
+    "truth_state": "current",
+    "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Plan-repo-picker-discovery",
+    "wiki_key": "plan/2026-07-27-repo-picker-discovery"
   },
   "roadmap-snapshot/2026-07-25_v0.2.0-release": {
     "canonical_key": "roadmap-snapshot/2026-07-25_v0.2.0-release",

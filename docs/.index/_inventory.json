@@ -164,6 +164,7 @@
    "status": "planned",
    "title": "Repo picker: local-root scanning + GitHub org search + shallow-clone cache",
    "truth_state": "current",
+   "wiki": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Plan-repo-picker-discovery",
    "wiki_key": "plan/2026-07-27-repo-picker-discovery"
   },
   {
