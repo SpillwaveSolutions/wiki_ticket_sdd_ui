@@ -44,7 +44,7 @@
    "frozen": false,
    "page_name": "Index-Traceability",
    "render": "as-is",
-   "render_hash": "eb1016ebcd32",
+   "render_hash": "547b0232144e",
    "source": "docs/.index/rendered/traceability.md",
    "title": "Traceability Index",
    "truth_state": "current",
@@ -97,7 +97,7 @@
   {
    "banner": "> **Current** \u2014 this is the living version. Historical snapshots are linked from [[Index-Releases]].",
    "frozen": false,
-   "page_name": "How-this-codebase-maps-to-\"graph-engineering\"",
+   "page_name": "How-this-codebase-maps-to-%22graph-engineering%22",
    "render": "doc+banner",
    "render_hash": "5bbd8e2b611f",
    "source": "docs/user_guide/graph-engineering.md",
@@ -161,11 +161,11 @@
    "wiki_key": "plan/2026-07-27-repo-picker-discovery"
   },
   {
-   "banner": "> **Current** \u2014 this is the living version; regenerated at 2026-07-27T23:25:57Z. Historical snapshots are linked from [[Index-Releases]].",
+   "banner": "> **Current** \u2014 this is the living version; regenerated at 2026-07-27T23:49:12Z. Historical snapshots are linked from [[Index-Releases]].",
    "frozen": false,
    "page_name": "Roadmap",
    "render": "doc+banner",
-   "render_hash": "037e46262a41",
+   "render_hash": "fe399fdd06f1",
    "source": "docs/roadmap.md",
    "title": "Roadmap",
    "truth_state": "current",

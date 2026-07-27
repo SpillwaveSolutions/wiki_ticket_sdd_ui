@@ -1,0 +1,65 @@
+{
+  "adapter_path": "/Users/richardhightower/clients/spillwave/src/wiki_ticket_sdd_ui/adapters/github/adapter",
+  "items": {
+    "01KY5ZZX8Y6N7E5YQYP4X1V7VA": {
+      "last_pushed_hash": "62e13d2e1095c558"
+    },
+    "01KY5ZZX8YBZ3FS5QP06RF4PT6": {
+      "last_pushed_hash": "16793a3df953b537"
+    },
+    "01KY5ZZX8YXD5YDJKQGJ3VCCHN": {
+      "last_pushed_hash": "dc6765a8506f1234"
+    },
+    "01KY5ZZX8Z46K7BCSPPFKN23JZ": {
+      "last_pushed_hash": "e50c6dd8a26c2434"
+    },
+    "01KY5ZZX8ZBF099JH8N2ZRJKKE": {
+      "last_pushed_hash": "d14b6c7623386204"
+    },
+    "01KY5ZZX8ZJJX208WYH58MY9WS": {
+      "last_pushed_hash": "6fb6c2cbe70c9e9e"
+    },
+    "01KY5ZZX8ZTV1ZYR8FYGBEWKJV": {
+      "last_pushed_hash": "55bb29969bdfd4da"
+    },
+    "01KY5ZZX8ZX1T0SD6S60CQD5Z0": {
+      "last_pushed_hash": "b6ee9483ef8f73b7"
+    },
+    "01KY5ZZX8ZYPXTMVCGX4AAZQSG": {
+      "last_pushed_hash": "8160ed7520fbb1e1"
+    },
+    "01KY659FMF8BB293744Q4X2V6G": {
+      "last_pushed_hash": "50880b004f0d5f64"
+    },
+    "01KY67KXG4E4D2P1FJ6JPKTYX3": {
+      "last_pushed_hash": "cb06fd743a31a304"
+    },
+    "01KYAH5VKVZZF2Q4T0AF2ZYJG0": {
+      "last_pushed_hash": "853df216c8f10966"
+    },
+    "01KYDGTV93N0Q1SZWNTE1GRMR2": {
+      "last_pushed_hash": "25ff1146601611a2"
+    },
+    "01KYDGTVE9YFP8S85WH00MB94W": {
+      "last_pushed_hash": "d1f10eb6dac871f2"
+    },
+    "01KYJYCFCC5V94FMQJDZ0FZ2AS": {
+      "last_pushed_hash": "c640def235754e54"
+    },
+    "01KYJYCFCC843N3DX38Q9JA13F": {
+      "last_pushed_hash": "8c7df736c99fe18f"
+    },
+    "01KYJYCFCCF4MS6GAG2YQE82BJ": {
+      "last_pushed_hash": "91eb7b2c313b734c"
+    },
+    "01KYJYCFCCFT3PJV6FP99AEWSS": {
+      "last_pushed_hash": "b0a6264e6b59e4fd"
+    },
+    "01KYJYCFCD0KTXXFHMVRTRC3VX": {
+      "last_pushed_hash": "e57d96a51b0e87c5"
+    },
+    "01KYJYCFCD9JAQD5BGPCCCE82T": {
+      "last_pushed_hash": "9ec245a88352a596"
+    }
+  }
+}

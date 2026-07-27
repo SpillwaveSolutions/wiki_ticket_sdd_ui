@@ -146,9 +146,19 @@
    "type": "belongs-to"
   },
   {
+   "from": "item/01KYJYCFCC5V94FMQJDZ0FZ2AS",
+   "to": "ticket/github#18",
+   "type": "references"
+  },
+  {
    "from": "item/01KYJYCFCC843N3DX38Q9JA13F",
    "to": "item/01KYJYCFCCFT3PJV6FP99AEWSS",
    "type": "belongs-to"
+  },
+  {
+   "from": "item/01KYJYCFCC843N3DX38Q9JA13F",
+   "to": "ticket/github#19",
+   "type": "references"
   },
   {
    "from": "item/01KYJYCFCCF4MS6GAG2YQE82BJ",
@@ -156,14 +166,34 @@
    "type": "belongs-to"
   },
   {
+   "from": "item/01KYJYCFCCF4MS6GAG2YQE82BJ",
+   "to": "ticket/github#20",
+   "type": "references"
+  },
+  {
+   "from": "item/01KYJYCFCCFT3PJV6FP99AEWSS",
+   "to": "ticket/github#21",
+   "type": "references"
+  },
+  {
    "from": "item/01KYJYCFCD0KTXXFHMVRTRC3VX",
    "to": "item/01KYJYCFCCFT3PJV6FP99AEWSS",
    "type": "belongs-to"
   },
   {
+   "from": "item/01KYJYCFCD0KTXXFHMVRTRC3VX",
+   "to": "ticket/github#22",
+   "type": "references"
+  },
+  {
    "from": "item/01KYJYCFCD9JAQD5BGPCCCE82T",
    "to": "item/01KYJYCFCCFT3PJV6FP99AEWSS",
    "type": "belongs-to"
+  },
+  {
+   "from": "item/01KYJYCFCD9JAQD5BGPCCCE82T",
+   "to": "ticket/github#23",
+   "type": "references"
   },
   {
    "from": "plan/2026-07-21-wiki-ticket-ui",
@@ -540,9 +570,33 @@
    "doc_type": "ticket",
    "url": ""
   },
+  "ticket/github#18": {
+   "doc_type": "ticket",
+   "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/18"
+  },
+  "ticket/github#19": {
+   "doc_type": "ticket",
+   "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/19"
+  },
   "ticket/github#2": {
    "doc_type": "ticket",
    "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/2"
+  },
+  "ticket/github#20": {
+   "doc_type": "ticket",
+   "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/20"
+  },
+  "ticket/github#21": {
+   "doc_type": "ticket",
+   "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/21"
+  },
+  "ticket/github#22": {
+   "doc_type": "ticket",
+   "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/22"
+  },
+  "ticket/github#23": {
+   "doc_type": "ticket",
+   "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/23"
   },
   "ticket/github#3": {
    "doc_type": "ticket",

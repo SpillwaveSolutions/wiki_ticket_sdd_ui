@@ -73,6 +73,7 @@
    "source": "docs/user_guide/graph-engineering.md",
    "title": "How this codebase maps to \"graph engineering\"",
    "truth_state": "current",
+   "wiki": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/How-this-codebase-maps-to-%22graph-engineering%22",
    "wiki_key": "guide/graph-engineering"
   },
   {
@@ -170,10 +171,10 @@
   {
    "canonical_key": "roadmap",
    "doc_type": "roadmap",
-   "generated_at": "2026-07-27T23:25:57Z",
+   "generated_at": "2026-07-27T23:49:12Z",
    "slug": "roadmap",
    "source": "docs/roadmap.md",
-   "source_hash": "31ed743f",
+   "source_hash": "a2573b01",
    "title": "Roadmap",
    "truth_state": "current",
    "wiki": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Roadmap",

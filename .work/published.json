@@ -50,6 +50,18 @@
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Design-Doc",
     "wiki_key": "design/current-design-doc"
   },
+  "guide/graph-engineering": {
+    "canonical_key": "guide/graph-engineering",
+    "doc_type": "guide",
+    "render_hash": "5bbd8e2b611f",
+    "rev": "a880d04",
+    "source": "docs/user_guide/graph-engineering.md",
+    "source_hash": "b1c74f99a337",
+    "title": "How this codebase maps to \"graph engineering\"",
+    "truth_state": "current",
+    "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/How-this-codebase-maps-to-%22graph-engineering%22",
+    "wiki_key": "guide/graph-engineering"
+  },
   "guide/user-guide": {
     "canonical_key": "guide/user-guide",
     "doc_type": "guide",
@@ -129,17 +141,6 @@
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Plan-tauri-desktop-shell",
     "wiki_key": "plan/2026-07-23-tauri-desktop-shell"
   },
-  "roadmap": {
-    "canonical_key": "roadmap",
-    "doc_type": "roadmap",
-    "render_hash": "037e46262a41",
-    "rev": "4efa9d9",
-    "source": "docs/roadmap.md",
-    "source_hash": "4c54afad340a",
-    "truth_state": "current",
-    "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Roadmap",
-    "wiki_key": "roadmap"
-  },
   "plan/2026-07-27-repo-picker-discovery": {
     "canonical_key": "plan/2026-07-27-repo-picker-discovery",
     "doc_type": "plan",
@@ -150,6 +151,17 @@
     "truth_state": "current",
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Plan-repo-picker-discovery",
     "wiki_key": "plan/2026-07-27-repo-picker-discovery"
+  },
+  "roadmap": {
+    "canonical_key": "roadmap",
+    "doc_type": "roadmap",
+    "render_hash": "037e46262a41",
+    "rev": "4efa9d9",
+    "source": "docs/roadmap.md",
+    "source_hash": "4c54afad340a",
+    "truth_state": "current",
+    "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Roadmap",
+    "wiki_key": "roadmap"
   },
   "roadmap-snapshot/2026-07-25_v0.2.0-release": {
     "canonical_key": "roadmap-snapshot/2026-07-25_v0.2.0-release",

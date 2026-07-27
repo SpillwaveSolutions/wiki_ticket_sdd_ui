@@ -5,15 +5,18 @@ _The evidence chain: plan → item → ticket → code → release, forward and 
 ### Verify end to end and seed local config
 `01KYJYCFCD9JAQD5BGPCCCE82T` · status: todo
 - belongs-to: Repo picker: local-root scanning + GitHub org search + shallow-clone cache
+- references: [github#23](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/23)
 - produced-by: [[Plan-repo-picker-discovery]]
 
 ### Build the repo-picker UI: tabs, local-roots panel, GitHub search panel
 `01KYJYCFCD0KTXXFHMVRTRC3VX` · status: todo
 - belongs-to: Repo picker: local-root scanning + GitHub org search + shallow-clone cache
+- references: [github#22](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/22)
 - produced-by: [[Plan-repo-picker-discovery]]
 
 ### Repo picker: local-root scanning + GitHub org search + shallow-clone cache
 `01KYJYCFCCFT3PJV6FP99AEWSS` · status: todo
+- references: [github#21](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/21)
 - contains: Add frontend types and api.ts methods for the new commands
 - contains: Add repo-discovery Tauri commands and register them
 - contains: Write src-tauri/src/appconfig.rs
@@ -24,16 +27,19 @@ _The evidence chain: plan → item → ticket → code → release, forward and 
 ### Write src-tauri/src/appconfig.rs
 `01KYJYCFCCF4MS6GAG2YQE82BJ` · status: todo
 - belongs-to: Repo picker: local-root scanning + GitHub org search + shallow-clone cache
+- references: [github#20](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/20)
 - produced-by: [[Plan-repo-picker-discovery]]
 
 ### Add repo-discovery Tauri commands and register them
 `01KYJYCFCC843N3DX38Q9JA13F` · status: todo
 - belongs-to: Repo picker: local-root scanning + GitHub org search + shallow-clone cache
+- references: [github#19](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/19)
 - produced-by: [[Plan-repo-picker-discovery]]
 
 ### Add frontend types and api.ts methods for the new commands
 `01KYJYCFCC5V94FMQJDZ0FZ2AS` · status: todo
 - belongs-to: Repo picker: local-root scanning + GitHub org search + shallow-clone cache
+- references: [github#18](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/18)
 - produced-by: [[Plan-repo-picker-discovery]]
 
 ### ia-normalize back-writes ledger refs into doc sidecars after wiki-publish, re-staling the inventory it just wrote
