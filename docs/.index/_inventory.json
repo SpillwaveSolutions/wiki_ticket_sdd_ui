@@ -148,12 +148,31 @@
    "wiki_key": "plan/2026-07-23-tauri-desktop-shell"
   },
   {
+   "canonical_key": "plan/2026-07-27-repo-picker-discovery",
+   "date": "2026-07-27",
+   "doc_type": "plan",
+   "epic": "01KYJYCFCCFT3PJV6FP99AEWSS",
+   "items": [
+    "01KYJYCFCCF4MS6GAG2YQE82BJ",
+    "01KYJYCFCC843N3DX38Q9JA13F",
+    "01KYJYCFCC5V94FMQJDZ0FZ2AS",
+    "01KYJYCFCD0KTXXFHMVRTRC3VX",
+    "01KYJYCFCD9JAQD5BGPCCCE82T"
+   ],
+   "slug": "repo-picker-discovery",
+   "source": "docs/plans/2026-07-27-repo-picker-discovery.md",
+   "status": "planned",
+   "title": "Repo picker: local-root scanning + GitHub org search + shallow-clone cache",
+   "truth_state": "current",
+   "wiki_key": "plan/2026-07-27-repo-picker-discovery"
+  },
+  {
    "canonical_key": "roadmap",
    "doc_type": "roadmap",
-   "generated_at": "2026-07-25T21:40:53Z",
+   "generated_at": "2026-07-27T23:25:57Z",
    "slug": "roadmap",
    "source": "docs/roadmap.md",
-   "source_hash": "142a87f6",
+   "source_hash": "31ed743f",
    "title": "Roadmap",
    "truth_state": "current",
    "wiki": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Roadmap",

@@ -2,6 +2,40 @@
 
 _The evidence chain: plan → item → ticket → code → release, forward and backward. Generated from `docs/.index/_graph.json`; do not edit._
 
+### Verify end to end and seed local config
+`01KYJYCFCD9JAQD5BGPCCCE82T` · status: todo
+- belongs-to: Repo picker: local-root scanning + GitHub org search + shallow-clone cache
+- produced-by: [[Plan-repo-picker-discovery]]
+
+### Build the repo-picker UI: tabs, local-roots panel, GitHub search panel
+`01KYJYCFCD0KTXXFHMVRTRC3VX` · status: todo
+- belongs-to: Repo picker: local-root scanning + GitHub org search + shallow-clone cache
+- produced-by: [[Plan-repo-picker-discovery]]
+
+### Repo picker: local-root scanning + GitHub org search + shallow-clone cache
+`01KYJYCFCCFT3PJV6FP99AEWSS` · status: todo
+- contains: Add frontend types and api.ts methods for the new commands
+- contains: Add repo-discovery Tauri commands and register them
+- contains: Write src-tauri/src/appconfig.rs
+- contains: Build the repo-picker UI: tabs, local-roots panel, GitHub search panel
+- contains: Verify end to end and seed local config
+- produced-by: [[Plan-repo-picker-discovery]]
+
+### Write src-tauri/src/appconfig.rs
+`01KYJYCFCCF4MS6GAG2YQE82BJ` · status: todo
+- belongs-to: Repo picker: local-root scanning + GitHub org search + shallow-clone cache
+- produced-by: [[Plan-repo-picker-discovery]]
+
+### Add repo-discovery Tauri commands and register them
+`01KYJYCFCC843N3DX38Q9JA13F` · status: todo
+- belongs-to: Repo picker: local-root scanning + GitHub org search + shallow-clone cache
+- produced-by: [[Plan-repo-picker-discovery]]
+
+### Add frontend types and api.ts methods for the new commands
+`01KYJYCFCC5V94FMQJDZ0FZ2AS` · status: todo
+- belongs-to: Repo picker: local-root scanning + GitHub org search + shallow-clone cache
+- produced-by: [[Plan-repo-picker-discovery]]
+
 ### ia-normalize back-writes ledger refs into doc sidecars after wiki-publish, re-staling the inventory it just wrote
 `01KYDGTVE9YFP8S85WH00MB94W` · status: done
 - references: ticket/github#16

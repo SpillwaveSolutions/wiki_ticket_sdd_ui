@@ -2,6 +2,7 @@
 
 - [[Roadmap]]
 - [[Design-Doc]] · [[Code-Walkthrough]]
+- Plan: [[Plan-repo-picker-discovery]]
 - Plan: [[Plan-wiki-ticket-ui]]
 
 ### History

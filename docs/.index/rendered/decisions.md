@@ -11,6 +11,7 @@ _Why things are the way they are: ADRs (rules adopted) and plans (designs execut
 
 | Plan | Lifecycle | Truth | Date |
 |---|---|---|---|
+| [[Plan-repo-picker-discovery]] Repo picker: local-root scanning + GitHub org search + shallow-clone cache | planned | current | 2026-07-27 |
 | [[Plan-tauri-desktop-shell]] Tauri 2 desktop shell wrapping the same frontend | completed | current | 2026-07-23 |
 | [[Plan-wiki-ticket-ui-ia]] WikiTicket UI — IA-aware dashboard (supersedes wiki-ticket-ui) | completed | current | 2026-07-22 |
 | [[Plan-wiki-ticket-ui]] WikiTicket UI — project status dashboard (wiki_ticket_sdd_ui) | planned | current | 2026-07-21 |

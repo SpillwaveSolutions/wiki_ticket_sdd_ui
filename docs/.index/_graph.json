@@ -141,6 +141,31 @@
    "type": "references"
   },
   {
+   "from": "item/01KYJYCFCC5V94FMQJDZ0FZ2AS",
+   "to": "item/01KYJYCFCCFT3PJV6FP99AEWSS",
+   "type": "belongs-to"
+  },
+  {
+   "from": "item/01KYJYCFCC843N3DX38Q9JA13F",
+   "to": "item/01KYJYCFCCFT3PJV6FP99AEWSS",
+   "type": "belongs-to"
+  },
+  {
+   "from": "item/01KYJYCFCCF4MS6GAG2YQE82BJ",
+   "to": "item/01KYJYCFCCFT3PJV6FP99AEWSS",
+   "type": "belongs-to"
+  },
+  {
+   "from": "item/01KYJYCFCD0KTXXFHMVRTRC3VX",
+   "to": "item/01KYJYCFCCFT3PJV6FP99AEWSS",
+   "type": "belongs-to"
+  },
+  {
+   "from": "item/01KYJYCFCD9JAQD5BGPCCCE82T",
+   "to": "item/01KYJYCFCCFT3PJV6FP99AEWSS",
+   "type": "belongs-to"
+  },
+  {
    "from": "plan/2026-07-21-wiki-ticket-ui",
    "to": "item/01KY111BC71KJGNH55CB2DWMKN",
    "type": "produces"
@@ -228,6 +253,36 @@
   {
    "from": "plan/2026-07-23-tauri-desktop-shell",
    "to": "item/01KY5ZZX8Z46K7BCSPPFKN23JZ",
+   "type": "produces"
+  },
+  {
+   "from": "plan/2026-07-27-repo-picker-discovery",
+   "to": "item/01KYJYCFCC5V94FMQJDZ0FZ2AS",
+   "type": "produces"
+  },
+  {
+   "from": "plan/2026-07-27-repo-picker-discovery",
+   "to": "item/01KYJYCFCC843N3DX38Q9JA13F",
+   "type": "produces"
+  },
+  {
+   "from": "plan/2026-07-27-repo-picker-discovery",
+   "to": "item/01KYJYCFCCF4MS6GAG2YQE82BJ",
+   "type": "produces"
+  },
+  {
+   "from": "plan/2026-07-27-repo-picker-discovery",
+   "to": "item/01KYJYCFCCFT3PJV6FP99AEWSS",
+   "type": "produces"
+  },
+  {
+   "from": "plan/2026-07-27-repo-picker-discovery",
+   "to": "item/01KYJYCFCD0KTXXFHMVRTRC3VX",
+   "type": "produces"
+  },
+  {
+   "from": "plan/2026-07-27-repo-picker-discovery",
+   "to": "item/01KYJYCFCD9JAQD5BGPCCCE82T",
    "type": "produces"
   },
   {
@@ -383,6 +438,36 @@
    "status": "done",
    "title": "ia-normalize back-writes ledger refs into doc sidecars after wiki-publish, re-staling the inventory it just wrote"
   },
+  "item/01KYJYCFCC5V94FMQJDZ0FZ2AS": {
+   "doc_type": "item",
+   "status": "todo",
+   "title": "Add frontend types and api.ts methods for the new commands"
+  },
+  "item/01KYJYCFCC843N3DX38Q9JA13F": {
+   "doc_type": "item",
+   "status": "todo",
+   "title": "Add repo-discovery Tauri commands and register them"
+  },
+  "item/01KYJYCFCCF4MS6GAG2YQE82BJ": {
+   "doc_type": "item",
+   "status": "todo",
+   "title": "Write src-tauri/src/appconfig.rs"
+  },
+  "item/01KYJYCFCCFT3PJV6FP99AEWSS": {
+   "doc_type": "item",
+   "status": "todo",
+   "title": "Repo picker: local-root scanning + GitHub org search + shallow-clone cache"
+  },
+  "item/01KYJYCFCD0KTXXFHMVRTRC3VX": {
+   "doc_type": "item",
+   "status": "todo",
+   "title": "Build the repo-picker UI: tabs, local-roots panel, GitHub search panel"
+  },
+  "item/01KYJYCFCD9JAQD5BGPCCCE82T": {
+   "doc_type": "item",
+   "status": "todo",
+   "title": "Verify end to end and seed local config"
+  },
   "plan/2026-07-21-wiki-ticket-ui": {
    "doc_type": "plan",
    "source": "docs/plans/2026-07-21-wiki-ticket-ui.md",
@@ -399,6 +484,12 @@
    "doc_type": "plan",
    "source": "docs/plans/2026-07-23-tauri-desktop-shell.md",
    "title": "Tauri 2 desktop shell wrapping the same frontend",
+   "truth_state": "current"
+  },
+  "plan/2026-07-27-repo-picker-discovery": {
+   "doc_type": "plan",
+   "source": "docs/plans/2026-07-27-repo-picker-discovery.md",
+   "title": "Repo picker: local-root scanning + GitHub org search + shallow-clone cache",
    "truth_state": "current"
   },
   "release/v0.2.0": {
