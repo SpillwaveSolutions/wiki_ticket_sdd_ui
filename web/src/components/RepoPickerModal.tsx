@@ -2,6 +2,10 @@ import { useEffect, useState } from "react";
 import type { RepoInfo } from "../lib/types";
 import { api, isTauri } from "../lib/api";
 import { getRecentRepos, rememberRepo } from "../lib/recentRepos";
+import LocalRootsPanel from "./LocalRootsPanel";
+import GithubRepoPanel from "./GithubRepoPanel";
+
+type Tab = "recent" | "local" | "github";
 
 interface RepoPickerModalProps {
   repo: RepoInfo | null;
@@ -21,6 +25,7 @@ export default function RepoPickerModal({ repo, onClose }: RepoPickerModalProps)
   const [draft, setDraft] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [tab, setTab] = useState<Tab>("recent");
   const tauri = isTauri();
 
   useEffect(() => {
@@ -64,6 +69,11 @@ export default function RepoPickerModal({ repo, onClose }: RepoPickerModalProps)
       }
       setBusy(false);
     }
+  }
+
+  function handleCloned(info: RepoInfo) {
+    rememberRepo(info.repo_path);
+    window.location.reload();
   }
 
   return (
@@ -114,33 +124,55 @@ export default function RepoPickerModal({ repo, onClose }: RepoPickerModalProps)
           </button>
         )}
 
-        <div className="mt-4">
-          <p className="text-xs uppercase tracking-wide text-slate-500">Recent</p>
-          <ul className="mt-1 max-h-40 space-y-1 overflow-auto">
-            {recent.length === 0 && (
-              <li className="text-xs text-slate-600">No history yet.</li>
-            )}
-            {recent.map((path) => (
-              <li key={path}>
-                {tauri ? (
-                  <button
-                    type="button"
-                    disabled={busy}
-                    onClick={() => selectPath(path)}
-                    className="w-full truncate rounded px-2 py-1 text-left text-xs text-slate-300 hover:bg-slate-800/60 disabled:opacity-50"
-                    title={path}
-                  >
-                    {path}
-                  </button>
-                ) : (
-                  <span className="block truncate rounded px-2 py-1 text-xs text-slate-300">
-                    {path}
-                  </span>
-                )}
-              </li>
+        {tauri && (
+          <div className="mt-4 flex gap-1 rounded-lg border border-slate-800 bg-slate-900/40 p-1 text-xs">
+            {(["recent", "local", "github"] as Tab[]).map((t) => (
+              <button
+                key={t}
+                type="button"
+                onClick={() => setTab(t)}
+                className={`flex-1 rounded px-2 py-1 capitalize transition-colors ${
+                  tab === t ? "bg-accent/20 text-accent" : "text-slate-400 hover:bg-slate-800/60"
+                }`}
+              >
+                {t === "github" ? "GitHub" : t}
+              </button>
             ))}
-          </ul>
-        </div>
+          </div>
+        )}
+
+        {(!tauri || tab === "recent") && (
+          <div className="mt-4">
+            <p className="text-xs uppercase tracking-wide text-slate-500">Recent</p>
+            <ul className="mt-1 max-h-40 space-y-1 overflow-auto">
+              {recent.length === 0 && (
+                <li className="text-xs text-slate-600">No history yet.</li>
+              )}
+              {recent.map((path) => (
+                <li key={path}>
+                  {tauri ? (
+                    <button
+                      type="button"
+                      disabled={busy}
+                      onClick={() => selectPath(path)}
+                      className="w-full truncate rounded px-2 py-1 text-left text-xs text-slate-300 hover:bg-slate-800/60 disabled:opacity-50"
+                      title={path}
+                    >
+                      {path}
+                    </button>
+                  ) : (
+                    <span className="block truncate rounded px-2 py-1 text-xs text-slate-300">
+                      {path}
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {tauri && tab === "local" && <LocalRootsPanel onSelect={selectPath} busy={busy} />}
+        {tauri && tab === "github" && <GithubRepoPanel onCloned={handleCloned} />}
 
         {!tauri && (
           <div className="mt-4 flex gap-2">

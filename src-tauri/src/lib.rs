@@ -1,3 +1,4 @@
+pub mod appconfig;
 pub mod commands;
 pub mod error;
 pub mod repo;
@@ -34,6 +35,17 @@ pub fn run() {
             commands::get_repo,
             commands::pick_repo,
             commands::set_repo,
+            commands::list_repo_roots,
+            commands::add_repo_root,
+            commands::remove_repo_root,
+            commands::pick_repo_root,
+            commands::scan_local_repos,
+            commands::list_gh_orgs,
+            commands::list_org_repos,
+            commands::check_worklog_enabled,
+            commands::clone_repo,
+            commands::list_cached_repos,
+            commands::clean_repo_cache,
             commands::get_items,
             commands::get_events,
             commands::get_roadmap,

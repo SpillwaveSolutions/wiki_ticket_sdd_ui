@@ -1,6 +1,7 @@
 //! The 13 Tauri commands — full port of server/src/routes.ts.
 //! Handlers shell out / read files identically; no worklog/IA reimplementation.
 
+use crate::appconfig::{self, CachedRepoInfo, LocalRepoCandidate};
 use crate::error::CmdError;
 use crate::repo::{self, config_str, config_top_str, load_target_repo, resolve_doc_path};
 use crate::state::AppState;
@@ -575,6 +576,194 @@ pub fn set_repo(state: State<'_, AppState>, path: String) -> Result<RepoInfo, Cm
         )));
     }
     apply_repo_path(&state, path)
+}
+
+// ── repo discovery: local roots + GitHub search + clone cache ──────────────
+
+#[tauri::command]
+pub fn list_repo_roots() -> Vec<String> {
+    appconfig::load().repo_roots
+}
+
+#[tauri::command]
+pub fn add_repo_root(path: String) -> Result<Vec<String>, CmdError> {
+    appconfig::add_root(path)
+}
+
+#[tauri::command]
+pub fn remove_repo_root(path: String) -> Result<Vec<String>, CmdError> {
+    appconfig::remove_root(&path)
+}
+
+#[tauri::command]
+pub fn pick_repo_root(app: AppHandle) -> Result<Vec<String>, CmdError> {
+    let folder = app
+        .dialog()
+        .file()
+        .set_title("Choose a directory containing worklog repos")
+        .blocking_pick_folder();
+
+    let Some(file_path) = folder else {
+        return Err(CmdError::bad_request("selection cancelled"));
+    };
+    let path = file_path
+        .into_path()
+        .map_err(|e| CmdError::bad_request(format!("invalid folder path: {e}")))?;
+    appconfig::add_root(path.to_string_lossy().to_string())
+}
+
+#[tauri::command]
+pub fn scan_local_repos() -> Vec<LocalRepoCandidate> {
+    appconfig::scan_local_repos()
+}
+
+#[tauri::command]
+pub fn list_gh_orgs() -> Result<Vec<String>, CmdError> {
+    let cwd = std::env::current_dir().unwrap_or_else(|_| PathBuf::from("."));
+    let mut logins = Vec::new();
+
+    let me = run("gh", &["api", "user"], &cwd)
+        .ok()
+        .filter(|o| o.status.success())
+        .and_then(|o| serde_json::from_slice::<Value>(&o.stdout).ok())
+        .and_then(|v| v.get("login").and_then(|l| l.as_str()).map(|s| s.to_string()));
+    if let Some(login) = me {
+        logins.push(login);
+    } else {
+        return Err(CmdError::bad_request(
+            "gh CLI unavailable or not authenticated — run `gh auth login`",
+        ));
+    }
+
+    if let Ok(output) = run("gh", &["api", "user/orgs"], &cwd) {
+        if output.status.success() {
+            if let Ok(Value::Array(orgs)) = serde_json::from_slice::<Value>(&output.stdout) {
+                for org in orgs {
+                    if let Some(login) = org.get("login").and_then(|l| l.as_str()) {
+                        logins.push(login.to_string());
+                    }
+                }
+            }
+        }
+    }
+    Ok(logins)
+}
+
+#[derive(Debug, Serialize, Clone)]
+pub struct GhRepoCandidate {
+    pub owner: String,
+    pub name: String,
+    pub description: Option<String>,
+    pub is_private: bool,
+}
+
+#[tauri::command]
+pub fn list_org_repos(org: Option<String>) -> Result<Vec<GhRepoCandidate>, CmdError> {
+    let cwd = std::env::current_dir().unwrap_or_else(|_| PathBuf::from("."));
+    let mut args = vec!["repo", "list"];
+    if let Some(ref o) = org {
+        args.push(o.as_str());
+    }
+    args.extend_from_slice(&[
+        "--limit",
+        "200",
+        "--json",
+        "name,owner,description,isPrivate",
+    ]);
+    let output = run("gh", &args, &cwd)
+        .map_err(|e| CmdError::internal(format!("gh spawn failed: {e}")))?;
+    if !output.status.success() {
+        return Err(CmdError::bad_request(format!(
+            "gh repo list failed: {}",
+            String::from_utf8_lossy(&output.stderr)
+        )));
+    }
+    let parsed: Value = serde_json::from_slice(&output.stdout)
+        .map_err(|e| CmdError::internal(format!("invalid gh JSON: {e}")))?;
+    let Value::Array(items) = parsed else {
+        return Ok(vec![]);
+    };
+    let repos = items
+        .into_iter()
+        .filter_map(|item| {
+            let name = item.get("name")?.as_str()?.to_string();
+            let owner = item.get("owner")?.get("login")?.as_str()?.to_string();
+            let description = item
+                .get("description")
+                .and_then(|d| d.as_str())
+                .map(|s| s.to_string());
+            let is_private = item
+                .get("isPrivate")
+                .and_then(|p| p.as_bool())
+                .unwrap_or(false);
+            Some(GhRepoCandidate {
+                owner,
+                name,
+                description,
+                is_private,
+            })
+        })
+        .collect();
+    Ok(repos)
+}
+
+#[tauri::command]
+pub fn check_worklog_enabled(owner: String, name: String) -> bool {
+    let cwd = std::env::current_dir().unwrap_or_else(|_| PathBuf::from("."));
+    run(
+        "gh",
+        &[
+            "api",
+            &format!("repos/{owner}/{name}/contents/.work/config.yml"),
+        ],
+        &cwd,
+    )
+    .map(|o| o.status.success())
+    .unwrap_or(false)
+}
+
+#[tauri::command]
+pub fn clone_repo(state: State<'_, AppState>, owner: String, name: String) -> Result<RepoInfo, CmdError> {
+    let dest = appconfig::cache_root().join(&owner).join(&name);
+    if !dest.exists() {
+        if let Some(parent) = dest.parent() {
+            fs::create_dir_all(parent)
+                .map_err(|e| CmdError::internal(format!("failed to create cache dir: {e}")))?;
+        }
+        let cwd = std::env::current_dir().unwrap_or_else(|_| PathBuf::from("."));
+        let dest_str = dest.to_string_lossy().to_string();
+        let output = run(
+            "gh",
+            &[
+                "repo",
+                "clone",
+                &format!("{owner}/{name}"),
+                &dest_str,
+                "--",
+                "--depth",
+                "1",
+            ],
+            &cwd,
+        )
+        .map_err(|e| CmdError::internal(format!("gh repo clone spawn failed: {e}")))?;
+        if !output.status.success() {
+            return Err(CmdError::internal(format!(
+                "gh repo clone failed: {}",
+                String::from_utf8_lossy(&output.stderr)
+            )));
+        }
+    }
+    apply_repo_path(&state, dest)
+}
+
+#[tauri::command]
+pub fn list_cached_repos() -> Vec<CachedRepoInfo> {
+    appconfig::list_cached_repos()
+}
+
+#[tauri::command]
+pub fn clean_repo_cache(path: Option<String>) -> Result<(), CmdError> {
+    appconfig::clean_cache(path)
 }
 
 #[tauri::command]

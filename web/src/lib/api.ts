@@ -8,9 +8,12 @@
 
 import { invoke } from "@tauri-apps/api/core";
 import type {
+  CachedRepoInfo,
+  GhRepoCandidate,
   GitCommit,
   GraphResponse,
   InventoryResponse,
+  LocalRepoCandidate,
   ManifestResponse,
   ReleasesResponse,
   RepoInfo,
@@ -108,6 +111,18 @@ async function getText(url: string, cmd: string, args?: Record<string, unknown>)
   return res.text();
 }
 
+/** Tauri-only: no browser-mode equivalent (native fs/gh shell-out). */
+async function tauriInvoke<T>(cmd: string, args?: Record<string, unknown>): Promise<T> {
+  if (!isTauri()) {
+    throw new ApiError(`${cmd} is only available in the desktop app`, 400);
+  }
+  try {
+    return await invoke<T>(cmd, args ?? {});
+  } catch (e) {
+    throw toApiError(e);
+  }
+}
+
 export const api = {
   getRepo: () => getJson<RepoInfo>("/api/repo", "get_repo"),
   getItems: () => getJson<WorklogItem[]>("/api/items", "get_items"),
@@ -152,4 +167,20 @@ export const api = {
       throw toApiError(e);
     }
   },
+
+  // Repo discovery: local roots + GitHub org search + shallow-clone cache
+  // (all Tauri-only — no browser-mode equivalent).
+  listRepoRoots: () => tauriInvoke<string[]>("list_repo_roots"),
+  addRepoRoot: (path: string) => tauriInvoke<string[]>("add_repo_root", { path }),
+  removeRepoRoot: (path: string) => tauriInvoke<string[]>("remove_repo_root", { path }),
+  pickRepoRoot: () => tauriInvoke<string[]>("pick_repo_root"),
+  scanLocalRepos: () => tauriInvoke<LocalRepoCandidate[]>("scan_local_repos"),
+  listGhOrgs: () => tauriInvoke<string[]>("list_gh_orgs"),
+  listOrgRepos: (org?: string) => tauriInvoke<GhRepoCandidate[]>("list_org_repos", { org }),
+  checkWorklogEnabled: (owner: string, name: string) =>
+    tauriInvoke<boolean>("check_worklog_enabled", { owner, name }),
+  cloneRepo: (owner: string, name: string) =>
+    tauriInvoke<RepoInfo>("clone_repo", { owner, name }),
+  listCachedRepos: () => tauriInvoke<CachedRepoInfo[]>("list_cached_repos"),
+  cleanRepoCache: (path?: string) => tauriInvoke<void>("clean_repo_cache", { path }),
 };

@@ -200,3 +200,26 @@ export interface TraceCheckResponse {
    * still uses for the gap list itself (this field is just the count). */
   gaps: number;
 }
+
+/** Tauri-only: scan_local_repos — a repo found under a configured root directory. */
+export interface LocalRepoCandidate {
+  path: string;
+  name: string;
+  worklog_enabled: boolean;
+}
+
+/** Tauri-only: list_org_repos — a repo candidate from `gh repo list`, worklog
+ * status resolved separately (and progressively) via check_worklog_enabled. */
+export interface GhRepoCandidate {
+  owner: string;
+  name: string;
+  description: string | null;
+  is_private: boolean;
+}
+
+/** Tauri-only: list_cached_repos — a repo cloned into the managed shallow-clone cache. */
+export interface CachedRepoInfo {
+  owner: string;
+  name: string;
+  path: string;
+}
