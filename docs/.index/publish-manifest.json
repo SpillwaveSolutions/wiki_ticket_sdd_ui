@@ -4,7 +4,7 @@
    "frozen": false,
    "page_name": "Home",
    "render": "as-is",
-   "render_hash": "31ac7596e8bd",
+   "render_hash": "009e156a6f21",
    "source": "docs/.index/rendered/home.md",
    "title": "Home",
    "truth_state": "current",
@@ -14,7 +14,7 @@
    "frozen": false,
    "page_name": "Index-Decisions",
    "render": "as-is",
-   "render_hash": "5a19910984d9",
+   "render_hash": "93cd03927654",
    "source": "docs/.index/rendered/decisions.md",
    "title": "Decisions Index",
    "truth_state": "current",
@@ -44,7 +44,7 @@
    "frozen": false,
    "page_name": "Index-Traceability",
    "render": "as-is",
-   "render_hash": "547b0232144e",
+   "render_hash": "d1d24048ffb0",
    "source": "docs/.index/rendered/traceability.md",
    "title": "Traceability Index",
    "truth_state": "current",
@@ -161,11 +161,11 @@
    "wiki_key": "plan/2026-07-27-repo-picker-discovery"
   },
   {
-   "banner": "> **Current** \u2014 this is the living version; regenerated at 2026-07-27T23:49:12Z. Historical snapshots are linked from [[Index-Releases]].",
+   "banner": "> **Current** \u2014 this is the living version; regenerated at 2026-07-28T01:29:12Z. Historical snapshots are linked from [[Index-Releases]].",
    "frozen": false,
    "page_name": "Roadmap",
    "render": "doc+banner",
-   "render_hash": "fe399fdd06f1",
+   "render_hash": "cdf35a183540",
    "source": "docs/roadmap.md",
    "title": "Roadmap",
    "truth_state": "current",
@@ -195,7 +195,7 @@
   }
  ],
  "sidebar": {
-  "render_hash": "ecee717811a3",
+  "render_hash": "ebb00a999acb",
   "source": "docs/.index/rendered/_Sidebar.md"
  },
  "version": 1

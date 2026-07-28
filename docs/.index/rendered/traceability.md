@@ -3,19 +3,19 @@
 _The evidence chain: plan → item → ticket → code → release, forward and backward. Generated from `docs/.index/_graph.json`; do not edit._
 
 ### Verify end to end and seed local config
-`01KYJYCFCD9JAQD5BGPCCCE82T` · status: todo
+`01KYJYCFCD9JAQD5BGPCCCE82T` · status: done
 - belongs-to: Repo picker: local-root scanning + GitHub org search + shallow-clone cache
 - references: [github#23](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/23)
 - produced-by: [[Plan-repo-picker-discovery]]
 
 ### Build the repo-picker UI: tabs, local-roots panel, GitHub search panel
-`01KYJYCFCD0KTXXFHMVRTRC3VX` · status: todo
+`01KYJYCFCD0KTXXFHMVRTRC3VX` · status: done
 - belongs-to: Repo picker: local-root scanning + GitHub org search + shallow-clone cache
 - references: [github#22](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/22)
 - produced-by: [[Plan-repo-picker-discovery]]
 
 ### Repo picker: local-root scanning + GitHub org search + shallow-clone cache
-`01KYJYCFCCFT3PJV6FP99AEWSS` · status: todo
+`01KYJYCFCCFT3PJV6FP99AEWSS` · status: done
 - references: [github#21](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/21)
 - contains: Add frontend types and api.ts methods for the new commands
 - contains: Add repo-discovery Tauri commands and register them
@@ -25,19 +25,19 @@ _The evidence chain: plan → item → ticket → code → release, forward and 
 - produced-by: [[Plan-repo-picker-discovery]]
 
 ### Write src-tauri/src/appconfig.rs
-`01KYJYCFCCF4MS6GAG2YQE82BJ` · status: todo
+`01KYJYCFCCF4MS6GAG2YQE82BJ` · status: done
 - belongs-to: Repo picker: local-root scanning + GitHub org search + shallow-clone cache
 - references: [github#20](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/20)
 - produced-by: [[Plan-repo-picker-discovery]]
 
 ### Add repo-discovery Tauri commands and register them
-`01KYJYCFCC843N3DX38Q9JA13F` · status: todo
+`01KYJYCFCC843N3DX38Q9JA13F` · status: done
 - belongs-to: Repo picker: local-root scanning + GitHub org search + shallow-clone cache
 - references: [github#19](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/19)
 - produced-by: [[Plan-repo-picker-discovery]]
 
 ### Add frontend types and api.ts methods for the new commands
-`01KYJYCFCC5V94FMQJDZ0FZ2AS` · status: todo
+`01KYJYCFCC5V94FMQJDZ0FZ2AS` · status: done
 - belongs-to: Repo picker: local-root scanning + GitHub org search + shallow-clone cache
 - references: [github#18](https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/18)
 - produced-by: [[Plan-repo-picker-discovery]]

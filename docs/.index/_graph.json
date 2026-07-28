@@ -470,32 +470,32 @@
   },
   "item/01KYJYCFCC5V94FMQJDZ0FZ2AS": {
    "doc_type": "item",
-   "status": "todo",
+   "status": "done",
    "title": "Add frontend types and api.ts methods for the new commands"
   },
   "item/01KYJYCFCC843N3DX38Q9JA13F": {
    "doc_type": "item",
-   "status": "todo",
+   "status": "done",
    "title": "Add repo-discovery Tauri commands and register them"
   },
   "item/01KYJYCFCCF4MS6GAG2YQE82BJ": {
    "doc_type": "item",
-   "status": "todo",
+   "status": "done",
    "title": "Write src-tauri/src/appconfig.rs"
   },
   "item/01KYJYCFCCFT3PJV6FP99AEWSS": {
    "doc_type": "item",
-   "status": "todo",
+   "status": "done",
    "title": "Repo picker: local-root scanning + GitHub org search + shallow-clone cache"
   },
   "item/01KYJYCFCD0KTXXFHMVRTRC3VX": {
    "doc_type": "item",
-   "status": "todo",
+   "status": "done",
    "title": "Build the repo-picker UI: tabs, local-roots panel, GitHub search panel"
   },
   "item/01KYJYCFCD9JAQD5BGPCCCE82T": {
    "doc_type": "item",
-   "status": "todo",
+   "status": "done",
    "title": "Verify end to end and seed local config"
   },
   "plan/2026-07-21-wiki-ticket-ui": {
