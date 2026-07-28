@@ -1,9 +1,9 @@
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it } from "vitest";
 import { createApp } from "../src/app.js";
-import { loadTargetRepo, parseFlatYaml, TargetRepoError } from "../src/repo.js";
+import { loadTargetRepo, parseFlatYaml, resolveRepoPath, TargetRepoError } from "../src/repo.js";
 import { buildFixtureRepo } from "./fixture.js";
 
 describe("target repo resolution", () => {
@@ -26,6 +26,35 @@ describe("target repo resolution", () => {
   it("strips inline comments without corrupting quoted values", () => {
     const config = parseFlatYaml('project:\n  name: "Has # not a comment"\n');
     expect(config.project.name).toBe("Has # not a comment");
+  });
+});
+
+describe("resolveRepoPath", () => {
+  const ORIGINAL_INIT_CWD = process.env.INIT_CWD;
+
+  afterEach(() => {
+    if (ORIGINAL_INIT_CWD === undefined) delete process.env.INIT_CWD;
+    else process.env.INIT_CWD = ORIGINAL_INIT_CWD;
+  });
+
+  it("resolves a relative --repo against INIT_CWD, not the workspace's own cwd", () => {
+    // Regression: `npm start` -> `npm run -w server start --` runs with
+    // process.cwd() == server/, not the directory `npm start` was invoked
+    // from. A bare `path.resolve(candidate)` silently resolved "../foo"
+    // against server/ instead — this is exactly the bug a live browser
+    // pass against the built app surfaced.
+    process.env.INIT_CWD = "/Users/example/clients/wiki_ticket_sdd_ui";
+    expect(resolveRepoPath("../wiki_ticket_sdd")).toBe("/Users/example/clients/wiki_ticket_sdd");
+  });
+
+  it("passes an absolute --repo through unaffected by INIT_CWD", () => {
+    process.env.INIT_CWD = "/Users/example/clients/wiki_ticket_sdd_ui/server";
+    expect(resolveRepoPath("/Users/example/other/repo")).toBe("/Users/example/other/repo");
+  });
+
+  it("falls back to process.cwd() when INIT_CWD is unset (direct `node dist/index.js`)", () => {
+    delete process.env.INIT_CWD;
+    expect(resolveRepoPath("../wiki_ticket_sdd")).toBe(path.resolve(process.cwd(), "../wiki_ticket_sdd"));
   });
 });
 

@@ -80,7 +80,13 @@ export function parseFlatYaml(text: string): Record<string, any> {
 }
 
 export function resolveRepoPath(candidate?: string): string {
-  return path.resolve(candidate || process.env.WORKLOG_REPO || process.cwd());
+  // npm workspace scripts (`npm start` -> `npm run -w server start --`) run
+  // with cwd set to server/, not the directory the user invoked npm from —
+  // a bare path.resolve(candidate) then resolves a relative --repo against
+  // the wrong directory. npm always sets INIT_CWD to the real invocation
+  // directory; fall back to cwd for direct `node dist/index.js` invocation.
+  const baseDir = process.env.INIT_CWD || process.cwd();
+  return path.resolve(baseDir, candidate || process.env.WORKLOG_REPO || baseDir);
 }
 
 /** A valid target has `.work/config.yml` at its root. Throws otherwise. */
