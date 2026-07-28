@@ -339,6 +339,21 @@
    "from": "roadmap-snapshot/2026-07-26_v0.2.1-release",
    "to": "release/v0.2.1",
    "type": "targets"
+  },
+  {
+   "from": "roadmap-snapshot/2026-07-28_v0.3.0-release",
+   "to": "roadmap",
+   "type": "snapshot-of"
+  },
+  {
+   "from": "roadmap-snapshot/2026-07-28_v0.3.0-release",
+   "to": "roadmap-snapshot/2026-07-26_v0.2.1-release",
+   "type": "supersedes"
+  },
+  {
+   "from": "roadmap-snapshot/2026-07-28_v0.3.0-release",
+   "to": "release/v0.3.0",
+   "type": "targets"
   }
  ],
  "nodes": {
@@ -533,6 +548,9 @@
   "release/v0.2.1": {
    "doc_type": "release"
   },
+  "release/v0.3.0": {
+   "doc_type": "release"
+  },
   "roadmap": {
    "doc_type": "roadmap",
    "source": "docs/roadmap.md",
@@ -548,6 +566,12 @@
   "roadmap-snapshot/2026-07-26_v0.2.1-release": {
    "doc_type": "roadmap-snapshot",
    "source": "docs/roadmap/2026-07-26_v0.2.1-release.md",
+   "title": "Roadmap",
+   "truth_state": "snapshot"
+  },
+  "roadmap-snapshot/2026-07-28_v0.3.0-release": {
+   "doc_type": "roadmap-snapshot",
+   "source": "docs/roadmap/2026-07-28_v0.3.0-release.md",
    "title": "Roadmap",
    "truth_state": "snapshot"
   },
