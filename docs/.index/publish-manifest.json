@@ -44,7 +44,7 @@
    "frozen": false,
    "page_name": "Index-Traceability",
    "render": "as-is",
-   "render_hash": "d1d24048ffb0",
+   "render_hash": "5d00051db293",
    "source": "docs/.index/rendered/traceability.md",
    "title": "Traceability Index",
    "truth_state": "current",
@@ -161,11 +161,11 @@
    "wiki_key": "plan/2026-07-27-repo-picker-discovery"
   },
   {
-   "banner": "> **Current** \u2014 this is the living version; regenerated at 2026-07-28T01:29:12Z. Historical snapshots are linked from [[Index-Releases]].",
+   "banner": "> **Current** \u2014 this is the living version; regenerated at 2026-07-28T02:02:53Z. Historical snapshots are linked from [[Index-Releases]].",
    "frozen": false,
    "page_name": "Roadmap",
    "render": "doc+banner",
-   "render_hash": "cdf35a183540",
+   "render_hash": "86d6eac14010",
    "source": "docs/roadmap.md",
    "title": "Roadmap",
    "truth_state": "current",

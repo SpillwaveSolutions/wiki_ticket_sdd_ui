@@ -498,6 +498,11 @@
    "status": "done",
    "title": "Verify end to end and seed local config"
   },
+  "item/01KYK7BGG2GB9V0FX77KPGNGY7": {
+   "doc_type": "item",
+   "status": "done",
+   "title": "Relative --repo path resolves against wrong cwd under npm workspaces"
+  },
   "plan/2026-07-21-wiki-ticket-ui": {
    "doc_type": "plan",
    "source": "docs/plans/2026-07-21-wiki-ticket-ui.md",

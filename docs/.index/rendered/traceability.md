@@ -2,6 +2,9 @@
 
 _The evidence chain: plan → item → ticket → code → release, forward and backward. Generated from `docs/.index/_graph.json`; do not edit._
 
+### Relative --repo path resolves against wrong cwd under npm workspaces
+`01KYK7BGG2GB9V0FX77KPGNGY7` · status: done
+
 ### Verify end to end and seed local config
 `01KYJYCFCD9JAQD5BGPCCCE82T` · status: done
 - belongs-to: Repo picker: local-root scanning + GitHub org search + shallow-clone cache
