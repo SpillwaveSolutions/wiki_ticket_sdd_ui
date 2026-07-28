@@ -1,9 +1,9 @@
 {
   "_sidebar": {
-    "render_hash": "ecee717811a3",
-    "rev": "4efa9d9",
+    "render_hash": "ebb00a999acb",
+    "rev": "2ce39e1",
     "source": "docs/.index/rendered/_Sidebar.md",
-    "source_hash": "ecee717811a3",
+    "source_hash": "ebb00a999acb",
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/_Sidebar"
   },
   "design/2026-07-25_v0.2.0-release-code-walkthrough": {
@@ -74,17 +74,17 @@
     "wiki_key": "guide/user-guide"
   },
   "home": {
-    "render_hash": "31ac7596e8bd",
-    "rev": "4efa9d9",
+    "render_hash": "009e156a6f21",
+    "rev": "2ce39e1",
     "source": "docs/.index/rendered/home.md",
-    "source_hash": "31ac7596e8bd",
+    "source_hash": "009e156a6f21",
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Home"
   },
   "index/decisions": {
-    "render_hash": "5a19910984d9",
-    "rev": "4efa9d9",
+    "render_hash": "93cd03927654",
+    "rev": "2ce39e1",
     "source": "docs/.index/rendered/decisions.md",
-    "source_hash": "5a19910984d9",
+    "source_hash": "93cd03927654",
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Index-Decisions"
   },
   "index/releases": {
@@ -102,10 +102,10 @@
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Index-Status"
   },
   "index/traceability": {
-    "render_hash": "eb1016ebcd32",
-    "rev": "4efa9d9",
+    "render_hash": "d1d24048ffb0",
+    "rev": "2ce39e1",
     "source": "docs/.index/rendered/traceability.md",
-    "source_hash": "eb1016ebcd32",
+    "source_hash": "d1d24048ffb0",
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Index-Traceability"
   },
   "plan/2026-07-21-wiki-ticket-ui": {
@@ -155,10 +155,10 @@
   "roadmap": {
     "canonical_key": "roadmap",
     "doc_type": "roadmap",
-    "render_hash": "037e46262a41",
-    "rev": "4efa9d9",
+    "render_hash": "cdf35a183540",
+    "rev": "2ce39e1",
     "source": "docs/roadmap.md",
-    "source_hash": "4c54afad340a",
+    "source_hash": "9a3bd9e6dfbf",
     "truth_state": "current",
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Roadmap",
     "wiki_key": "roadmap"
