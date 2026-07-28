@@ -41,6 +41,37 @@ Develop and verify against `../wiki_ticket_sdd` (the real repo this was born
 from), plus a fresh `init.sh`-scaffolded throwaway repo for the generic-repo
 proof. The plan's Verification section lists the acceptance checks.
 
+## Testing policy
+
+Never report a UI change done on the strength of typecheck/build/unit tests
+alone — those verify the code compiles, not that the feature works. Before
+telling Rick something is ready for his own pass, actually drive it:
+
+- **Desktop (Tauri) changes:** there is no tool in this environment that can
+  click through a native window. Test the same React UI served over HTTP
+  instead (`npm start -- --repo <dogfood repo>`, port 4181) using the
+  `agent-browser` CLI (`agent-browser open/snapshot/eval/...`). Tauri-only
+  code paths (anything gated on `isTauri()`) need `window.__TAURI_INTERNALS__`
+  mocked via `eval` before opening the picker — `@tauri-apps/api/mocks.js`
+  documents the exact shape (`invoke`, `transformCallback`, ...); a plain
+  `async (cmd, args) => {...}` handler keyed on `cmd` is enough. Read the
+  console log (`agent-browser console`) after each interaction to confirm the
+  right command actually fired with the right args, not just that the UI
+  looked right.
+- **Known environment quirk:** this app's modals use `position: fixed` +
+  `z-50` overlays. In this session, `agent-browser`'s coordinate-based
+  `click`/`screenshot` couldn't reliably hit or render elements *inside* such
+  an overlay (elements outside it worked fine) — verified by dispatching a
+  real `element.click()` via `eval`, which worked correctly every time.
+  If a click-by-ref silently does nothing inside a fixed overlay, that's this
+  quirk, not necessarily an app bug — confirm with a direct DOM `.click()`
+  before concluding something is broken.
+- Rick does one final pass after that — testing first is what makes that
+  pass fast, not a replacement for it. (This rule exists because a real,
+  previously-unnoticed bug — a relative `--repo` path resolving against the
+  wrong directory under `npm run -w server` — was only caught by actually
+  loading the app in a browser, not by any of typecheck/build/unit tests.)
+
 <!-- worklog:policy:start -->
 ## Work tracking policy
 
