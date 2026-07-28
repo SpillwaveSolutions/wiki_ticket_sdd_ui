@@ -54,10 +54,22 @@ Design record: [`docs/plans/2026-07-22-wiki-ticket-ui-ia.md`](docs/plans/2026-07
 ## Desktop app (Tauri 2)
 
 Same React UI, with the API ported to Rust (`src-tauri/`) and invoked over
-Tauri IPC instead of HTTP. Pick a worklog repo with the native folder dialog
-(or set `WORKLOG_REPO` before launch, as an optional seed). No repo selected
-yet? The picker opens automatically on first launch instead of leaving every
-panel showing an error.
+Tauri IPC instead of HTTP. No repo selected yet? The picker opens
+automatically on first launch instead of leaving every panel showing an
+error. The picker has three tabs:
+
+- **Recent** — repos you've opened before, plus a native folder dialog
+  (`Choose folder…`) for anything not yet in that list.
+- **Local** — scans root directories you configure (folders that hold many
+  checkouts, e.g. `~/src`) for already-cloned worklog-enabled repos. Roots
+  persist in `~/.config/wicked_ticket/config.json`.
+- **GitHub** — browses `gh repo list` by org, filters progressively to
+  worklog-enabled repos, and clones any of them with one click into a
+  managed shallow-clone cache (`~/.config/wicked_ticket/clones/`), which the
+  same tab lets you clear. Requires the `gh` CLI authenticated.
+
+`WORKLOG_REPO` is still an optional seed: set it before launch and it's used
+as the initial repo if valid, skipping the picker.
 
 ```sh
 npm install

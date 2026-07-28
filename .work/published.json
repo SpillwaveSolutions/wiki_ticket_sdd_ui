@@ -65,10 +65,10 @@
   "guide/user-guide": {
     "canonical_key": "guide/user-guide",
     "doc_type": "guide",
-    "render_hash": "21a32174dee6",
-    "rev": "3cf8f37",
+    "render_hash": "204a91a90952",
+    "rev": "c394eea",
     "source": "docs/user_guide/user-guide.md",
-    "source_hash": "02e1f2fefaf0",
+    "source_hash": "7dfe195191f4",
     "truth_state": "current",
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/WikiTicket-UI-User-Guide",
     "wiki_key": "guide/user-guide"

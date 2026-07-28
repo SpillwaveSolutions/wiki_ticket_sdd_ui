@@ -19,7 +19,8 @@ same 13 read-only endpoints:
    over HTTP. One process per target repo.
 2. **Desktop mode** — a native Tauri 2 app. The same API is ported to Rust
    commands invoked over Tauri IPC instead of HTTP, and you pick the target
-   repo with a native folder dialog instead of a CLI flag.
+   repo with a repo picker (recent history, local-root scanning, GitHub org
+   search) instead of a CLI flag.
 
 Panels never know or care which transport they're talking over — see the
 [panel tour in the README](../../README.md#panel-tour) for what each one
@@ -70,19 +71,34 @@ instead:
 
 - **First launch with no repo selected**: the app opens the repo picker for
   you automatically (rather than showing every panel as an error).
-- **Choose folder…**: opens a native OS folder dialog (`pick_repo`
-  command). Pick any directory containing `.work/config.yml`.
-- **Recent repos**: every repo you've opened, browser or desktop, is
-  remembered in the browser's local storage. In desktop mode the list is
-  clickable — selecting an entry calls `set_repo` and reloads the app
-  against it.
 - **`WORKLOG_REPO`** is an optional seed: set it before launching the
   desktop app and it's used as the initial repo if it's a valid directory,
   so you can skip the picker on repeat runs of the same repo (`src-tauri/src/lib.rs`).
   It's read once at startup, not re-checked while the app is running.
-- Switching repos (folder dialog or a recent entry) reloads the whole app so
-  every panel remounts against the new target — there's no live in-place
-  repo swap.
+- Switching repos (any picker tab) reloads the whole app so every panel
+  remounts against the new target — there's no live in-place repo swap.
+
+The picker has three tabs (desktop only — browser mode keeps the simpler
+recent-history view described below):
+
+- **Recent** — every repo you've opened, browser or desktop, remembered in
+  local storage. Clicking an entry calls `set_repo` and reloads. Also has
+  **Choose folder…**, a native OS folder dialog (`pick_repo` command) for
+  any directory containing `.work/config.yml`.
+- **Local** — scans root directories you add (folders that hold several repo
+  checkouts, e.g. `~/src`, `~/clients/<client>/src`) for worklog-enabled
+  repos one level deep. Add/remove roots with the picker in this tab; they
+  persist in `~/.config/wicked_ticket/config.json` — app-level state,
+  separate from any target repo's own `.work/config.yml`. Only repos with
+  `worklog_enabled: true` are listed as clickable candidates.
+- **GitHub** — lists your `gh` orgs, then `gh repo list`s the selected org
+  and checks each repo for worklog-enablement in the background (6 at a
+  time), showing only the ones that qualify as they resolve. **Clone &
+  open** does a shallow clone into a managed cache
+  (`~/.config/wicked_ticket/clones/`) and switches to it immediately; the
+  same tab lists cached clones with per-repo and clear-all cleanup. Needs
+  the `gh` CLI installed and authenticated — without it this tab shows an
+  install/auth hint instead of an error.
 
 The desktop shell reads the same files the Node server does and carries the
 same read-only guarantee: nothing here ever writes to the target repo.
@@ -96,9 +112,9 @@ cargo test --manifest-path src-tauri/Cargo.toml
 ## Picking a repo, either mode
 
 Open the repo picker from the top bar. It shows the currently active repo
-path and, in desktop mode, gives you the folder dialog and clickable recent
-list described above. In browser mode it's a read-only history plus a field
-to remember an extra path for your next `npm start -- --repo`.
+path and, in desktop mode, the Recent/Local/GitHub tabs described above. In
+browser mode it's a read-only history plus a field to remember an extra path
+for your next `npm start -- --repo`.
 
 ## Troubleshooting
 
