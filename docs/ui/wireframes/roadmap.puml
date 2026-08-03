@@ -1,0 +1,55 @@
+@startuml roadmap
+' Roadmap — /roadmap. Source: web/src/panels/Roadmap.tsx
+' docs/roadmap.md: TOC of H2s + GFM body + Mermaid blocks.
+salt
+{
+  {#
+    {
+      { WikiTicket UI | Fixture Project | main | . | [ Repo ] }
+    }
+  }
+  {#
+    {
+      {* <b>WikiTicket UI</b> }
+      --
+      { Overview }
+      { Board }
+      { <b>Roadmap</b> }
+      { Activity }
+      { Releases }
+      { Docs }
+      { Publish plane }
+      { Sync health }
+      { Charts }
+      { Traceability }
+    } | {
+      { <b>Roadmap</b> }
+      .
+      {#
+        {
+          { <b>On this page</b> }
+          --
+          { Now }
+          { Next }
+          { Later }
+          { Dependency graph }
+        } | {
+          {SI
+          # Project roadmap
+          ## Now
+          - Item A
+          - Item B
+          ## Next
+          | Milestone | Status |
+          | v0.4 | planned |
+          ## Later
+          …
+          ## Dependency graph
+          (mermaid diagram)
+          }
+        }
+      }
+    }
+  }
+}
+@enduml

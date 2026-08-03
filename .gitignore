@@ -9,3 +9,13 @@ __pycache__/
 *.pyc
 *.tsbuildinfo
 .work/wiki-checkout/
+
+# Machine-local dev port memory (scripts/dev-ports.mjs)
+.dev-ports.json
+
+# Playwright / smoke artifacts
+screenshots/
+playwright-report/
+test-results/
+blob-report/
+playwright/.cache/

@@ -425,6 +425,18 @@
    "title": "WikiTicket UI User Guide",
    "truth_state": "current"
   },
+  "guide/wireframes": {
+   "doc_type": "guide",
+   "source": "docs/user_guide/wireframes.md",
+   "title": "WikiTicket UI Wireframes",
+   "truth_state": "current"
+  },
+  "home": {
+   "doc_type": "guide",
+   "source": "docs/wiki-home.md",
+   "title": "Home",
+   "truth_state": "current"
+  },
   "item/01KY5ZZX": {
    "doc_type": "item",
    "status": "in_progress",

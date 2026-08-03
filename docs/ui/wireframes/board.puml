@@ -1,0 +1,61 @@
+@startuml board
+' Board — /board. Source: web/src/panels/Board.tsx
+' Four columns; card click opens a detail drawer (shown collapsed note).
+salt
+{
+  {#
+    {
+      { WikiTicket UI | Fixture Project | main | . | [ Repo ] }
+    }
+  }
+  {#
+    {
+      {* <b>WikiTicket UI</b> }
+      --
+      { Overview }
+      { <b>Board</b> }
+      { Roadmap }
+      { Activity }
+      { Releases }
+      { Docs }
+      { Publish plane }
+      { Sync health }
+      { Charts }
+      { Traceability }
+    } | {
+      { <b>Board</b> }
+      .
+      {#
+        {
+          { <b>Todo</b> }
+          {^"Ship wireframes"
+            [task] [feature] [P2]
+            epic: Dashboard
+          }
+          {^"Document ports"
+            [task] [chore] [P3]
+          }
+        } | {
+          { <b>In progress</b> }
+          {^"Playwright e2e"
+            [task] [feature] [P1]
+            epic: Testing
+          }
+        } | {
+          { <b>Blocked</b> }
+          {^"GH API rate limit"
+            [task] [ops] [P2]
+          }
+        } | {
+          { <b>Recently done</b> }
+          {^"Tauri mockIPC tests"
+            [task] [feature]
+          }
+        }
+      }
+      .
+      (card click → detail drawer: title, badges, event history, external link)
+    }
+  }
+}
+@enduml

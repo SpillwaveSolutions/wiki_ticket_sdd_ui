@@ -1,0 +1,46 @@
+@startuml publish-plane
+' Publish plane — /publish-plane. Source: web/src/panels/PublishPlane.tsx
+' Three-way wiki drift vs .work/published.json + publish-manifest.
+salt
+{
+  {#
+    {
+      { WikiTicket UI | Fixture Project | main | . | [ Repo ] }
+    }
+  }
+  {#
+    {
+      {* <b>WikiTicket UI</b> }
+      --
+      { Overview }
+      { Board }
+      { Roadmap }
+      { Activity }
+      { Releases }
+      { Docs }
+      { <b>Publish plane</b> }
+      { Sync health }
+      { Charts }
+      { Traceability }
+    } | {
+      { <b>Publish plane</b> }
+      .
+      {#
+        { In sync | 12 }
+        { Pending republish | 2 }
+        { Source drift | 1 }
+        { Unknown | 0 }
+      }
+      .
+      {T
+      + wiki_key | drift | published_at | note
+      ++ Plan-wiki-ticket-ui-ia | in-sync | 2026-07-28 |
+      ++ User-guide | pending | 2026-07-20 | rendered banner changed
+      ++ Design-v0.3 | source-drift | 2026-07-28 | source edited after publish
+      }
+      .
+      (empty: Nothing published yet — no .work/published.json)
+    }
+  }
+}
+@enduml

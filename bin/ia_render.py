@@ -182,6 +182,9 @@ def render_sidebar(records, has_graph=False):
               "- [[Worklog-Spec]]"]
     if has_graph:
         lines.append("- [[Index-Traceability]]")
+    # Living UI wireframes (guide/wireframes + wiki-add Screen-Specifications).
+    if any(r.get("wiki_key") == "guide/wireframes" for r in records.values()):
+        lines.append("- [[WikiTicket-UI-Wireframes]] · [[Screen-Specifications]]")
     return "\n".join(lines) + "\n"
 
 

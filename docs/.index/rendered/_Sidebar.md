@@ -16,3 +16,4 @@
 - [[User-Guide]] · [[CLI-Reference]] · [[Plugin-Guide]]
 - [[Worklog-Spec]]
 - [[Index-Traceability]]
+- [[WikiTicket-UI-Wireframes]] · [[Screen-Specifications]]

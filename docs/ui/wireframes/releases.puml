@@ -1,0 +1,43 @@
+@startuml releases
+' Releases — /releases. Source: web/src/panels/Releases.tsx
+' GitHub release timeline + linked roadmap snapshots. Offline when no gh.
+salt
+{
+  {#
+    {
+      { WikiTicket UI | Fixture Project | main | . | [ Repo ] }
+    }
+  }
+  {#
+    {
+      {* <b>WikiTicket UI</b> }
+      --
+      { Overview }
+      { Board }
+      { Roadmap }
+      { Activity }
+      { <b>Releases</b> }
+      { Docs }
+      { Publish plane }
+      { Sync health }
+      { Charts }
+      { Traceability }
+    } | {
+      { <b>Releases</b> }
+      .
+      {^"v0.3.0  ·  WikiTicket UI  ·  3d ago  ·  GitHub release"
+        Linked snapshots:
+        · docs/roadmap/2026-07-28_v0.3.0-release.md
+        [ Show notes ]
+      }
+      {^"v0.2.0  ·  2w ago  ·  GitHub release"
+        Linked snapshots: (none matched)
+        [ Show notes ]
+      }
+      .
+      (empty: No releases yet)
+      (offline: OfflineState when gh/API unavailable)
+    }
+  }
+}
+@enduml

@@ -1,0 +1,48 @@
+@startuml repo-picker
+' Repo picker modal — TopBar [Repo]. Source: web/src/components/RepoPickerModal.tsx
+' Left: web mode (remember paths only). Right: desktop (Tauri) with tabs.
+salt
+{
+  { <b>Repo picker — web mode</b> }
+  {^"Repo"
+    Active repo is set at server launch (--repo).
+    This picker remembers paths for the next launch —
+    it does not switch repos live.
+    .
+    Current: /path/to/wiki_ticket_sdd
+    .
+    { <b>Recent</b> }
+    { /Users/…/wiki_ticket_sdd }
+    { /Users/…/other-worklog }
+    No history yet. (when empty)
+    .
+    "  /absolute/path…  "  [ Remember ]
+    .
+    [ Close ]
+  }
+  .
+  { <b>Repo picker — desktop (Tauri)</b> }
+  {^"Repo"
+    Choose a worklog repo folder (must contain .work/config.yml).
+    Switching reloads the app against the new target.
+    .
+    Current: none selected
+    .
+    [ Choose folder… ]
+    .
+    { [ <b>recent</b> ] | [ local ] | [ GitHub ] }
+    .
+    { <b>Recent</b> }
+    { /Users/…/wiki_ticket_sdd }
+    .
+    -- local tab --
+    Roots: ~/src  [ + add root ] [ scan ]
+    { worklog-enabled checkouts under roots… }
+    .
+    -- GitHub tab --
+    Org: ^ SpillwaveSolutions  ^
+    { repos → filter worklog-enabled → [ Clone ] }
+    Cached clones: [ Clear cache ]
+  }
+}
+@enduml

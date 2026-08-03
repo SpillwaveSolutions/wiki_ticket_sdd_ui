@@ -1,9 +1,9 @@
 {
   "_sidebar": {
-    "render_hash": "ebb00a999acb",
-    "rev": "2ce39e1",
+    "render_hash": "42d38716d58a",
+    "rev": "c6b310cfb18d3bc99a3decaa808fc1a31361b213",
     "source": "docs/.index/rendered/_Sidebar.md",
-    "source_hash": "ebb00a999acb",
+    "source_hash": "42d38716d58a",
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/_Sidebar"
   },
   "design/2026-07-25_v0.2.0-release-code-walkthrough": {
@@ -87,20 +87,41 @@
   "guide/user-guide": {
     "canonical_key": "guide/user-guide",
     "doc_type": "guide",
-    "render_hash": "204a91a90952",
-    "rev": "c394eea",
+    "page_id": "WikiTicket-UI-User-Guide",
+    "render_hash": "3752f7a145a6",
+    "rev": "c6b310cfb18d3bc99a3decaa808fc1a31361b213",
     "source": "docs/user_guide/user-guide.md",
-    "source_hash": "7dfe195191f4",
+    "source_hash": "2209c05d3c9e",
+    "title": "WikiTicket UI User Guide",
     "truth_state": "current",
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/WikiTicket-UI-User-Guide",
     "wiki_key": "guide/user-guide"
   },
+  "guide/wireframes": {
+    "canonical_key": "guide/wireframes",
+    "doc_type": "guide",
+    "page_id": "WikiTicket-UI-Wireframes",
+    "render_hash": "1b69422c516a",
+    "rev": "c6b310cfb18d3bc99a3decaa808fc1a31361b213",
+    "source": "docs/user_guide/wireframes.md",
+    "source_hash": "1c39a0def6ce",
+    "title": "WikiTicket UI Wireframes",
+    "truth_state": "current",
+    "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/WikiTicket-UI-Wireframes",
+    "wiki_key": "guide/wireframes"
+  },
   "home": {
-    "render_hash": "009e156a6f21",
-    "rev": "2ce39e1",
+    "canonical_key": "home",
+    "doc_type": "guide",
+    "page_id": "Home",
+    "render_hash": "374fa31cbe8e",
+    "rev": "c6b310cfb18d3bc99a3decaa808fc1a31361b213",
     "source": "docs/.index/rendered/home.md",
-    "source_hash": "009e156a6f21",
-    "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Home"
+    "source_hash": "374fa31cbe8e",
+    "title": "Home",
+    "truth_state": "current",
+    "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Home",
+    "wiki_key": "home"
   },
   "index/decisions": {
     "render_hash": "93cd03927654",
@@ -229,5 +250,27 @@
     "truth_state": "snapshot",
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Roadmap-2026-07-28_v0.3.0-release",
     "wiki_key": "roadmap-snapshot/2026-07-28_v0.3.0-release"
+  },
+  "ui/design-artifacts": {
+    "canonical_key": "ui/design-artifacts",
+    "page_id": "UI-Design-Artifacts",
+    "render_hash": "74aff63ed0b1",
+    "rev": "c6b310cfb18d3bc99a3decaa808fc1a31361b213",
+    "source": "docs/ui/README.md",
+    "source_hash": "88d7220dd312",
+    "title": "UI Design Artifacts",
+    "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/UI-Design-Artifacts",
+    "wiki_key": "ui/design-artifacts"
+  },
+  "ui/screens": {
+    "canonical_key": "ui/screens",
+    "page_id": "Screen-Specifications",
+    "render_hash": "718157205fa2",
+    "rev": "c6b310cfb18d3bc99a3decaa808fc1a31361b213",
+    "source": "docs/ui/screens.md",
+    "source_hash": "463fd1112830",
+    "title": "Screen Specifications",
+    "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Screen-Specifications",
+    "wiki_key": "ui/screens"
   }
 }

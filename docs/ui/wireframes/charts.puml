@@ -1,0 +1,61 @@
+@startuml charts
+' Charts — /charts. Source: web/src/panels/Charts.tsx
+' 2×2 grid from raw worklog events + items.
+salt
+{
+  {#
+    {
+      { WikiTicket UI | Fixture Project | main | . | [ Repo ] }
+    }
+  }
+  {#
+    {
+      {* <b>WikiTicket UI</b> }
+      --
+      { Overview }
+      { Board }
+      { Roadmap }
+      { Activity }
+      { Releases }
+      { Docs }
+      { Publish plane }
+      { Sync health }
+      { <b>Charts</b> }
+      { Traceability }
+    } | {
+      { <b>Charts</b> }
+      .
+      {#
+        {
+          {^"Burnup (cumulative created vs closed)"
+            {SI
+            (line chart)
+            }
+          }
+        } | {
+          {^"Kind mix (triage + ops should trend down)"
+            {SI
+            (stacked / pie)
+            }
+          }
+        }
+      }
+      {#
+        {
+          {^"Velocity — closes per ISO week (last 12)"
+            {SI
+            (bar chart)
+            }
+          }
+        } | {
+          {^"Unplanned ratio — items created per week (last 12)"
+            {SI
+            (bar chart)
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@enduml

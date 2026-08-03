@@ -1,0 +1,53 @@
+@startuml sync-health
+' Sync health — /sync-health. Source: web/src/panels/SyncHealth.tsx
+' .work/sync-state.json cursors, unpushed open items, orphans/conflicts.
+salt
+{
+  {#
+    {
+      { WikiTicket UI | Fixture Project | main | . | [ Repo ] }
+    }
+  }
+  {#
+    {
+      {* <b>WikiTicket UI</b> }
+      --
+      { Overview }
+      { Board }
+      { Roadmap }
+      { Activity }
+      { Releases }
+      { Docs }
+      { Publish plane }
+      { <b>Sync health</b> }
+      { Charts }
+      { Traceability }
+    } | {
+      { <b>Sync health</b> }
+      .
+      {^"! Attention"
+        1 item needs attention: orphan or unresolved merge conflict
+        · 01KY… — Orphaned item (orphan)
+      }
+      .
+      {#
+        { Open items | 5 }
+        { Linked to GitHub | 4 }
+        { Unpushed | 1 }
+      }
+      .
+      { <b>Sync cursors</b> }
+      { github.issues | 01KZ… }
+      { github.pulls | 01KZ… }
+      .
+      { <b>Unpushed open items</b> }
+      {T
+      + id | title | status
+      ++ 01KY… | Local-only task | todo
+      }
+      .
+      { > All linked open items (4) }
+    }
+  }
+}
+@enduml
