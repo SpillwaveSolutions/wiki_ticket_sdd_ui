@@ -2,6 +2,9 @@
 
 _The evidence chain: plan → item → ticket → code → release, forward and backward. Generated from `docs/.index/_graph.json`; do not edit._
 
+### CI-enforced read-only guarantee (check-readonly)
+`01KZ4G2N25H45KFR00YM6W74M8` · status: done
+
 ### v0.3.1: orphan cleanup, port/CI greps, patch release
 `01KZ4AW6Z5QQ11RRS8GS0J9CNX` · status: done
 

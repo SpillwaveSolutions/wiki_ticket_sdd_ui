@@ -91,7 +91,7 @@ scripts/dev-ports.mjs     ← dual port resolver
 scripts/e2e-web-server.mjs← Playwright webServer orchestrator
 ```
 
-**Read-only guarantee:** neither the Node server nor the Tauri shell writes to the target worklog repo.
+**Read-only guarantee:** neither the Node server nor the Tauri shell writes to the target worklog repo. Enforced in CI by `npm run check:readonly` (`scripts/check-readonly.mjs`). Allowed non-target writes: app config + managed clone cache only.
 
 ## Wireframes
 
