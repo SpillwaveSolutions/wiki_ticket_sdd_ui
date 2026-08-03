@@ -26,6 +26,27 @@ jobs:
       - run: npm run typecheck
       - run: npm test
       - run: npm run build
+      # withGlobalTauri ships window.__TAURI__ in RELEASE builds; api.ts / isTauri()
+      # sniff that global. It must live only in a local dev overlay, never here.
+      - name: withGlobalTauri stays out of the committed Tauri config
+        run: |
+          if grep -q withGlobalTauri src-tauri/tauri.conf.json; then
+            echo "::error file=src-tauri/tauri.conf.json::withGlobalTauri must not appear in the committed config"
+            exit 1
+          fi
+      # Dev ports are resolved by scripts/dev-ports.mjs. A CLI --port or a
+      # literal Vite bind that reintroduces 5173/8080 as the only option is
+      # what makes sibling Spillwave apps fight on one machine.
+      - name: no fixed-port flags that defeat the resolver
+        run: |
+          if grep -nE -- '--port[[:space:]]+(5173|8080)\b' package.json scripts/* 2>/dev/null; then
+            echo "::error::do not pin Vite/API with --port 5173|8080; use scripts/dev-ports.mjs"
+            exit 1
+          fi
+          if grep -nE 'strictPort:\s*false' web/vite.config.ts 2>/dev/null; then
+            echo "::error file=web/vite.config.ts::strictPort must stay true so a bind failure is loud"
+            exit 1
+          fi
 
   e2e:
     runs-on: ubuntu-latest

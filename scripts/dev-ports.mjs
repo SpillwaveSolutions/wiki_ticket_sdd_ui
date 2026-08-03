@@ -11,12 +11,16 @@
  *   3. First free port at or above the role's base
  *
  * CLI:
- *   node scripts/dev-ports.mjs              -> "vite=<n> api=<n>"
+ *   node scripts/dev-ports.mjs              -> resolve+persist (npm run port:resolve)
+ *   node scripts/dev-ports.mjs --peek       -> read only: remembered/base, no probe (npm run port)
  *   node scripts/dev-ports.mjs --json       -> {"vite":n,"api":n}
  *   node scripts/dev-ports.mjs --url        -> http://127.0.0.1:<vite>/
  *   node scripts/dev-ports.mjs --vite       -> vite port only
  *   node scripts/dev-ports.mjs --api        -> api port only
- *   node scripts/dev-ports.mjs --peek       -> remembered/base without allocating
+ *
+ * Only a process about to bind should resolve. Resolving while the dev server
+ * is up makes its own port look taken, so the next free port is persisted and
+ * `npm run port` would walk away from the live server. Keep `port` on --peek.
  */
 import { createServer } from "node:net";
 import { execFileSync } from "node:child_process";

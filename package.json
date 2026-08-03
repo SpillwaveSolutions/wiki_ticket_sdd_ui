@@ -1,7 +1,7 @@
 {
   "name": "wiki-ticket-sdd-ui",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.3.1",
   "description": "Local read-only dashboard for any WikiTicket SDD (worklog) repo",
   "workspaces": [
     "server",
@@ -10,7 +10,8 @@
   "scripts": {
     "start": "npm run -w server start --",
     "dev": "node scripts/dev.mjs",
-    "port": "node scripts/dev-ports.mjs",
+    "port": "node scripts/dev-ports.mjs --peek",
+    "port:resolve": "node scripts/dev-ports.mjs",
     "build": "npm run -w web build && npm run -w server build",
     "typecheck": "npm run -w server typecheck && npm run -w web typecheck",
     "test": "npm run -w server test && npm run -w web test",

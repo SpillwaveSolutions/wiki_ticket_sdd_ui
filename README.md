@@ -115,7 +115,8 @@ state) pattern currently being discussed for agent systems, see
 ```sh
 npm install
 npm run dev           # Hono API + Vite (ports auto-resolved; bases 4181 / 8080)
-npm run port          # print/allocate vite=… api=…
+npm run port          # read remembered ports (does not reallocate)
+npm run port:resolve  # probe free ports and write .dev-ports.json
 npm run typecheck     # both workspaces
 npm test              # vitest (server + web, including Tauri IPC mocks)
 npm run test:e2e      # Playwright (Chromium) against a scratch fixture repo

@@ -1,9 +1,9 @@
 {
   "_sidebar": {
-    "render_hash": "42d38716d58a",
-    "rev": "c6b310cfb18d3bc99a3decaa808fc1a31361b213",
+    "render_hash": "c9c64ff4e589",
+    "rev": "df2a199f77bde18804cd4d592adc4e9724e72866",
     "source": "docs/.index/rendered/_Sidebar.md",
-    "source_hash": "42d38716d58a",
+    "source_hash": "c9c64ff4e589",
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/_Sidebar"
   },
   "design/2026-07-25_v0.2.0-release-code-walkthrough": {
@@ -115,7 +115,7 @@
     "doc_type": "guide",
     "page_id": "Home",
     "render_hash": "374fa31cbe8e",
-    "rev": "c6b310cfb18d3bc99a3decaa808fc1a31361b213",
+    "rev": "df2a199f77bde18804cd4d592adc4e9724e72866",
     "source": "docs/.index/rendered/home.md",
     "source_hash": "374fa31cbe8e",
     "title": "Home",
@@ -133,10 +133,11 @@
   "index/releases": {
     "canonical_key": "index/releases",
     "doc_type": "index",
-    "render_hash": "bbe6afe0d2df",
-    "rev": "ad76141",
+    "page_id": "Index-Releases",
+    "render_hash": "5aa79a9e22d0",
+    "rev": "df2a199f77bde18804cd4d592adc4e9724e72866",
     "source": "docs/.index/rendered/releases.md",
-    "source_hash": "bbe6afe0d2df",
+    "source_hash": "5aa79a9e22d0",
     "title": "Releases Index",
     "truth_state": "current",
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Index-Releases",
@@ -152,10 +153,11 @@
   "index/traceability": {
     "canonical_key": "index/traceability",
     "doc_type": "index",
-    "render_hash": "5d00051db293",
-    "rev": "ad76141",
+    "page_id": "Index-Traceability",
+    "render_hash": "5ebfd08bae37",
+    "rev": "df2a199f77bde18804cd4d592adc4e9724e72866",
     "source": "docs/.index/rendered/traceability.md",
-    "source_hash": "5d00051db293",
+    "source_hash": "5ebfd08bae37",
     "title": "Traceability Index",
     "truth_state": "current",
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Index-Traceability",
@@ -208,10 +210,11 @@
   "roadmap": {
     "canonical_key": "roadmap",
     "doc_type": "roadmap",
-    "render_hash": "86d6eac14010",
-    "rev": "ad76141",
+    "page_id": "Roadmap",
+    "render_hash": "b8b27cad2fc9",
+    "rev": "df2a199f77bde18804cd4d592adc4e9724e72866",
     "source": "docs/roadmap.md",
-    "source_hash": "f42383a03ecd",
+    "source_hash": "917c625afd1c",
     "title": "Roadmap",
     "truth_state": "current",
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Roadmap",
@@ -250,6 +253,19 @@
     "truth_state": "snapshot",
     "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Roadmap-2026-07-28_v0.3.0-release",
     "wiki_key": "roadmap-snapshot/2026-07-28_v0.3.0-release"
+  },
+  "roadmap-snapshot/2026-08-03_v0.3.1-release": {
+    "canonical_key": "roadmap-snapshot/2026-08-03_v0.3.1-release",
+    "doc_type": "roadmap-snapshot",
+    "page_id": "Roadmap-2026-08-03_v0.3.1-release",
+    "render_hash": "ac13693b4d15",
+    "rev": "df2a199f77bde18804cd4d592adc4e9724e72866",
+    "source": "docs/roadmap/2026-08-03_v0.3.1-release.md",
+    "source_hash": "14291809282a",
+    "title": "Roadmap",
+    "truth_state": "snapshot",
+    "url": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Roadmap-2026-08-03_v0.3.1-release",
+    "wiki_key": "roadmap-snapshot/2026-08-03_v0.3.1-release"
   },
   "ui/design-artifacts": {
     "canonical_key": "ui/design-artifacts",
