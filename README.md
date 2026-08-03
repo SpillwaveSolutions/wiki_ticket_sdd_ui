@@ -101,7 +101,8 @@ ever *reads* it:
   and git/`gh` for everything else, falling back to an offline state
   wherever GitHub access isn't available.
 
-**Read-only guarantee**: this app never writes to the target repo. In
+**Read-only guarantee**: this app never writes to the target repo
+(`npm run check:readonly` in CI). In
 production (`npm start`), the server also serves the built `web/dist` static
 assets, so one process is the whole app; in development, Vite serves the
 front end and proxies `/api/*` to the server.

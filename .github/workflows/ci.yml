@@ -23,6 +23,9 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      # Read-only guarantee: never write the target worklog repo (design §22).
+      # Allowed: appconfig (~/.config + clone cache) and clone_repo into that cache.
+      - run: npm run check:readonly
       - run: npm run typecheck
       - run: npm test
       - run: npm run build

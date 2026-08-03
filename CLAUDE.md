@@ -32,6 +32,7 @@ before doing anything.
    documents — frozen docs keep metadata in sidecars; `_inventory.json` is
    the merged truth.
 3. **Read-only guarantee.** This app NEVER writes to the target repo.
+   CI enforces it: `npm run check:readonly` (also part of `npm run verify`).
 4. **Degrade gracefully.** `gh` CLI when available, unauthenticated REST
    fallback, and full offline function for all file-based panels.
 

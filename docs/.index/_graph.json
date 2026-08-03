@@ -582,6 +582,11 @@
    "status": "done",
    "title": "v0.3.1: orphan cleanup, port/CI greps, patch release"
   },
+  "item/01KZ4G2N25H45KFR00YM6W74M8": {
+   "doc_type": "item",
+   "status": "done",
+   "title": "CI-enforced read-only guarantee (check-readonly)"
+  },
   "plan/2026-07-21-wiki-ticket-ui": {
    "doc_type": "plan",
    "source": "docs/plans/2026-07-21-wiki-ticket-ui.md",
