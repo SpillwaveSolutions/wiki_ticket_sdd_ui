@@ -121,6 +121,26 @@
    "wiki_key": "guide/user-guide"
   },
   {
+   "canonical_key": "guide/wireframes",
+   "doc_type": "guide",
+   "slug": "wireframes",
+   "source": "docs/user_guide/wireframes.md",
+   "title": "WikiTicket UI Wireframes",
+   "truth_state": "current",
+   "wiki": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/WikiTicket-UI-Wireframes",
+   "wiki_key": "guide/wireframes"
+  },
+  {
+   "canonical_key": "home",
+   "doc_type": "guide",
+   "slug": "home",
+   "source": "docs/wiki-home.md",
+   "title": "Home",
+   "truth_state": "current",
+   "wiki": "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/wiki/Home",
+   "wiki_key": "home"
+  },
+  {
    "canonical_key": "plan/2026-07-21-wiki-ticket-ui",
    "date": "2026-07-21",
    "doc_type": "plan",

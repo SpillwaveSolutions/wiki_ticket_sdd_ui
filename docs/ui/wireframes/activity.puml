@@ -1,0 +1,51 @@
+@startuml activity
+' Activity — /activity. Source: web/src/panels/Activity.tsx
+' Merged feed: worklog events + git commits + GitHub releases.
+salt
+{
+  {#
+    {
+      { WikiTicket UI | Fixture Project | main | . | [ Repo ] }
+    }
+  }
+  {#
+    {
+      {* <b>WikiTicket UI</b> }
+      --
+      { Overview }
+      { Board }
+      { Roadmap }
+      { <b>Activity</b> }
+      { Releases }
+      { Docs }
+      { Publish plane }
+      { Sync health }
+      { Charts }
+      { Traceability }
+    } | {
+      { <b>Activity</b> }
+      .
+      { Sources }
+      { [X] worklog | [X] git | [X] release }
+      .
+      { Worklog op filter }
+      ^ all ops              ^
+      .
+      Showing 40 of 40
+      .
+      {^"[worklog] create  ·  2h ago  ·  agent"
+        First item
+      }
+      {^"[git] commit  ·  5h ago  ·  rick"
+        abc1234 chore: bump version
+      }
+      {^"[release]  ·  1d ago"
+        v0.3.0 — Dashboard release
+      }
+      {^"[worklog] close  ·  2d ago  ·  agent"
+        First item
+      }
+    }
+  }
+}
+@enduml

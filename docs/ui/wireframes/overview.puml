@@ -1,0 +1,58 @@
+@startuml overview
+' Overview — /. Source: web/src/panels/Overview.tsx
+' Salt draws structure only. See docs/ui/README.md § Acceptable differences.
+salt
+{
+  {#
+    {
+      { WikiTicket UI | Fixture Project | main | v0.3.0 | . | [ Repo ] }
+    }
+  }
+  {#
+    {
+      {* <b>WikiTicket UI</b> }
+      --
+      { <b>Overview</b> }
+      { Board }
+      { Roadmap }
+      { Activity }
+      { Releases }
+      { Docs }
+      { Publish plane }
+      { Sync health }
+      { Charts }
+      { Traceability }
+    } | {
+      { <b>Overview</b> }
+      .
+      {#
+        { Open | 4 }
+        { In progress | 2 }
+        { Blocked | 1 }
+        { Epics in flight | 1 }
+        { Latest release | v0.3.0 }
+        { Last status report | 3d ago }
+      }
+      .
+      { <b>Milestone progress</b> }
+      {^"v0.3.0"
+        3/5
+        {T
+        +++++
+        }
+      }
+      {^"v0.4.0"
+        0/4
+        {T
+        +
+        }
+      }
+      .
+      { <b>Activity, last 30 days</b> }
+      {SI
+      (30-day sparkline area chart)
+      }
+    }
+  }
+}
+@enduml

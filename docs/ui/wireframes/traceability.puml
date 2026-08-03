@@ -1,0 +1,69 @@
+@startuml traceability
+' Traceability — /traceability. Source: web/src/panels/Traceability.tsx
+' Node list + focus neighborhood (2 hops) + trace-check checklist.
+salt
+{
+  {#
+    {
+      { WikiTicket UI | Fixture Project | main | . | [ Repo ] }
+    }
+  }
+  {#
+    {
+      {* <b>WikiTicket UI</b> }
+      --
+      { Overview }
+      { Board }
+      { Roadmap }
+      { Activity }
+      { Releases }
+      { Docs }
+      { Publish plane }
+      { Sync health }
+      { Charts }
+      { <b>Traceability</b> }
+    } | {
+      { <b>Traceability</b> }
+      .
+      {#
+        {
+          "  Search nodes…  "
+          --
+          {T
+          + plan · wiki-ticket-ui-ia
+          ++ item · First item
+          ++ item · Second item
+          ++ ticket · #42
+          ++ release · v0.3.0
+          }
+        } | {
+          breadcrumb: plan › First item
+          .
+          Edge types: [X] implements [X] tracks [X] ships …
+          .
+          {#
+            {
+              { <b>Upstream · 2 hops</b> }
+              { plan · wiki-ticket-ui-ia }
+            } | {
+              { <b>Focus</b> }
+              {^"item · First item"
+                status: done
+              }
+            } | {
+              { <b>Downstream · 2 hops</b> }
+              { ticket · #42 }
+              { release · v0.3.0 }
+            }
+          }
+          .
+          { <b>Trace-check</b> }
+          { [ok] every item has a plan edge }
+          { [ok] no dangling ticket ids }
+          { [!] one orphan event (see detail) }
+        }
+      }
+    }
+  }
+}
+@enduml

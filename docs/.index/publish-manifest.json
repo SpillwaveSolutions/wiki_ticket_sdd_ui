@@ -4,7 +4,7 @@
    "frozen": false,
    "page_name": "Home",
    "render": "as-is",
-   "render_hash": "009e156a6f21",
+   "render_hash": "374fa31cbe8e",
    "source": "docs/.index/rendered/home.md",
    "title": "Home",
    "truth_state": "current",
@@ -132,11 +132,22 @@
    "frozen": false,
    "page_name": "WikiTicket-UI-User-Guide",
    "render": "doc+banner",
-   "render_hash": "204a91a90952",
+   "render_hash": "5239c5025fef",
    "source": "docs/user_guide/user-guide.md",
    "title": "WikiTicket UI User Guide",
    "truth_state": "current",
    "wiki_key": "guide/user-guide"
+  },
+  {
+   "banner": "> **Current** \u2014 this is the living version. Historical snapshots are linked from [[Index-Releases]].",
+   "frozen": false,
+   "page_name": "WikiTicket-UI-Wireframes",
+   "render": "doc+banner",
+   "render_hash": "036f19518997",
+   "source": "docs/user_guide/wireframes.md",
+   "title": "WikiTicket UI Wireframes",
+   "truth_state": "current",
+   "wiki_key": "guide/wireframes"
   },
   {
    "banner": "> **Current** \u2014 the active plan. Plans are frozen once written; a design change lands in a new superseding plan, never an edit to this one.",
@@ -228,7 +239,7 @@
   }
  ],
  "sidebar": {
-  "render_hash": "ac074c5e8b88",
+  "render_hash": "42d38716d58a",
   "source": "docs/.index/rendered/_Sidebar.md"
  },
  "version": 1

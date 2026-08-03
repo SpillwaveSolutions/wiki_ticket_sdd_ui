@@ -1,0 +1,54 @@
+@startuml docs
+' Docs — /docs. Source: web/src/panels/Docs.tsx
+' Inventory list (truth_state badges) + content pane.
+salt
+{
+  {#
+    {
+      { WikiTicket UI | Fixture Project | main | . | [ Repo ] }
+    }
+  }
+  {#
+    {
+      {* <b>WikiTicket UI</b> }
+      --
+      { Overview }
+      { Board }
+      { Roadmap }
+      { Activity }
+      { Releases }
+      { <b>Docs</b> }
+      { Publish plane }
+      { Sync health }
+      { Charts }
+      { Traceability }
+    } | {
+      { <b>Docs</b> | "  Search title…  " | ^ all truth  ^ }
+      .
+      {#
+        {
+          {T
+          + Guide · living
+          ++ User guide
+          + Design · frozen
+          ++ v0.3.0 design doc
+          + ADR · living
+          ++ 0001-record-decisions
+          + Plan · living
+          ++ wiki-ticket-ui-ia
+          }
+        } | {
+          { <b>User guide</b> }
+          truth: living · type: guide
+          supersedes: —
+          .
+          {SI
+          # User guide
+          markdown body…
+          }
+        }
+      }
+    }
+  }
+}
+@enduml

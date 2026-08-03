@@ -1,0 +1,32 @@
+@startuml shell-app
+' Shared app chrome — TopBar + SideNav + main. Every panel reuses this frame.
+' Salt draws structure only. See docs/ui/README.md § Acceptable differences.
+salt
+{
+  {#
+    {
+      { WikiTicket UI | project-name | main | v0.3.0 | [dirty] | . | [ Repo ] }
+    }
+  }
+  {#
+    {
+      {* <b>WikiTicket UI</b> }
+      --
+      { Overview }
+      { Board }
+      { Roadmap }
+      { Activity }
+      { Releases }
+      { Docs }
+      { Publish plane }
+      { Sync health }
+      { Charts }
+      { Traceability }
+    } | {
+      {^"main"
+        (panel content for the active route)
+      }
+    }
+  }
+}
+@enduml

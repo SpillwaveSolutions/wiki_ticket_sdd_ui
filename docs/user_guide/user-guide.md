@@ -51,7 +51,7 @@ Open the printed URL (`http://localhost:4181` by default).
 For active development instead of a production build:
 
 ```sh
-npm run dev   # tsx-watch server (:4181) + Vite dev server (:5173), concurrently
+npm run dev   # Hono API + Vite (ports auto-resolved; bases :4181 / :8080)
 ```
 
 Vite proxies `/api/*` to `http://localhost:4181`; point it at a server on a
@@ -131,6 +131,7 @@ for your next `npm start -- --repo`.
 ## See also
 
 - [README](../../README.md) — quickstart, full panel tour, architecture.
+- [Wireframes](./wireframes.md) — PlantUML Salt wireframe for every screen.
 - Governing plan: `docs/plans/2026-07-22-wiki-ticket-ui-ia.md` (pointer only
   — frozen design lives in the main `wiki_ticket_sdd` repo).
 - `docs/plans/2026-07-23-tauri-desktop-shell.md` — how the desktop shell was
