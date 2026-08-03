@@ -33,9 +33,9 @@ Several Spillwave Tauri apps may run on one machine. Ports are resolved by
 | Hono API | 4181 | `WT_API_PORT` / `PORT` / `VITE_API_PORT` |
 
 ```bash
-npm run port              # allocate/print vite=… api=…
-npm run port -- --url     # http://127.0.0.1:<vite>/
-npm run port -- --peek    # remember without allocating
+npm run port              # read only — remembered ports (never reallocates)
+npm run port:resolve      # probe free ports and persist .dev-ports.json
+npm run port -- --url     # with --peek: http://127.0.0.1:<vite>/
 ```
 
 `npm run tauri:dev` patches Tauri's `devUrl` to the resolved Vite port.

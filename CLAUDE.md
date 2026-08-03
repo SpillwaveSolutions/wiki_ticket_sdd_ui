@@ -67,7 +67,9 @@ Notes:
   Coordinate-based `agent-browser` click/screenshot can miss overlay
   content — dispatch `element.click()` via `eval` before calling a bug.
 - Ports are dynamic (`scripts/dev-ports.mjs`, bases Vite 8080 / API 4181).
-  Do not hardcode 5173. Use `npm run port -- --url` for the UI origin.
+  Do not hardcode 5173. `npm run port` is **read-only** (`--peek`); use
+  `npm run port:resolve` only when about to bind. UI origin:
+  `npm run port -- --url` (peek + url).
 - Rick does one final pass after that — automated verify is what makes
   that pass fast, not a replacement for it.
 

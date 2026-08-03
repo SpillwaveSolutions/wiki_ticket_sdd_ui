@@ -2,6 +2,9 @@
 
 _The evidence chain: plan → item → ticket → code → release, forward and backward. Generated from `docs/.index/_graph.json`; do not edit._
 
+### v0.3.1: orphan cleanup, port/CI greps, patch release
+`01KZ4AW6Z5QQ11RRS8GS0J9CNX` · status: done
+
 ### Relative --repo path resolves against wrong cwd under npm workspaces
 `01KYK7BGG2GB9V0FX77KPGNGY7` · status: done
 
@@ -137,5 +140,5 @@ _The evidence chain: plan → item → ticket → code → release, forward and 
 - produced-by: [[Plan-wiki-ticket-ui-ia]]
 
 ### 01KY5ZZX
-`01KY5ZZX` · status: in_progress
+`01KY5ZZX` · status: cancelled
 

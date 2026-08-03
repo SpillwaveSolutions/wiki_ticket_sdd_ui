@@ -227,6 +227,11 @@ def render(paths=PATHS, viz="deps,hierarchy"):
             f"Resolve with `worklog resolve {iid} --field {c.get('field', '?')} "
             f"--take local|remote`.")
     for iid in sorted(set(r.orphans)):
+        # A cancelled/done orphan is resolved: typo IDs get closed that way and
+        # should not keep the roadmap red forever.
+        orphan_item = r.items.get(iid) or {}
+        if orphan_item.get("status") in CLOSED_STATUSES:
+            continue
         attention.append(f"- Orphan events for `{iid[:8]}` — no create/snapshot yet.")
     if attention:
         lines += ["", "## Needs attention", ""] + attention

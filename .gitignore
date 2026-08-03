@@ -13,7 +13,8 @@ __pycache__/
 # Machine-local dev port memory (scripts/dev-ports.mjs)
 .dev-ports.json
 
-# Playwright / smoke artifacts
+# Playwright / smoke artifacts (never product art under docs/images/)
+.artifacts/
 screenshots/
 playwright-report/
 test-results/

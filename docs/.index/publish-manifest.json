@@ -24,7 +24,7 @@
    "frozen": false,
    "page_name": "Index-Releases",
    "render": "as-is",
-   "render_hash": "bbe6afe0d2df",
+   "render_hash": "5aa79a9e22d0",
    "source": "docs/.index/rendered/releases.md",
    "title": "Releases Index",
    "truth_state": "current",
@@ -44,7 +44,7 @@
    "frozen": false,
    "page_name": "Index-Traceability",
    "render": "as-is",
-   "render_hash": "5d00051db293",
+   "render_hash": "5ebfd08bae37",
    "source": "docs/.index/rendered/traceability.md",
    "title": "Traceability Index",
    "truth_state": "current",
@@ -194,11 +194,11 @@
    "wiki_key": "plan/2026-07-27-repo-picker-discovery"
   },
   {
-   "banner": "> **Current** \u2014 this is the living version; regenerated at 2026-07-28T02:02:53Z. Historical snapshots are linked from [[Index-Releases]].",
+   "banner": "> **Current** \u2014 this is the living version; regenerated at 2026-08-03T17:31:21Z. Historical snapshots are linked from [[Index-Releases]].",
    "frozen": false,
    "page_name": "Roadmap",
    "render": "doc+banner",
-   "render_hash": "86d6eac14010",
+   "render_hash": "1b52768b919c",
    "source": "docs/roadmap.md",
    "title": "Roadmap",
    "truth_state": "current",
@@ -236,10 +236,21 @@
    "title": "Roadmap",
    "truth_state": "snapshot",
    "wiki_key": "roadmap-snapshot/2026-07-28_v0.3.0-release"
+  },
+  {
+   "banner": "> **Snapshot** of release v0.3.1 (2026-08-03) \u2014 frozen record. The current version is [[Roadmap]].",
+   "frozen": true,
+   "page_name": "Roadmap-2026-08-03_v0.3.1-release",
+   "render": "doc+banner",
+   "render_hash": "5bece58a0098",
+   "source": "docs/roadmap/2026-08-03_v0.3.1-release.md",
+   "title": "Roadmap",
+   "truth_state": "snapshot",
+   "wiki_key": "roadmap-snapshot/2026-08-03_v0.3.1-release"
   }
  ],
  "sidebar": {
-  "render_hash": "42d38716d58a",
+  "render_hash": "c9c64ff4e589",
   "source": "docs/.index/rendered/_Sidebar.md"
  },
  "version": 1

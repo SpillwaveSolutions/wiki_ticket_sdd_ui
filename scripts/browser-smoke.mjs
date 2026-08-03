@@ -7,8 +7,9 @@
  *   node scripts/browser-smoke.mjs [url] [out.png]
  *   npm run smoke
  *
- * Default URL comes from scripts/dev-ports.mjs --url (or http://127.0.0.1:8080/).
- * Screenshots land under screenshots/ so agents can Read them (not only /tmp).
+ * Default URL comes from scripts/dev-ports.mjs --peek --url.
+ * Screenshots land under .artifacts/ (gitignored) so agents can Read them
+ * without overwriting committed product art under docs/images/ or screenshots/.
  */
 import { mkdirSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -29,7 +30,7 @@ function defaultUrl() {
 }
 
 const url = process.argv[2] || defaultUrl();
-const outPng = process.argv[3] || join(ROOT, "screenshots/smoke.png");
+const outPng = process.argv[3] || join(ROOT, ".artifacts/smoke.png");
 const timeoutMs = Number(process.env.BROWSER_SMOKE_TIMEOUT_MS || 45000);
 
 mkdirSync(dirname(outPng), { recursive: true });
