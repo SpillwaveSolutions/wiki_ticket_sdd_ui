@@ -29,6 +29,9 @@ process serves both the JSON API and the built web app.
 `--repo` defaults to `$WORKLOG_REPO`, then the current directory, if omitted.
 Override the port with `--port <n>` or `PORT=<n>`.
 
+Desktop packaging, port resolution, and the test ladder: [`DESKTOP.md`](./DESKTOP.md).
+Screen wireframes (PlantUML Salt): [`docs/ui/`](./docs/ui/).
+
 ## Panel tour
 
 | Panel | What it shows |
@@ -73,13 +76,13 @@ as the initial repo if valid, skipping the picker.
 
 ```sh
 npm install
-npm run tauri dev     # Vite + Rust shell, hot reload
-npm run tauri build   # produces .app / .dmg under src-tauri/target/release/bundle/
+npm run tauri:dev     # Vite + Rust shell (dynamic port), hot reload
+npm run tauri:build   # produces .app / .dmg under src-tauri/target/release/bundle/
 ```
 
-`cargo test --manifest-path src-tauri/Cargo.toml` runs the Rust unit +
-fixture parity suite (also in CI). The desktop shell never writes to the
-target repo — same read-only guarantee as the Node server.
+`npm run test:rust` runs the Rust unit + fixture parity suite (also in CI).
+The desktop shell never writes to the target repo — same read-only guarantee
+as the Node server.
 
 ## Architecture
 
@@ -111,13 +114,21 @@ state) pattern currently being discussed for agent systems, see
 
 ```sh
 npm install
-npm run dev          # tsx-watch server (:4181) + Vite dev server (:5173), concurrently
+npm run dev           # Hono API + Vite (ports auto-resolved; bases 4181 / 8080)
+npm run port          # print/allocate vite=… api=…
 npm run typecheck     # both workspaces
-npm test              # vitest, both workspaces
+npm test              # vitest (server + web, including Tauri IPC mocks)
+npm run test:e2e      # Playwright (Chromium) against a scratch fixture repo
+npm run verify        # typecheck + unit + e2e — preferred pre-merge check
+npm run smoke         # headless load + screenshot (dev server must already be up)
+npm run test:rust     # cargo fixture parity
+npm run tauri:dev     # desktop shell
 ```
 
-The Vite dev server proxies `/api/*` to `http://localhost:4181`; point it at
-a server on a different port with `VITE_API_PORT=<port> npm run -w web dev`.
+Ports are resolved by `scripts/dev-ports.mjs` and remembered in
+`.dev-ports.json` so sibling Spillwave apps do not collide. Overrides:
+`WT_DEV_PORT` (Vite), `WT_API_PORT` / `PORT` / `VITE_API_PORT` (API).
 
-Dogfood target for manual verification: `../wiki_ticket_sdd` (the repo this
-tool was built to observe), i.e. `npm start -- --repo ../wiki_ticket_sdd`.
+Dogfood target: `../wiki_ticket_sdd`, e.g.
+`npm run dev -- --repo ../wiki_ticket_sdd` or
+`npm start -- --repo ../wiki_ticket_sdd`.

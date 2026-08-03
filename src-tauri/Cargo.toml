@@ -22,3 +22,9 @@ tauri-plugin-log = "2"
 tauri-plugin-dialog = "2"
 sha2 = "0.10"
 ureq = { version = "2", default-features = false, features = ["tls", "json"] }
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+strip = true

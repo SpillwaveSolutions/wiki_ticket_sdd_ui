@@ -9,13 +9,28 @@
   ],
   "scripts": {
     "start": "npm run -w server start --",
-    "dev": "npm run -w server dev & npm run -w web dev",
+    "dev": "node scripts/dev.mjs",
+    "port": "node scripts/dev-ports.mjs",
     "build": "npm run -w web build && npm run -w server build",
     "typecheck": "npm run -w server typecheck && npm run -w web typecheck",
     "test": "npm run -w server test && npm run -w web test",
-    "tauri": "tauri"
+    "test:watch": "npm run -w web test -- --watch",
+    "test:rust": "cargo test --manifest-path src-tauri/Cargo.toml",
+    "test:e2e": "playwright test",
+    "test:e2e:install": "playwright install chromium",
+    "verify": "npm run typecheck && npm test && npm run test:e2e",
+    "smoke": "node scripts/browser-smoke.mjs",
+    "tauri": "tauri",
+    "tauri:dev": "node scripts/tauri-dev.mjs",
+    "tauri:build": "tauri build",
+    "desktop:dev": "npm run tauri:dev",
+    "desktop:build": "npm run tauri:build",
+    "wireframes": "plantuml -tpng docs/ui/wireframes/*.puml && mkdir -p docs/images/wireframes && cp docs/ui/wireframes/*.png docs/images/wireframes/",
+    "wireframes:check": "plantuml --check-syntax docs/ui/wireframes/*.puml"
   },
   "devDependencies": {
-    "@tauri-apps/cli": "^2.11.4"
+    "@playwright/test": "^1.52.0",
+    "@tauri-apps/cli": "^2.11.4",
+    "playwright": "^1.52.0"
   }
 }

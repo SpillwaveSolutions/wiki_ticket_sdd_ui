@@ -5,7 +5,7 @@
   "identifier": "com.spillwave.wiki-ticket-ui",
   "build": {
     "frontendDist": "../web/dist",
-    "devUrl": "http://localhost:5173",
+    "devUrl": "http://127.0.0.1:8080",
     "beforeDevCommand": "npm run -w web dev",
     "beforeBuildCommand": "npm run -w web build"
   },
@@ -32,6 +32,11 @@
       "icons/128x128@2x.png",
       "icons/icon.icns",
       "icons/icon.ico"
-    ]
+    ],
+    "windows": {
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper"
+      }
+    }
   }
 }
