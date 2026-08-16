@@ -24,6 +24,7 @@ import type {
   WorklogEvent,
   WorklogItem,
 } from "./types";
+import { isSampleMode, SAMPLE_EVENTS, SAMPLE_ITEMS, SAMPLE_REPO } from "./sample";
 
 export class ApiError extends Error {
   status: number;
@@ -124,9 +125,18 @@ async function tauriInvoke<T>(cmd: string, args?: Record<string, unknown>): Prom
 }
 
 export const api = {
-  getRepo: () => getJson<RepoInfo>("/api/repo", "get_repo"),
-  getItems: () => getJson<WorklogItem[]>("/api/items", "get_items"),
-  getEvents: () => getJson<WorklogEvent[]>("/api/events", "get_events"),
+  getRepo: async (): Promise<RepoInfo> => {
+    if (isSampleMode()) return SAMPLE_REPO;
+    return getJson<RepoInfo>("/api/repo", "get_repo");
+  },
+  getItems: async (): Promise<WorklogItem[]> => {
+    if (isSampleMode()) return SAMPLE_ITEMS;
+    return getJson<WorklogItem[]>("/api/items", "get_items");
+  },
+  getEvents: async (): Promise<WorklogEvent[]> => {
+    if (isSampleMode()) return SAMPLE_EVENTS;
+    return getJson<WorklogEvent[]>("/api/events", "get_events");
+  },
   getRoadmap: () => getJson<RoadmapResponse>("/api/roadmap", "get_roadmap"),
   getDocs: () => getJson<InventoryResponse>("/api/docs", "get_docs"),
   getDocContent: (path: string) =>
