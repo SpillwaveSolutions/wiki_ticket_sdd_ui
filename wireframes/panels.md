@@ -27,7 +27,7 @@ One panel fills the main column. Shared chrome is in `shell.md`.
 - **Empty / missing artifact**: EmptyState, not a crash.
 - **Offline GitHub**: degrade; do not block Overview/Board/Docs that can run locally.
 
-- **No worklog repo**: guided empty state (not a raw 400 path). Copy explains this is a WikiTicket SDD folder. **Choose repo** opens the picker.
+- **No worklog repo**: guided empty state (not a raw 400 path). Copy explains this is a WikiTicket SDD folder. **Choose repo** opens the picker. **Load sample worklog** (`data-testid=load-sample-worklog`) activates an offline sample corpus so Overview/Board can be explored without a real repo.
 
 ## Acceptance Criteria
 - [ ] Each `PANELS` path renders the matching panel heading or primary landmark.
@@ -37,6 +37,8 @@ One panel fills the main column. Shared chrome is in `shell.md`.
 - [ ] Traceability lets the user walk a node both directions.
 - [ ] No control writes to the target repo.
 - [ ] A missing worklog repo shows a guided empty state with Choose repo, not a raw API path.
+- [ ] Guided empty state includes **Load sample worklog** which enables sample mode (session) and returns fixture items/events/repo for core panels.
 
 ## Notes
 - PlantUML Salt: docs/ui/wireframes/. This file is the Guard contract.
+- Sample fixtures live in `web/src/lib/sample.ts`; mode flag `sessionStorage["wiki-ticket-sample"]`.

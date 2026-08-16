@@ -1,3 +1,5 @@
+import { enableSampleMode } from "../lib/sample";
+
 interface EmptyStateProps {
   title: string;
   detail?: string;
@@ -26,21 +28,36 @@ export function isNoRepoError(message: string): boolean {
   return /worklog|no repo selected/i.test(message);
 }
 
+function loadSample() {
+  enableSampleMode();
+  window.location.reload();
+}
+
 export function NoRepoState({ detail }: { detail?: string }) {
   return (
     <div className="flex flex-col items-center justify-center gap-3 rounded-lg border border-dashed border-slate-800 py-12 text-center">
       <p className="text-sm font-medium text-slate-300">No worklog repo</p>
       <p className="max-w-md text-xs text-slate-500">
         This session needs a WikiTicket SDD folder (a repo with <code>.work/config.yml</code>).
-        Choose one with the Repo button.
+        Choose one with the Repo button, or explore with the offline sample corpus.
       </p>
-      <button
-        type="button"
-        className="focus-ring rounded-lg border border-slate-800 px-3 py-1.5 text-xs text-slate-300 hover:bg-slate-800/60"
-        onClick={() => window.dispatchEvent(new Event("wiki-ticket:open-repo"))}
-      >
-        Choose repo
-      </button>
+      <div className="flex flex-wrap items-center justify-center gap-2">
+        <button
+          type="button"
+          className="focus-ring rounded-lg border border-slate-800 px-3 py-1.5 text-xs text-slate-300 hover:bg-slate-800/60"
+          onClick={() => window.dispatchEvent(new Event("wiki-ticket:open-repo"))}
+        >
+          Choose repo
+        </button>
+        <button
+          type="button"
+          data-testid="load-sample-worklog"
+          className="focus-ring rounded-lg border border-accent/40 bg-accent/10 px-3 py-1.5 text-xs text-accent hover:bg-accent/20"
+          onClick={loadSample}
+        >
+          Load sample worklog
+        </button>
+      </div>
       {detail && (
         <p className="max-w-md truncate text-[11px] text-slate-600" title={detail}>
           {detail}
