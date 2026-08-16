@@ -20,13 +20,13 @@ Choose the single worklog-enabled repo this session reads. On desktop with no re
 +------------------------------------------------+
 ```
 
-Clicking the dimmed backdrop or Close dismisses. This is a `div` overlay — it does **not** set `role=dialog`.
+Clicking the dimmed backdrop, Close, or Escape dismisses. Overlay is `role=dialog` `aria-modal=true` labelled by the Repo heading.
 
 ## Key Elements
 
 | Element | Type | Behavior / Notes |
 |---------|------|------------------|
-| Title | heading | **Repo** |
+| Title | heading | **Repo**. `id=repo-picker-title` |
 | Current | text | `repo.repo_path` or none selected |
 | Choose folder | button | Tauri only. Native folder dialog. Cancel is not an error. |
 | Tabs | recent / local / GitHub | **Tauri only.** Browser has no tabs. |
@@ -44,7 +44,8 @@ Clicking the dimmed backdrop or Close dismisses. This is a `div` overlay — it 
 - **Browser**: copy explains `--repo` at server launch; picker only remembers paths.
 
 ## Acceptance Criteria
-- [ ] Overlay title is Repo. Backdrop or Close dismisses it.
+- [ ] Overlay is role=dialog aria-modal=true, labelled by the Repo heading.
+- [ ] Backdrop, Close, or Escape dismisses it.
 - [ ] Desktop (Tauri) with no repo or a non-worklog path auto-opens the picker.
 - [ ] Tauri shows the three tabs; choosing a valid worklog repo reloads the window.
 - [ ] Browser does not switch repos live; it can remember a path for the next launch.

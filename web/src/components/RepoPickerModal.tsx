@@ -32,6 +32,17 @@ export default function RepoPickerModal({ repo, onClose }: RepoPickerModalProps)
     if (repo?.repo_path) setRecent(rememberRepo(repo.repo_path));
   }, [repo?.repo_path]);
 
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        onClose();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
+
   function addDraft() {
     const trimmed = draft.trim();
     if (!trimmed) return;
@@ -79,13 +90,16 @@ export default function RepoPickerModal({ repo, onClose }: RepoPickerModalProps)
   return (
     <div
       className="fixed inset-0 z-50 flex items-start justify-center bg-slate-950/70 pt-24"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="repo-picker-title"
       onClick={onClose}
     >
       <div
         className="glass w-full max-w-md rounded-xl p-5"
         onClick={(e) => e.stopPropagation()}
       >
-        <h2 className="text-sm font-semibold text-slate-100">Repo</h2>
+        <h2 id="repo-picker-title" className="text-sm font-semibold text-slate-100">Repo</h2>
         <p className="mt-1 text-xs text-slate-500">
           {tauri ? (
             <>
