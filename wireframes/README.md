@@ -1,8 +1,11 @@
 # Wireframes
 
-This directory is required by Spillwave UI Guard.
+As-built UI contracts for WikiTicket UI (UI Guard). Salt/PlantUML sketches still live in [docs/ui/](../docs/ui/). This folder is the agent-facing contract.
 
-- One folder per feature or major screen
-- Use `_template.md` as the skeleton
-- Keep acceptance criteria current — the adversarial reviewer treats them as the contract
-- Source plugin: https://github.com/SpillwaveSolutions/spillwave-ui-guard
+| Screen | File |
+|--------|------|
+| App chrome | [shell.md](./shell.md) |
+| Repo picker | [repo-picker.md](./repo-picker.md) |
+| Ten read-only panels | [panels.md](./panels.md) |
+
+The app never writes to the target repo.
