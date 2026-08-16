@@ -183,3 +183,30 @@ describe("api.ts Tauri invoke path", () => {
     expect(fetchMock).not.toHaveBeenCalled();
   });
 });
+
+describe("api.ts sample mode", () => {
+  beforeEach(() => {
+    sessionStorage.setItem("wiki-ticket-sample", "1");
+  });
+  afterEach(() => {
+    sessionStorage.removeItem("wiki-ticket-sample");
+  });
+
+  it("returns fixture repo/items/events/roadmap/git/releases without fetch", async () => {
+    const fetchMock = vi.fn();
+    vi.stubGlobal("fetch", fetchMock);
+    const repo = await api.getRepo();
+    const items = await api.getItems();
+    const events = await api.getEvents();
+    const roadmap = await api.getRoadmap();
+    const commits = await api.getGitLog(2);
+    const releases = await api.getReleases();
+    expect(repo.name).toBe("sample-worklog");
+    expect(items.length).toBeGreaterThan(0);
+    expect(events.length).toBeGreaterThan(0);
+    expect(roadmap.markdown).toMatch(/mermaid/);
+    expect(commits).toHaveLength(2);
+    expect(releases.releases[0]?.tag_name).toBe("v0.1.0");
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+});
