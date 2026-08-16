@@ -24,7 +24,7 @@ import type {
   WorklogEvent,
   WorklogItem,
 } from "./types";
-import { isSampleMode, SAMPLE_EVENTS, SAMPLE_ITEMS, SAMPLE_REPO } from "./sample";
+import { isSampleMode, SAMPLE_COMMITS, SAMPLE_EVENTS, SAMPLE_ITEMS, SAMPLE_RELEASES, SAMPLE_REPO, SAMPLE_ROADMAP } from "./sample";
 
 export class ApiError extends Error {
   status: number;
@@ -137,7 +137,10 @@ export const api = {
     if (isSampleMode()) return SAMPLE_EVENTS;
     return getJson<WorklogEvent[]>("/api/events", "get_events");
   },
-  getRoadmap: () => getJson<RoadmapResponse>("/api/roadmap", "get_roadmap"),
+  getRoadmap: async (): Promise<RoadmapResponse> => {
+    if (isSampleMode()) return SAMPLE_ROADMAP;
+    return getJson<RoadmapResponse>("/api/roadmap", "get_roadmap");
+  },
   getDocs: () => getJson<InventoryResponse>("/api/docs", "get_docs"),
   getDocContent: (path: string) =>
     getText(`/api/docs/content?path=${encodeURIComponent(path)}`, "get_doc_content", { path }),
@@ -145,13 +148,18 @@ export const api = {
   getManifest: () => getJson<ManifestResponse>("/api/index/manifest", "get_manifest"),
   getWikiLedger: () => getJson<WikiLedgerResponse>("/api/wiki-ledger", "get_wiki_ledger"),
   getSync: () => getJson<SyncState>("/api/sync", "get_sync"),
-  getGitLog: (limit?: number) =>
-    getJson<GitCommit[]>(
+  getGitLog: async (limit?: number): Promise<GitCommit[]> => {
+    if (isSampleMode()) return SAMPLE_COMMITS.slice(0, limit ?? SAMPLE_COMMITS.length);
+    return getJson<GitCommit[]>(
       `/api/git/log${limit ? `?limit=${limit}` : ""}`,
       "get_git_log",
       limit !== undefined ? { limit } : {},
-    ),
-  getReleases: () => getJson<ReleasesResponse>("/api/releases", "get_releases"),
+    );
+  },
+  getReleases: async (): Promise<ReleasesResponse> => {
+    if (isSampleMode()) return SAMPLE_RELEASES;
+    return getJson<ReleasesResponse>("/api/releases", "get_releases");
+  },
   getTraceCheck: () => getJson<TraceCheckResponse>("/api/trace-check", "get_trace_check"),
 
   /** Tauri-only: native folder dialog + validate + store. */

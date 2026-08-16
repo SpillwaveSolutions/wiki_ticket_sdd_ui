@@ -1,4 +1,4 @@
-import type { RepoInfo, WorklogEvent, WorklogItem } from "./types";
+import type { GitCommit, ReleasesResponse, RepoInfo, RoadmapResponse, WorklogEvent, WorklogItem } from "./types";
 
 export const SAMPLE_FLAG = "wiki-ticket-sample";
 
@@ -138,3 +138,73 @@ export const SAMPLE_EVENTS: WorklogEvent[] = [
     actor: "sample",
   },
 ];
+
+export const SAMPLE_ROADMAP: RoadmapResponse = {
+  meta: {
+    wiki_key: "roadmap",
+    doc_type: "roadmap",
+    truth_state: "canonical",
+  },
+  markdown: `---
+wiki_key: roadmap
+doc_type: roadmap
+truth_state: canonical
+---
+
+# Roadmap
+
+## Now
+
+| Item | Status |
+| --- | --- |
+| Overview panel | done |
+| Board drawer | in progress |
+| Sample worklog | in progress |
+
+## Next
+
+- Roadmap mermaid walkthrough
+- Activity feed with git + releases
+- Traceability graph
+
+\`\`\`mermaid
+flowchart LR
+  Overview --> Board
+  Board --> Roadmap
+  Roadmap --> Activity
+\`\`\`
+`,
+};
+
+export const SAMPLE_COMMITS: GitCommit[] = [
+  {
+    hash: "a1b2c3d",
+    author: "sample",
+    date: daysAgo(2),
+    subject: "feat: sample worklog empty state",
+  },
+  {
+    hash: "e4f5a6b",
+    author: "sample",
+    date: daysAgo(6),
+    subject: "feat: mobile menu drawer",
+  },
+  {
+    hash: "c7d8e9f",
+    author: "sample",
+    date: daysAgo(11),
+    subject: "docs: as-built wireframes",
+  },
+];
+
+export const SAMPLE_RELEASES: ReleasesResponse = {
+  offline: false,
+  releases: [
+    {
+      tag_name: "v0.1.0",
+      name: "v0.1.0 — UI Guard",
+      published_at: daysAgo(8),
+      html_url: "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/releases/tag/v0.1.0",
+    },
+  ],
+};
