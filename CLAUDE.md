@@ -93,3 +93,9 @@ Notes:
   changing after your first `ia-index` run, run it once more before you
   commit (see #16).
 <!-- worklog:policy:end -->
+
+
+## Spillwave UI Guard
+See `.claude/UI_GUARD.md` and the skills under `.spillwave/ui-guard/skills/`.
+Wireframe-first + adversarial review is required for non-trivial UI work.
+Plugin: https://github.com/SpillwaveSolutions/spillwave-ui-guard
