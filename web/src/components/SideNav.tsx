@@ -1,14 +1,21 @@
 import { NavLink } from "react-router-dom";
 import { PANELS } from "../lib/panels";
 
-export default function SideNav() {
+export default function SideNav({
+  className = "",
+  onNavigate,
+}: {
+  className?: string;
+  onNavigate?: () => void;
+}) {
   return (
-    <nav className="glass flex w-56 shrink-0 flex-col gap-1 rounded-xl p-3">
+    <nav className={`glass flex w-56 shrink-0 flex-col gap-1 rounded-xl p-3 ${className}`}>
       {PANELS.map((panel) => (
         <NavLink
           key={panel.path}
           to={panel.path}
           end={panel.path === "/"}
+          onClick={onNavigate}
           className={({ isActive }) =>
             `focus-ring rounded-lg px-3 py-2 text-sm transition-colors ${
               isActive
