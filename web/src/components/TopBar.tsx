@@ -19,6 +19,12 @@ export default function TopBar({ onOpenNav }: { onOpenNav?: () => void }) {
     }
   }, [repoState]);
 
+  useEffect(() => {
+    const open = () => setPickerOpen(true);
+    window.addEventListener("wiki-ticket:open-repo", open);
+    return () => window.removeEventListener("wiki-ticket:open-repo", open);
+  }, []);
+
   return (
     <header className="glass flex min-w-0 items-center justify-between gap-2 rounded-xl px-4 py-3">
       <div className="flex min-w-0 items-center gap-3">

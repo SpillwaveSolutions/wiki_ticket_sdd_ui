@@ -27,6 +27,8 @@ One panel fills the main column. Shared chrome is in `shell.md`.
 - **Empty / missing artifact**: EmptyState, not a crash.
 - **Offline GitHub**: degrade; do not block Overview/Board/Docs that can run locally.
 
+- **No worklog repo**: guided empty state (not a raw 400 path). Copy explains this is a WikiTicket SDD folder. **Choose repo** opens the picker.
+
 ## Acceptance Criteria
 - [ ] Each `PANELS` path renders the matching panel heading or primary landmark.
 - [ ] Board drawer opens from a card and shows history.
@@ -34,6 +36,7 @@ One panel fills the main column. Shared chrome is in `shell.md`.
 - [ ] Publish plane distinguishes the three drift states.
 - [ ] Traceability lets the user walk a node both directions.
 - [ ] No control writes to the target repo.
+- [ ] A missing worklog repo shows a guided empty state with Choose repo, not a raw API path.
 
 ## Notes
 - PlantUML Salt: docs/ui/wireframes/. This file is the Guard contract.
