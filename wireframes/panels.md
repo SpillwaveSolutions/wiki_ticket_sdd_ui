@@ -1,9 +1,13 @@
 # Screen: Read-only panels
 
 ## Goal
-Show the whole SDD project at once. Each panel is a route from PANELS. None mutate the target repo.
+Show the whole SDD project at once. Each panel is a route from `PANELS`. None mutate the target repo.
 
-## Panels
+## Layout
+
+One panel fills the main column. Shared chrome is in `shell.md`.
+
+## Key Elements
 
 | Panel | Must show |
 |-------|-----------|
@@ -18,13 +22,13 @@ Show the whole SDD project at once. Each panel is a route from PANELS. None muta
 | Charts | Burnup, kind mix, weekly velocity, unplanned-work ratio |
 | Traceability | Interactive graph plan to item to ticket to PR to release; trace-check checklist |
 
-## Shared states
+## States
 - **Loading**: spinner in the panel, not a blank page.
 - **Empty / missing artifact**: EmptyState, not a crash.
 - **Offline GitHub**: degrade; do not block Overview/Board/Docs that can run locally.
 
 ## Acceptance Criteria
-- [ ] Each PANELS path renders the matching panel heading or primary landmark.
+- [ ] Each `PANELS` path renders the matching panel heading or primary landmark.
 - [ ] Board drawer opens from a card and shows history.
 - [ ] Roadmap renders Mermaid when the markdown contains it.
 - [ ] Publish plane distinguishes the three drift states.
