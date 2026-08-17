@@ -27,7 +27,7 @@ One panel fills the main column. Shared chrome is in `shell.md`.
 - **Empty / missing artifact**: EmptyState, not a crash.
 - **Offline GitHub**: degrade; do not block Overview/Board/Docs that can run locally.
 
-- **No worklog repo**: guided empty state (not a raw 400 path). Copy explains this is a WikiTicket SDD folder. **Choose repo** opens the picker. **Load sample worklog** (`data-testid=load-sample-worklog`) activates an offline sample corpus so Overview, Board, Roadmap, Activity, Releases, Charts, **Docs**, and **Traceability** can be explored without a real repo.
+- **No worklog repo**: guided empty state (not a raw 400 path). Copy explains this is a WikiTicket SDD folder. **Choose repo** opens the picker. **Load sample worklog** (`data-testid=load-sample-worklog`) activates an offline sample corpus so Overview, Board, Roadmap, Activity, Releases, Charts, Docs, Traceability, **Publish plane**, and **Sync health** can be explored without a real repo.
 
 ## Acceptance Criteria
 - [ ] Each `PANELS` path renders the matching panel heading or primary landmark.
@@ -41,6 +41,8 @@ One panel fills the main column. Shared chrome is in `shell.md`.
 - [ ] Sample mode also returns fixture roadmap markdown (with a Mermaid block), git log, and one release so Roadmap, Activity, and Releases render offline.
 - [ ] Sample mode returns fixture docs inventory (with truth-state + a supersede chain) and doc content so Docs renders offline.
 - [ ] Sample mode returns a fixture graph (plan → item → ticket → PR → release) and a clean trace-check so Traceability renders offline.
+- [ ] Sample mode returns a wiki ledger with all three drift states (in-sync, pending republish, source-drift) so Publish plane renders offline.
+- [ ] Sample mode returns sync-state cursors plus mixed linked/unpushed/orphan items so Sync health renders offline.
 
 ## Notes
 - PlantUML Salt: docs/ui/wireframes/. This file is the Guard contract.

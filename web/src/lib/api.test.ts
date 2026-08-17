@@ -226,4 +226,15 @@ describe("api.ts sample mode", () => {
     expect(trace.output).toMatch(/no unlinked evidence/);
     expect(fetchMock).not.toHaveBeenCalled();
   });
+
+  it("returns fixture wiki ledger and sync state without fetch", async () => {
+    const fetchMock = vi.fn();
+    vi.stubGlobal("fetch", fetchMock);
+    const ledger = await api.getWikiLedger();
+    const sync = await api.getSync();
+    const drifts = Object.values(ledger).map((e) => e.drift);
+    expect(drifts).toEqual(expect.arrayContaining(["in-sync", "pending", "source-drift"]));
+    expect(sync.cursors?.github).toBeTruthy();
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
 });
