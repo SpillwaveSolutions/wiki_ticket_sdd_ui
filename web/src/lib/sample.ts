@@ -5,7 +5,9 @@ import type {
   ReleasesResponse,
   RepoInfo,
   RoadmapResponse,
+  SyncState,
   TraceCheckResponse,
+  WikiLedgerResponse,
   WorklogEvent,
   WorklogItem,
 } from "./types";
@@ -52,6 +54,11 @@ export const SAMPLE_ITEMS: WorklogItem[] = [
     priority: "P1",
     milestone: "v0.2",
     labels: ["ui", "sample"],
+    external: {
+      system: "github",
+      key: 1,
+      url: "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/1",
+    },
   },
   {
     id: "01SAMPLESTORY000000000001",
@@ -61,6 +68,11 @@ export const SAMPLE_ITEMS: WorklogItem[] = [
     kind: "feature",
     parent: "01SAMPLEEPIC0000000000001",
     milestone: "v0.2",
+    external: {
+      system: "github",
+      key: 2,
+      url: "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/2",
+    },
   },
   {
     id: "01SAMPLESTORY000000000002",
@@ -97,6 +109,14 @@ export const SAMPLE_ITEMS: WorklogItem[] = [
     level: "task",
     kind: "ops",
     milestone: "v0.1",
+  },
+  {
+    id: "01SAMPLEORPHAN00000000001",
+    title: "Orphan event from a deleted item",
+    status: "todo",
+    level: "task",
+    kind: "ops",
+    _orphan: true,
   },
 ];
 
@@ -356,4 +376,62 @@ export const SAMPLE_TRACE_CHECK: TraceCheckResponse = {
   output: "trace: no unlinked evidence\n",
   gaps: 0,
 };
+
+export const SAMPLE_LEDGER: WikiLedgerResponse = {
+  "ui-guard-plan": {
+    rev: "1",
+    source: "docs/plans/ui-guard.md",
+    source_hash: "aaa111",
+    render_hash: "aaa111",
+    url: "https://example.test/wiki/ui-guard-plan",
+    title: "UI Guard wireframe-first plan",
+    wiki_key: "ui-guard-plan",
+    doc_type: "plan",
+    truth_state: "current",
+    drift: "in-sync",
+  },
+  "empty-state-adr": {
+    rev: "2",
+    source: "docs/adr/0001-empty-state.md",
+    source_hash: "bbb222",
+    render_hash: "bbb333",
+    url: "https://example.test/wiki/empty-state-adr",
+    title: "ADR: guided empty state over raw 400s",
+    wiki_key: "empty-state-adr",
+    doc_type: "adr",
+    truth_state: "current",
+    drift: "pending",
+  },
+  roadmap: {
+    rev: "1",
+    source: "docs/roadmap.md",
+    source_hash: "ccc444",
+    render_hash: "ccc555",
+    url: "https://example.test/wiki/roadmap",
+    title: "Product Roadmap",
+    wiki_key: "roadmap",
+    doc_type: "roadmap",
+    truth_state: "current",
+    drift: "source-drift",
+  },
+};
+
+export const SAMPLE_SYNC: SyncState = {
+  adapter_path: ".work/adapters/github.json",
+  cursors: {
+    github: "2026-08-16T18:00:00.000Z",
+    wiki: "2026-08-16T12:00:00.000Z",
+  },
+  items: {
+    "01SAMPLEEPIC0000000000001": {
+      last_push: "2026-08-16T18:00:00.000Z",
+      last_pushed_hash: "deadbeef",
+    },
+    "01SAMPLESTORY000000000001": {
+      last_push: "2026-08-12T10:00:00.000Z",
+      last_pushed_hash: "cafebabe",
+    },
+  },
+};
+
 

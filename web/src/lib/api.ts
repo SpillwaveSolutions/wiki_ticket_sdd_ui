@@ -32,9 +32,11 @@ import {
   SAMPLE_EVENTS,
   SAMPLE_GRAPH,
   SAMPLE_ITEMS,
+  SAMPLE_LEDGER,
   SAMPLE_RELEASES,
   SAMPLE_REPO,
   SAMPLE_ROADMAP,
+  SAMPLE_SYNC,
   SAMPLE_TRACE_CHECK,
 } from "./sample";
 
@@ -170,8 +172,14 @@ export const api = {
     return getJson<GraphResponse>("/api/index/graph", "get_graph");
   },
   getManifest: () => getJson<ManifestResponse>("/api/index/manifest", "get_manifest"),
-  getWikiLedger: () => getJson<WikiLedgerResponse>("/api/wiki-ledger", "get_wiki_ledger"),
-  getSync: () => getJson<SyncState>("/api/sync", "get_sync"),
+  getWikiLedger: async (): Promise<WikiLedgerResponse> => {
+    if (isSampleMode()) return SAMPLE_LEDGER;
+    return getJson<WikiLedgerResponse>("/api/wiki-ledger", "get_wiki_ledger");
+  },
+  getSync: async (): Promise<SyncState> => {
+    if (isSampleMode()) return SAMPLE_SYNC;
+    return getJson<SyncState>("/api/sync", "get_sync");
+  },
   getGitLog: async (limit?: number): Promise<GitCommit[]> => {
     if (isSampleMode()) return SAMPLE_COMMITS.slice(0, limit ?? SAMPLE_COMMITS.length);
     return getJson<GitCommit[]>(
