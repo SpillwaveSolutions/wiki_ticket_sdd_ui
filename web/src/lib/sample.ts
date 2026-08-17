@@ -1,4 +1,14 @@
-import type { GitCommit, ReleasesResponse, RepoInfo, RoadmapResponse, WorklogEvent, WorklogItem } from "./types";
+import type {
+  GitCommit,
+  GraphResponse,
+  InventoryResponse,
+  ReleasesResponse,
+  RepoInfo,
+  RoadmapResponse,
+  TraceCheckResponse,
+  WorklogEvent,
+  WorklogItem,
+} from "./types";
 
 export const SAMPLE_FLAG = "wiki-ticket-sample";
 
@@ -208,3 +218,142 @@ export const SAMPLE_RELEASES: ReleasesResponse = {
     },
   ],
 };
+
+export const SAMPLE_DOCS: InventoryResponse = {
+  version: 1,
+  docs: [
+    {
+      wiki_key: "ui-guard-plan",
+      doc_type: "plan",
+      title: "UI Guard wireframe-first plan",
+      source: "docs/plans/ui-guard.md",
+      status: "active",
+      truth_state: "current",
+      tags: ["ui", "process"],
+      date: "2026-08-16",
+    },
+    {
+      wiki_key: "empty-state-adr",
+      canonical_key: "empty-state-adr",
+      doc_type: "adr",
+      title: "ADR: guided empty state over raw 400s",
+      source: "docs/adr/0001-empty-state.md",
+      status: "accepted",
+      truth_state: "current",
+      supersedes: "empty-state-adr-draft",
+      tags: ["ux"],
+      date: "2026-08-16",
+    },
+    {
+      wiki_key: "empty-state-adr-draft",
+      doc_type: "adr",
+      title: "Draft: empty-state copy (superseded)",
+      source: "docs/adr/0001-empty-state-draft.md",
+      status: "superseded",
+      truth_state: "superseded",
+      superseded_by: "empty-state-adr",
+      date: "2026-08-15",
+    },
+    {
+      wiki_key: "roadmap",
+      doc_type: "roadmap",
+      title: "Product Roadmap",
+      source: "docs/roadmap.md",
+      truth_state: "current",
+    },
+    {
+      wiki_key: "status-2026-08",
+      doc_type: "status",
+      title: "August status",
+      source: "docs/status/2026-08.md",
+      truth_state: "current",
+      date: "2026-08-16",
+    },
+  ],
+};
+
+export const SAMPLE_DOC_CONTENT: Record<string, string> = {
+  "docs/plans/ui-guard.md": `# UI Guard wireframe-first plan
+
+Wireframes under \`wireframes/\` are the contract. Hooks and CI block UI
+edits that skip the wireframe update.
+
+## Next
+
+- Image block in ForgeNotes
+- Tree-aware New Note in Motion
+- Sample Docs + Traceability here
+`,
+  "docs/adr/0001-empty-state.md": `# ADR: guided empty state over raw 400s
+
+When no worklog repo is selected, show a guided empty state with
+**Choose repo** and **Load sample worklog**.
+`,
+  "docs/adr/0001-empty-state-draft.md": `# Draft: empty-state copy (superseded)
+
+Replaced by the guided empty state ADR.
+`,
+  "docs/roadmap.md": SAMPLE_ROADMAP.markdown,
+  "docs/status/2026-08.md": `# August status
+
+Sample worklog, Roadmap, Activity, and Releases fixtures are live.
+Docs and Traceability fixtures ship next.
+`,
+};
+
+export const SAMPLE_GRAPH: GraphResponse = {
+  version: 1,
+  nodes: {
+    "ui-guard-plan": {
+      doc_type: "plan",
+      source: "docs/plans/ui-guard.md",
+      title: "UI Guard wireframe-first plan",
+      truth_state: "current",
+    },
+    "01SAMPLEEPIC0000000000001": {
+      doc_type: "item",
+      title: "Ship WikiTicket UI read-only dashboard",
+      status: "in_progress",
+    },
+    "01SAMPLESTORY000000000001": {
+      doc_type: "item",
+      title: "Overview panel with milestone bars",
+      status: "done",
+    },
+    "ticket:SAMPLE-1": {
+      doc_type: "ticket",
+      title: "SAMPLE-1 Guided empty state",
+      url: "https://github.com/SpillwaveSolutions/wiki_ticket_sdd_ui/issues/1",
+    },
+    "pr:32": {
+      doc_type: "pr",
+      title: "PR #32 Bookmark block",
+      url: "https://github.com/SpillwaveSolutions/forge-notes/pull/32",
+    },
+    "release:v0.1.0": {
+      doc_type: "release",
+      title: "v0.1.0 — UI Guard",
+    },
+    roadmap: {
+      doc_type: "roadmap",
+      title: "Product Roadmap",
+      source: "docs/roadmap.md",
+      truth_state: "current",
+    },
+  },
+  edges: [
+    { from: "ui-guard-plan", to: "01SAMPLEEPIC0000000000001", type: "produces" },
+    { from: "01SAMPLEEPIC0000000000001", to: "01SAMPLESTORY000000000001", type: "belongs-to" },
+    { from: "01SAMPLEEPIC0000000000001", to: "ticket:SAMPLE-1", type: "targets" },
+    { from: "01SAMPLESTORY000000000001", to: "pr:32", type: "lands-in" },
+    { from: "pr:32", to: "release:v0.1.0", type: "lands-in" },
+    { from: "ui-guard-plan", to: "roadmap", type: "references" },
+  ],
+};
+
+export const SAMPLE_TRACE_CHECK: TraceCheckResponse = {
+  ok: true,
+  output: "trace: no unlinked evidence\n",
+  gaps: 0,
+};
+

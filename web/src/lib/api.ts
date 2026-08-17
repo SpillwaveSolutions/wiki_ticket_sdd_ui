@@ -24,7 +24,19 @@ import type {
   WorklogEvent,
   WorklogItem,
 } from "./types";
-import { isSampleMode, SAMPLE_COMMITS, SAMPLE_EVENTS, SAMPLE_ITEMS, SAMPLE_RELEASES, SAMPLE_REPO, SAMPLE_ROADMAP } from "./sample";
+import {
+  isSampleMode,
+  SAMPLE_COMMITS,
+  SAMPLE_DOC_CONTENT,
+  SAMPLE_DOCS,
+  SAMPLE_EVENTS,
+  SAMPLE_GRAPH,
+  SAMPLE_ITEMS,
+  SAMPLE_RELEASES,
+  SAMPLE_REPO,
+  SAMPLE_ROADMAP,
+  SAMPLE_TRACE_CHECK,
+} from "./sample";
 
 export class ApiError extends Error {
   status: number;
@@ -141,10 +153,22 @@ export const api = {
     if (isSampleMode()) return SAMPLE_ROADMAP;
     return getJson<RoadmapResponse>("/api/roadmap", "get_roadmap");
   },
-  getDocs: () => getJson<InventoryResponse>("/api/docs", "get_docs"),
-  getDocContent: (path: string) =>
-    getText(`/api/docs/content?path=${encodeURIComponent(path)}`, "get_doc_content", { path }),
-  getGraph: () => getJson<GraphResponse>("/api/index/graph", "get_graph"),
+  getDocs: async (): Promise<InventoryResponse> => {
+    if (isSampleMode()) return SAMPLE_DOCS;
+    return getJson<InventoryResponse>("/api/docs", "get_docs");
+  },
+  getDocContent: async (path: string): Promise<string> => {
+    if (isSampleMode()) {
+      const body = SAMPLE_DOC_CONTENT[path];
+      if (body === undefined) throw new ApiError(`not found: ${path}`, 404);
+      return body;
+    }
+    return getText(`/api/docs/content?path=${encodeURIComponent(path)}`, "get_doc_content", { path });
+  },
+  getGraph: async (): Promise<GraphResponse> => {
+    if (isSampleMode()) return SAMPLE_GRAPH;
+    return getJson<GraphResponse>("/api/index/graph", "get_graph");
+  },
   getManifest: () => getJson<ManifestResponse>("/api/index/manifest", "get_manifest"),
   getWikiLedger: () => getJson<WikiLedgerResponse>("/api/wiki-ledger", "get_wiki_ledger"),
   getSync: () => getJson<SyncState>("/api/sync", "get_sync"),
@@ -160,7 +184,10 @@ export const api = {
     if (isSampleMode()) return SAMPLE_RELEASES;
     return getJson<ReleasesResponse>("/api/releases", "get_releases");
   },
-  getTraceCheck: () => getJson<TraceCheckResponse>("/api/trace-check", "get_trace_check"),
+  getTraceCheck: async (): Promise<TraceCheckResponse> => {
+    if (isSampleMode()) return SAMPLE_TRACE_CHECK;
+    return getJson<TraceCheckResponse>("/api/trace-check", "get_trace_check");
+  },
 
   /** Tauri-only: native folder dialog + validate + store. */
   pickRepo: async (): Promise<RepoInfo> => {
