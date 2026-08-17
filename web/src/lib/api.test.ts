@@ -209,4 +209,21 @@ describe("api.ts sample mode", () => {
     expect(releases.releases[0]?.tag_name).toBe("v0.1.0");
     expect(fetchMock).not.toHaveBeenCalled();
   });
+
+  it("returns fixture docs inventory, content, graph, and trace-check without fetch", async () => {
+    const fetchMock = vi.fn();
+    vi.stubGlobal("fetch", fetchMock);
+    const docs = await api.getDocs();
+    const content = await api.getDocContent("docs/adr/0001-empty-state.md");
+    const graph = await api.getGraph();
+    const trace = await api.getTraceCheck();
+    expect(docs.docs.length).toBeGreaterThan(0);
+    expect(docs.docs.some((d) => d.truth_state === "superseded")).toBe(true);
+    expect(content).toMatch(/guided empty state/i);
+    expect(Object.keys(graph.nodes).length).toBeGreaterThan(0);
+    expect(graph.edges.length).toBeGreaterThan(0);
+    expect(trace.ok).toBe(true);
+    expect(trace.output).toMatch(/no unlinked evidence/);
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
 });
